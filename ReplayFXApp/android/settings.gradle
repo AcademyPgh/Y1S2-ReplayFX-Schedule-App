@@ -1,0 +1,3 @@
+rootProject.name = 'ReplayFXApp'
+
+include ':app'
