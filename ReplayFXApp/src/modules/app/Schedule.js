@@ -8,7 +8,7 @@ import {
 import styles from './StyleSheet';
 import _ from 'lodash';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-//import NewTabBar from './replay_scroll_tab_view';
+import NewTabBar from './replay_scroll_tab_view';
 import ScheduleListView from './ScheduleListView';
 import ScheduleData, {Types} from './ReplayFX_Axios';
 
@@ -39,11 +39,12 @@ export default class Scroll_Tab_View extends Component {
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
-    setTimeout(this.loadLocalTypes, 1500);
-    setTimeout(this.loadTypes, 2500);
+    setTimeout(this.loadLocalTypes, 1000);
+    setTimeout(this.loadTypes, 2000);
     this.loadLocalSchedule();
     this.loadSchedule();
     this.loadFavorites();
+
   }
 
   //function that loads favorites from local storage
