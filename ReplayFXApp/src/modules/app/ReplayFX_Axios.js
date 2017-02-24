@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const ScheduleData = () => {
 
-  return axios('https://replayfxcalendar.azurewebsites.net/public');
+  return axios('https://replayfxcalendar.azurewebsites.net/schedule');
 };
 
 export const Types = () => {
