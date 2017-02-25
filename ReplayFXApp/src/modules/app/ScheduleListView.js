@@ -17,6 +17,7 @@ import CloseIcon from '../utils/closeIcon';
 //import Collapsible from 'react-native-collapsible';
 //import Accordion from 'react-native-collapsible/Accordion';
 import {createAnimatableComponent, View, Text} from 'react-native-animatable';
+import SectionHeader from '../actions/SectionHeader';
 
 export default class ScheduleListView extends Component {
   constructor(props) {
@@ -132,13 +133,9 @@ export default class ScheduleListView extends Component {
   }
 
   renderSectionHeader(sectionData, category) {
-    let d = new Date(category);
-
-    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    let n = weekday[d.getDay()];
-    return (<View animation= 'bounceIn' delay= {400}>
-      <Text style={styles.header}>{n}</Text>
-    </View>);
+    return (
+      <SectionHeader sectionData= {sectionData} category= {category}/>
+    )
   }
 
   render() {
@@ -149,7 +146,6 @@ export default class ScheduleListView extends Component {
           transparent={false}
           visible={this.state.modalVisible}
           onRequestClose ={() => {
-            // Alert.alert('Modal has been closed!');
             this.setModalVisible(!this.state.modalVisible);
           }}>
           <View style= {styles.innerContainer}>
@@ -176,6 +172,7 @@ export default class ScheduleListView extends Component {
           dataSource={this.state.dataSource}
           renderRow={this.renderScheduleItem}
           renderSectionHeader={this.renderSectionHeader}
+
       />
       </View>
     );

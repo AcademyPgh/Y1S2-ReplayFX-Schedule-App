@@ -3,7 +3,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {stylechoice} from '../app/StyleSheet';
 
 const CloseIcon = () => {
-  return (<Ionicons name= 'ios-close' size={36}
+  return (<Ionicons name= 'ios-close-circle' size={36}
     color= {stylechoice.accentcolor}/>
   );
 };
