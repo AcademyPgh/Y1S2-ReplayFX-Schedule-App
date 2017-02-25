@@ -13,8 +13,8 @@ const ScheduleModal=(props)=> {
     return (<Modal
           animationType={'slide'}
           transparent={false}
-          visible={props.modalVisible}>
-       //   onRequestClose ={() => props.onSetModalVisible(!props.modalVisible)}>
+          visible={props.modalVisible}
+          onRequestClose ={(props) => props.onSetModalVisible(props)}>
           <View style= {styles.innerContainer}>
             <Text style={styles.modaltitle}>{props.modalTitle}</Text>
             <Text style={styles.modaldatetime}>{props.modalStartTime} - {props.modalEndTime}</Text>
@@ -26,8 +26,8 @@ const ScheduleModal=(props)=> {
             <Text style = {styles.modaldescription}>{props.modalDescription}</Text>
           </ScrollView>
             <View style ={styles.center}>
-            <TouchableHighlight onPress={() => {
-              onSetModalVisible(!props.modalVisible);
+            <TouchableHighlight onPress={(props) => {
+              props.onSetModalVisible(props);
             }}>
               <View><CloseIcon/></View>
             </TouchableHighlight>

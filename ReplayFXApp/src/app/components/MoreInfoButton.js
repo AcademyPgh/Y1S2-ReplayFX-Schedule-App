@@ -3,10 +3,10 @@ import {TouchableHighlight, View} from 'react-native';
 import styles, {stylechoice} from '../styles/StyleSheet';
 import Info_Icon from '../utils/Info_Icon';
 		
-function MoreInfoButton(props) {
+const MoreInfoButton= (props) => {
 if (props.extendedDescription || props.image)
     {return (
-  <TouchableHighlight onPress={() => props.onSetModalVisible(props.visible, props.title, props.startTime, props.endTime, props.location, props.extendedDescription, props.image)}>
+  <TouchableHighlight onPress={(props) => props.onSetModalVisible(props)}>
     <View>
       <Info_Icon/>
     </View>
