@@ -5,15 +5,15 @@ import {
   View,
   AsyncStorage
 } from 'react-native';
-import styles from './StyleSheet';
+import styles from '../styles/StyleSheet';
 import _ from 'lodash';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import NewTabBar from './replay_scroll_tab_view';
+import NewTabBar from '../utils/replay_scroll_tab_view';
 import ScheduleListView from './ScheduleListView';
-import ScheduleData, {Types} from './ReplayFX_Axios';
+import ScheduleData, {Types} from '../utils/ReplayFX_Axios';
 
 //This is a class that has all the info for our swipeable nav bar
-export default class Scroll_Tab_View extends Component {
+export default class Schedule extends Component {
 
   constructor(props) {
     super(props);

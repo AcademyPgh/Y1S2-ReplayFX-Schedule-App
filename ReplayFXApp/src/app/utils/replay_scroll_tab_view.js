@@ -12,7 +12,7 @@ const {
 const Button = require('../utils/Button');
 import {View, Text} from 'react-native-animatable';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import styles, {stylechoice} from './StyleSheet';
+import styles, {stylechoice} from '../styles/StyleSheet';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
