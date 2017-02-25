@@ -38,8 +38,8 @@ export default class Scroll_Tab_View extends Component {
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
-    setTimeout(this.loadLocalTypes, 1000);
-    setTimeout(this.loadTypes, 2000);
+    setTimeout(this.loadLocalTypes, 800);
+    setTimeout(this.loadTypes, 1600);
     this.loadLocalSchedule();
     this.loadSchedule();
     this.loadFavorites();

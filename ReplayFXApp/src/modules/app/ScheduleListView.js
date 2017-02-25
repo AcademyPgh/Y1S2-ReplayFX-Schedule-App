@@ -149,7 +149,7 @@ export default class ScheduleListView extends Component {
           transparent={false}
           visible={this.state.modalVisible}
           onRequestClose ={() => {
-            //Alert.alert('Modal has been closed!');
+            // Alert.alert('Modal has been closed!');
             this.setModalVisible(!this.state.modalVisible);
           }}>
           <View style= {styles.innerContainer}>
