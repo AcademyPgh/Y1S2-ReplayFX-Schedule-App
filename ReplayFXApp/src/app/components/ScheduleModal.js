@@ -5,6 +5,7 @@ import {
     View,
     Image,
     TouchableHighlight,
+    Text
 } from 'react-native';
 import styles, {stylechoice} from '../styles/StyleSheet';
 import CloseIcon from '../utils/closeIcon';

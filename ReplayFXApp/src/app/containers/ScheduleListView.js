@@ -11,7 +11,7 @@ import {createAnimatableComponent, View, Text} from 'react-native-animatable';
 import ScheduleItem from '../components/ScheduleItem';
 //import MoreInfoButton from '../components/MoreInfoButton';
 //import AddFavoriteButton from '../components/AddFavoriteButton';
-//import ScheduleModal from '../components/ScheduleModal';
+import ScheduleModal from '../components/ScheduleModal';
 
 
 export default class ScheduleListView extends Component {
@@ -32,11 +32,11 @@ export default class ScheduleListView extends Component {
       modalEndTime: '',
       modalLocation: ''
     };
-   this.renderScheduleItem = this.renderScheduleItem.bind(this);
+  this.renderScheduleItem = this.renderScheduleItem.bind(this);
     this.handleModalVisible = this.handleModalVisible.bind(this);
    this.handleFavoriteButtonPress=this.handleFavoriteButtonPress.bind(this);
     this.handleAnimateFavorite=this.handleAnimateFavorite.bind(this);
-   
+
   }
   componentWillReceiveProps(nextProps) {
     const ds = new ListView.DataSource({
@@ -61,12 +61,12 @@ export default class ScheduleListView extends Component {
 
   handleFavoriteButtonPress(props){
     if (this.isFavorite){
-            () => props.removeFavorite(props);
+            props.removeFavorite;
             this.favoriteColor='stylechoice.inactive'
             Alert.alert('Item has been removed from your schedule')
           }
           else {
-            () => props.addFavorite(props);
+            props.addFavorite;
             this.favoriteColor='stylechoice.accentcolor'
             Alert.alert('Item has been added to your schedule');
           }
@@ -102,12 +102,24 @@ export default class ScheduleListView extends Component {
             description= {item.description}
             extendedDescription= {item.extendedDescription}
             image= {item.image}
+            id={item.id}
             onSetModalVisible= {() => this.handleModalVisible(true, item.title, item.startTime, item.endTime, item.location, item.extendedDescription, item.image)}
-            onFavoriteButtonPress= {() => this.handleFavoriteButtonPress()}
-            animateFavorite= {() => this.handleAnimateFavorite()}/>)}
+            onFavoriteButtonPress= {() => this.handleFavoriteButtonPress(item.isFavorite)}
+            favoriteColor={this.favoriteColor}
+            animateFavorite= {() => this.handleAnimateFavorite(item.isFavorite)}/>)}
+
   render() {
     return (
       <View style={styles.container}>
+        <ScheduleModal
+        modalVisible={this.state.modalVisible}
+        modalStartTime={this.state.modalStartTime}
+        modalEndTime={this.state.modalEndTime}
+        modalLocation={this.state.modalLocation}
+        modalImage={this.state.modalImage}
+        modalDescription={this.state.modalDescription}
+        onSetModalVisible={() => this.handleModalVisible(false)}
+         />
         <ListView
           styles={styles.container}
           dataSource={this.state.dataSource}
@@ -118,6 +130,4 @@ export default class ScheduleListView extends Component {
     );
   }
 }
-
-
       
