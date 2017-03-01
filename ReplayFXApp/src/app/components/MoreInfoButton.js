@@ -6,7 +6,7 @@ import Info_Icon from '../utils/Info_Icon';
 const MoreInfoButton= (props) => {
 if (props.extendedDescription || props.image)
     {return (
-  <TouchableHighlight onPress={(props) => props.onSetModalVisible(props)}>
+  <TouchableHighlight onPress={() => props.onSetModalVisible(props)}>
     <View>
       <Info_Icon/>
     </View>

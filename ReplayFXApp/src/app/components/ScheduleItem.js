@@ -24,9 +24,8 @@ function ScheduleItem(props) {
       <AddFavoriteButton 
         id={props.id}
         isFavorite={props.isFavorite}
-        onFavoriteButtonPress={props.onFavoriteButtonPress}
-        animateFavorite={() => props.onAnimateFavorite()}
-        favoriteColor={props.favoriteColor}
+        onFavoriteButtonPress={() => props.onFavoriteButtonPress(props)}
+        //favoriteColor={props.favoriteColor}
         />
       </View>
       </View>

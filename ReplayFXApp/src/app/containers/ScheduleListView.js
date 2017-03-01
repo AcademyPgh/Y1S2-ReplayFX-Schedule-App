@@ -30,12 +30,15 @@ export default class ScheduleListView extends Component {
       modalImage: '',
       modalStartTime: '',
       modalEndTime: '',
-      modalLocation: ''
+      modalLocation: '',
+      isFavorite: false,
+      animation: "",
+      favoriteColor: "inactive"
+
     };
   this.renderScheduleItem = this.renderScheduleItem.bind(this);
     this.handleModalVisible = this.handleModalVisible.bind(this);
    this.handleFavoriteButtonPress=this.handleFavoriteButtonPress.bind(this);
-    this.handleAnimateFavorite=this.handleAnimateFavorite.bind(this);
 
   }
   componentWillReceiveProps(nextProps) {
@@ -59,27 +62,28 @@ export default class ScheduleListView extends Component {
     </View>);
   }
 
-  handleFavoriteButtonPress(props){
-    if (this.isFavorite){
-            props.removeFavorite;
-            this.favoriteColor='stylechoice.inactive'
-            Alert.alert('Item has been removed from your schedule')
+  handleFavoriteButtonPress(isFavorite, favoriteColor, animation, props){
+    
+    if (isFavorite){
+          this.setState ({
+            isFavorite: false,
+            favoriteColor: stylechoice.inactive,
+            animation: "shake"
+          })  
+            this.props.removeFavorite(props);
+            Alert.alert('Item has been removed from your schedule');
           }
           else {
-            props.addFavorite;
-            this.favoriteColor='stylechoice.accentcolor'
+            this.setState ({
+              isFavorite: true,
+              favoriteColor: stylechoice.accentcolor,
+              animation: "bounce"
+            })
+            this.props.addFavorite(props);
             Alert.alert('Item has been added to your schedule');
           }
     }
 
-    handleAnimateFavorite() {
-      if (this.isFavorite){
-       'bounce'
-      }
-      else {   
-        'shake'}
-      delay = 400;
-    }
   
   handleModalVisible(visible, title, startTime, endTime, location, extendedDescription, image) {
     this.setState({
@@ -104,9 +108,8 @@ export default class ScheduleListView extends Component {
             image= {item.image}
             id={item.id}
             onSetModalVisible= {() => this.handleModalVisible(true, item.title, item.startTime, item.endTime, item.location, item.extendedDescription, item.image)}
-            onFavoriteButtonPress= {() => this.handleFavoriteButtonPress(item.isFavorite)}
-            favoriteColor={this.favoriteColor}
-            animateFavorite= {() => this.handleAnimateFavorite(item.isFavorite)}/>)}
+            onFavoriteButtonPress={() =>this.handleFavoriteButtonPress(item.isFavorite, item.favoriteColor, item.animation )}
+            />)}
 
   render() {
     return (
