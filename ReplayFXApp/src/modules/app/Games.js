@@ -33,17 +33,7 @@ export default class Games extends Component {
       </View>
     );
   }
-  // _renderHeader() {
-  //    return (
-  //      <View style={styles.header}>
-  //        {this.state.gameSectionHeader.map((game, index) => {
-  //          return (
-  //        <Text style={styles.headerText}>{game}</Text>
-  //      );
-  //    })}
-  //      </View>
-  //    );
-  //  }
+
 
    _renderContent(section) {
      return (
