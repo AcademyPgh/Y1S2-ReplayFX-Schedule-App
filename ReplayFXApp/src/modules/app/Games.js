@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TouchableHighlight, Modal} from 'react-native';
+import {TouchableHighlight, Modal, ScrollView} from 'react-native';
 import {View, Text} from 'react-native-animatable';
 import Accordion from 'react-native-collapsible/Accordion';
 import styles, {stylechoice} from './StyleSheet';
@@ -47,13 +47,14 @@ export default class Games extends Component {
   modalVisible: false,
   modalTitle: '',
   modalDescription: '',
-  modalImage: '',
-  modalStartTime: '',
-  modalEndTime: '',
+  // modalImage: '',
+
   modalLocation: ''
   };
 
   this._renderHeader = this._renderHeader.bind(this);
+  this._renderContent = this._renderContent.bind(this);
+  this.setModalVisible = this.setModalVisible.bind(this);
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -63,15 +64,13 @@ export default class Games extends Component {
   //   });
   // }
 
-  setModalVisible(visible, title, startTime, endTime, location, extendedDescription, image) {
+  setModalVisible(visible, title, location, description) {
     this.setState({
       modalVisible: visible,
       modalTitle: title,
-      modalStartTime: startTime,
-      modalEndTime: endTime,
       modalLocation: location,
-      modalDescription: extendedDescription,
-      modalImage: image});
+      modalDescription: description
+      });
   }
 
 
@@ -89,10 +88,15 @@ export default class Games extends Component {
          {
            section.content.map((game, index) => {
              return (
+
+               <TouchableHighlight onPress= {() => {
+                 this.setModalVisible(true, game.gameTitle, game.location);
+               }}>
                <View style= {styles.gameTitleLocation} key= {index}>
                 <Text style={styles.title}>{game.gameTitle}</Text>
                 <Text style={styles.title}>{game.location}</Text>
               </View>
+              </TouchableHighlight>
              );
            })
 
@@ -104,7 +108,7 @@ export default class Games extends Component {
    render() {
      return (
        <View>
-       {/* <Modal
+       <Modal
          animationType={'slide'}
          transparent={false}
          visible={this.state.modalVisible}
@@ -113,13 +117,13 @@ export default class Games extends Component {
          }}>
          <View style= {styles.innerContainer}>
            <Text style={styles.modaltitle}>{this.state.modalTitle}</Text>
-           <Text style={styles.modaldatetime}>{this.state.modalStartTime} - {this.state.modalEndTime}</Text>
+           {/* <Text style={styles.modaldatetime}>{this.state.modalStartTime} - {this.state.modalEndTime}</Text> */}
            <Text style ={styles.modaldatetime}>{this.state.modalLocation}</Text>
            <ScrollView>
-           <View style ={{alignItems: 'center'}}>
-               <Image source={{uri: this.state.modalImage}} style={styles.modalimage}/>
-          </View>
-           <Text style = {styles.modaldescription}>{this.state.modalDescription}</Text>
+           {/* <View style ={{alignItems: 'center'}}>
+               <Image source={{uri: this.state.modalImage ? this.state.modalImage : ''}} style={styles.modalimage}/>
+          </View> */}
+           {/* <Text style = {styles.modaldescription}>{this.state.modalDescription}</Text> */}
          </ScrollView>
            <View style ={styles.center}>
            <TouchableHighlight onPress={() => {
@@ -129,7 +133,7 @@ export default class Games extends Component {
            </TouchableHighlight>
          </View>
          </View>
-       </Modal> */}
+       </Modal>
 
        <Accordion
          sections={this.state.SECTIONS}

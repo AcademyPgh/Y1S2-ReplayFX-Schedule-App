@@ -154,7 +154,7 @@ export default class ScheduleListView extends Component {
             <Text style ={styles.modaldatetime}>{this.state.modalLocation}</Text>
             <ScrollView>
             <View style ={{alignItems: 'center'}}>
-                <Image source={{uri: this.state.modalImage}} style={styles.modalimage}/>
+                <Image source={{uri: this.state.modalImage ? this.state.modalImage : ''}} style={styles.modalimage}/>
            </View>
             <Text style = {styles.modaldescription}>{this.state.modalDescription}</Text>
           </ScrollView>
