@@ -1,6 +1,6 @@
 import _ from 'lodash';
 // sorts content into sections based on the types (if it's a favorite, all, movie, etc.)
-const content_sections = (data, favorites, schedule) => {
+const ScheduleDataDivider = (data, favorites, schedule) => {
   let dataMap = {};
   schedule.forEach((event) => {
     if (_.indexOf(favorites, event.id) > -1)
@@ -44,4 +44,4 @@ const content_sections = (data, favorites, schedule) => {
   return dataMap;
 };
 
-export default content_sections;
+export default ScheduleDataDivider;

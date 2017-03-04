@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
+ AppRegistry,
   BackAndroid,
 } 
 from 'react-native';

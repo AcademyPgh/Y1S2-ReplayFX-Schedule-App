@@ -1,6 +1,7 @@
 //This was "hello"
 import React, {Component} from 'react';
 import styles from './StyleSheet';
+import Scroll_Tab_View from './Schedule'
 import {
     Text,
     View,
@@ -30,6 +31,9 @@ render() {
       </View>
       {/* Line of text under the logo saying we built this */}
       <Text style= {styles.academy}>App Built by Academy Pittsburgh</Text>
+       <Scroll_Tab_View/>
+       {/* Shows our "main content" */}
+
       </View>
     );
   }
