@@ -12,19 +12,36 @@ export default class Games extends Component {
     SECTIONS: [
       {
       title: 'Arcade',
-      content: ['Streets of Rage', 'Arkanoid', 'Pac-Man'],
+      content: [
+        {gameTitle: 'Streets of Rage', location: 'A1'},
+        {gameTitle: 'Arkanoid', location: 'A2'},
+        {gameTitle: 'Pac-Man', location: 'A3'}],
     },
     {
       title: 'Pinball',
-      content: ['Walking Dead', 'Monopoly', 'A something or another'],
+      content: [
+        {gameTitle: 'Walking Dead', location: 'B1'},
+        {gameTitle: 'Monopoly', location: 'B2'},
+        {gameTitle:'A something or another', location: 'B3'}],
     },
     {
       title: 'Console',
-      content: ['Sonic','Super Mario', 'Donkey Kong', 'Mario Kart', 'Super Smash Bros']
+      content: [
+        {gameTitle: 'Sonic', location: 'C1'},
+        {gameTitle: 'Super Mario', location: 'C2'},
+        {gameTitle: 'Donkey Kong', location: 'C3'},
+        {gameTitle: 'Mario Kart', location: 'C4'},
+        {gameTitle:'Super Smash Bros', location: 'C5'}
+      ]
     },
     {
       title: 'Board',
-      content: ['Monopoly', 'Clue', 'Battle-Ship', 'Sorry']
+      content: [
+        {gameTitle: 'Monopoly', location: 'D1'},
+        {gameTitle: 'Clue', location: 'D2'},
+        {gameTitle: 'Battle-Ship', location: 'D3'},
+        {gameTitle: 'Sorry', location: 'D4'}
+      ]
     }
   ],
   modalVisible: false,
@@ -42,9 +59,10 @@ export default class Games extends Component {
   // componentWillReceiveProps(nextProps) {
   // const sections = this.state.SECTIONS;
   //   this.setState({
-  //     
+  //
   //   });
   // }
+
   setModalVisible(visible, title, startTime, endTime, location, extendedDescription, image) {
     this.setState({
       modalVisible: visible,
@@ -69,9 +87,12 @@ export default class Games extends Component {
      return (
        <View>
          {
-           section.content.sort().map((game, index) => {
+           section.content.map((game, index) => {
              return (
-                <Text style={styles.title} key={index}>{game}</Text>
+               <View style= {styles.gameTitleLocation} key= {index}>
+                <Text style={styles.title}>{game.gameTitle}</Text>
+                <Text style={styles.title}>{game.location}</Text>
+              </View>
              );
            })
 
