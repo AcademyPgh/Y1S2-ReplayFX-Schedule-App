@@ -1,5 +1,4 @@
 // This was "Scroll Tab View"
-
 import React, {Component} from 'react';
 import {
   View,
@@ -11,6 +10,7 @@ import ScrollableTabView from 'react-native-scrollable-tab-view';
 import NewTabBar from '../utils/replay_scroll_tab_view';
 import ScheduleListView from './ScheduleListView';
 import ScheduleData, {Types} from '../utils/ReplayFX_Axios';
+import Games from './Games';
 
 //This is a class that has all the info for our swipeable nav bar
 export default class Schedule extends Component {
@@ -24,7 +24,8 @@ export default class Schedule extends Component {
       baseTabs: [
         //hard-coded
         {DisplayName: 'Experience', Name: 'all'},
-        {DisplayName: 'My Schedule', Name: 'favorites'}
+        {DisplayName: 'My Schedule', Name: 'favorites'},
+        {DisplayName: 'Games', Name: 'Games'}
       ],
       baseSchedule: []
     };
@@ -110,9 +111,11 @@ export default class Schedule extends Component {
       // This returns the tabs from the array so we can see them on the screen!
         <ScrollableTabView renderTabBar = {() => <NewTabBar favoritesCount= {this.state.favorites.length}/>} >
           {this.state.baseTabs.map((item, index) =>
-          {return (<View style={styles.slide} tabLabel= {item.DisplayName} key = {index} >
-            {/* passing the state of the length of the favorites so it's displayed in the
+          {return (
+            <View style={styles.slide} tabLabel= {item.DisplayName} key = {index} >
+            {/* Passing the state of the length of the favorites so it's displayed in the
             'my schedule' section on the swipeable nav bar */}
+            {item.DisplayName == 'Games' ? <Games/> : null}
             <ScheduleListView
               //rendering the state based on whether an item is in the favorites array or not
               typeIs={item.Name}
@@ -120,7 +123,9 @@ export default class Schedule extends Component {
               removeFavorite={this.removeFavorite}
               addFavorite={this.addFavorite}
               baseSchedule={this.state.baseSchedule}/>
-          </View>);})}
+          </View>
+
+        );})}
         </ScrollableTabView>
     );
   }
