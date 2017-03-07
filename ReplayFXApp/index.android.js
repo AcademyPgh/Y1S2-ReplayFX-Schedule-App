@@ -10,8 +10,8 @@ import {
   BackAndroid,
 } 
 from 'react-native';
-import ReplayMainView from './src/modules/app/ReplayMainView';
-import * as NavigationStateActions from './src/modules/navigation/NavigationState';
+import ReplayMainView from './src/app/components/ReplayMainView';
+//import * as NavigationStateActions from './src/modules/navigation/NavigationState';
 
 const ReplayFXApp = React.createClass({
 

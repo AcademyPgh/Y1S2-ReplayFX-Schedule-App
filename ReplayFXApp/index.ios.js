@@ -8,10 +8,8 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
-  View
 } from 'react-native';
-import ReplayMainView from './src/modules/app/ReplayMainView';
+import ReplayMainView from './src/app/components/ReplayMainView';
 
 
 export default class ReplayFXApp extends Component {
