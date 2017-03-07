@@ -3,15 +3,16 @@
 import React, {Component} from 'react';
 import {
   ListView,
-  Alert
+  Alert,
+  View
 } from 'react-native';
 import styles, {stylechoice} from '../styles/StyleSheet';
 import ScheduleDataDivider from '../utils/ScheduleDataDivider';
-import {createAnimatableComponent, View, Text} from 'react-native-animatable';
 import ScheduleItem from '../components/ScheduleItem';
 //import MoreInfoButton from '../components/MoreInfoButton';
 //import AddFavoriteButton from '../components/AddFavoriteButton';
 import ScheduleModal from '../components/ScheduleModal';
+import SectionHeader from '../components/SectionHeader';
 
 
 export default class ScheduleListView extends Component {
@@ -49,25 +50,16 @@ export default class ScheduleListView extends Component {
     });
   }
 
-  renderSectionHeader(sectionData, category) {
-    let d = new Date(category);
-
-    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    let n = weekday[d.getDay()];
-    return (<View animation= 'bounceIn' delay= {400}>
-      <Text style={styles.header}>{n}</Text>
-    </View>);
-  }
 
   handleFavoriteButtonPress(item){
     
     if (item.isFavorite){
             this.props.removeFavorite(item.id);
-            Alert.alert('Item has been removed from your schedule');
+          //  Alert.alert('Item has been removed from your schedule');
           }
           else {
             this.props.addFavorite(item.id);
-            Alert.alert('Item has been added to your schedule');
+        //    Alert.alert('Item has been added to your schedule');
           }
     }
 
@@ -90,6 +82,12 @@ export default class ScheduleListView extends Component {
             onSetModalVisible= {() => this.handleModalVisible(true, item.title, item.startTime, item.endTime, item.location, item.extendedDescription, item.image)}
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />)}
+
+  renderSectionHeader(sectionData, category) {
+    return (
+      <SectionHeader sectionData= {sectionData} category= {category}/>
+    )
+  }
   render() {
     return (
       <View style={styles.container}>

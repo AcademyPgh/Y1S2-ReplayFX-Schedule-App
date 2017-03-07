@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {TouchableHighlight, Modal, ScrollView} from 'react-native';
 import {View, Text} from 'react-native-animatable';
 import Accordion from 'react-native-collapsible/Accordion';
-import styles, {stylechoice} from './StyleSheet';
+import styles, {stylechoice} from '../styles/StyleSheet';
 import CloseIcon from '../utils/closeIcon';
 
 export default class Games extends Component {
@@ -92,7 +92,7 @@ export default class Games extends Component {
                <TouchableHighlight onPress= {() => {
                  this.setModalVisible(true, game.gameTitle, game.location);
                }}>
-               <View style= {styles.gameTitleLocation} key= {index}>
+               <View style= {styles.gameTitleLocation} key= {game.index}>
                 <Text style={styles.title}>{game.gameTitle}</Text>
                 <Text style={styles.title}>{game.location}</Text>
               </View>

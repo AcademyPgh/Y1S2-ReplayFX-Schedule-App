@@ -40,8 +40,8 @@ export default class Schedule extends Component {
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
-    setTimeout(this.loadLocalTypes, 1200);
-    setTimeout(this.loadTypes, 2200);
+    setTimeout(this.loadLocalTypes, 1000);
+    setTimeout(this.loadTypes, 1800);
     this.loadLocalSchedule();
     this.loadSchedule();
     this.loadFavorites();
@@ -54,6 +54,7 @@ export default class Schedule extends Component {
       if (value !== null) {
         this.setState({favorites: JSON.parse(value)});
       }
+      
     });
   }
   //Axios call that gives baseSchedule its state and stores the data

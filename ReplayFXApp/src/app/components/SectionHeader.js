@@ -1,6 +1,6 @@
 import React from 'react';
 import {createAnimatableComponent, View, Text} from 'react-native-animatable';
-import styles, {stylechoice} from '../app/StyleSheet';
+import styles, {stylechoice} from '../styles/StyleSheet';
 
 /*Day of week for each of event used as Section Header */
 const SectionHeader = ({sectionData, category}) => {

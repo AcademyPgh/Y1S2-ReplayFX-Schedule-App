@@ -1,3 +1,4 @@
+//delete this one 
 const React = require('react');
 const ReactNative = require('react-native');
 const {
@@ -182,8 +183,8 @@ name === 'My Schedule' ? <Ionicons name= 'ios-game-controller-b' style = {styles
 
     return <View
       style={[styles.tabcontainer, {backgroundColor: this.props.backgroundColor}, this.props.style]}
-      onLayout={this.onContainerLayout}
-    >
+      onLayout={this.onContainerLayout}>
+
       <ScrollView
         ref={(scrollView) => { this._scrollView = scrollView; }}
         horizontal={true}
@@ -191,13 +192,11 @@ name === 'My Schedule' ? <Ionicons name= 'ios-game-controller-b' style = {styles
         showsVerticalScrollIndicator={false}
         directionalLockEnabled={true}
         bounces={false}
-        scrollsToTop={false}
-      >
+        scrollsToTop={false}>
         <View
           style={[styles.tabs, {width: this.state._containerWidth}, this.props.tabsContainerStyle]}
           ref={'tabContainer'}
-          onLayout={this.onTabContainerLayout}
-        >
+          onLayout={this.onTabContainerLayout}>
           {this.props.tabs.map((name, page) => {
             const isTabActive = this.props.activeTab === page;
             const renderTab = this.props.renderTab || this.renderTab;

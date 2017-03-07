@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {TouchableHighlight, View} from 'react-native';
+import {TouchableHighlight} from 'react-native';
 import styles, {stylechoice} from '../styles/StyleSheet';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import  {View, Text} from 'react-native-animatable';
 
 const AddFavoriteButton = (props) => {
         return (
