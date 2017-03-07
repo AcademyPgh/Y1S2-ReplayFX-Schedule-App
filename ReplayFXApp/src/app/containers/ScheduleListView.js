@@ -30,10 +30,7 @@ export default class ScheduleListView extends Component {
       modalImage: '',
       modalStartTime: '',
       modalEndTime: '',
-      modalLocation: '',
-      isFavorite: false,
-      animation: "",
-      favoriteColor: "inactive"
+      modalLocation: ''
 
     };
   this.renderScheduleItem = this.renderScheduleItem.bind(this);
@@ -62,24 +59,14 @@ export default class ScheduleListView extends Component {
     </View>);
   }
 
-  handleFavoriteButtonPress(isFavorite, favoriteColor, animation, props){
+  handleFavoriteButtonPress(item){
     
-    if (isFavorite){
-          this.setState ({
-            isFavorite: false,
-            favoriteColor: stylechoice.inactive,
-            animation: "shake"
-          })  
-            this.props.removeFavorite(props);
+    if (item.isFavorite){
+            this.props.removeFavorite(item.id);
             Alert.alert('Item has been removed from your schedule');
           }
           else {
-            this.setState ({
-              isFavorite: true,
-              favoriteColor: stylechoice.accentcolor,
-              animation: "bounce"
-            })
-            this.props.addFavorite(props);
+            this.props.addFavorite(item.id);
             Alert.alert('Item has been added to your schedule');
           }
     }
@@ -99,18 +86,10 @@ export default class ScheduleListView extends Component {
  renderScheduleItem(item) {
    return(
       <ScheduleItem 
-            title={item.title}
-            startTime= {item.startTime}
-            endTime= {item.endTime}
-            location= {item.location}
-            description= {item.description}
-            extendedDescription= {item.extendedDescription}
-            image= {item.image}
-            id={item.id}
+            item={item}
             onSetModalVisible= {() => this.handleModalVisible(true, item.title, item.startTime, item.endTime, item.location, item.extendedDescription, item.image)}
-            onFavoriteButtonPress={() =>this.handleFavoriteButtonPress(item.isFavorite, item.favoriteColor, item.animation )}
+            onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />)}
-
   render() {
     return (
       <View style={styles.container}>
