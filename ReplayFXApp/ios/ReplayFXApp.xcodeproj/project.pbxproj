@@ -1014,6 +1014,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
 				PRODUCT_NAME = ReplayFXApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1032,6 +1033,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.academypgh.ReplayFXApp;
 				PRODUCT_NAME = ReplayFXApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
