@@ -37,6 +37,7 @@ export default class ScheduleListView extends Component {
   this.renderScheduleItem = this.renderScheduleItem.bind(this);
     this.handleModalVisible = this.handleModalVisible.bind(this);
    this.handleFavoriteButtonPress=this.handleFavoriteButtonPress.bind(this);
+   this.timeConverter=this.timeConverter.bind(this);
 
   }
   componentWillReceiveProps(nextProps) {
@@ -76,12 +77,38 @@ export default class ScheduleListView extends Component {
       modalDescription: extendedDescription,
       modalImage: image});
   }
+  timeConverter(time) {
+    if(time){
+    let times = time.split(':'); // convert to array
+
+  // assigning hour and minute based on position in array
+    let hours = Number(times[0]);
+    let minutes = Number(times[1]);
+
+  // calculate
+    if (hours > 0 ) 
+   { var timeValue = '' + ((hours > 12) ? hours - 12 : hours);  }
+    else {
+    var timeValue = '' + 12;
+    }  // hours, converting military time, midnight
+   
+    timeValue += (minutes < 10) ? ':0' + minutes : ':' + minutes;  // make sure minutes looks right based on how many there are
+    timeValue += (hours >= 12) ? ' PM' : ' AM'; //get AM/PM
+  }
+  else { // in case there is no end time.
+    time = "";
+    var timeValue = time;
+}
+return timeValue;
+  }
 
  renderScheduleItem(item) {
+   
    return(
       <ScheduleItem
-            item={item}
-            onSetModalVisible= {() => this.handleModalVisible(true, item.title, item.startTime, item.endTime, item.location, item.extendedDescription, item.image)}
+            timeConverter={this.timeConverter}
+            item={item} //passing whole object
+            onSetModalVisible= {() => this.handleModalVisible(true, item.title, this.timeConverter(item.startTime), this.timeConverter(item.endTime), item.location, item.extendedDescription, item.image)} //need to redefine the function otherwise tries to change state during render
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />)}
 

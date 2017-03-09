@@ -10,10 +10,11 @@ import MoreInfoButton from './MoreInfoButton';
 import AddFavoriteButton from './AddFavoriteButton';
 
 function ScheduleItem(props) {
+  
   return (
       <View style = {styles.info}>
         <Text animation='flipInY' delay={400} style={styles.title}>{props.item.title}</Text>
-        <Text animation='flipInY' delay={400} style={styles.datetime}> {props.item.startTime} - {props.item.endTime}</Text>
+        <Text animation='flipInY' delay={400} style={styles.datetime}> {props.timeConverter(props.item.startTime)} - {props.timeConverter(props.item.endTime)}</Text>
         <Text animation='flipInY' delay={400} style={styles.datetime}>{props.item.location}</Text>
         <Text animation='flipInY' delay={400} style={styles.description}>{props.item.description}</Text>
       <View style={styles.iconrowstyle}>
@@ -31,8 +32,3 @@ function ScheduleItem(props) {
   }
 
   export default ScheduleItem;
-
-  // <Text animation='flipInY' delay={400} style={styles.title}>{props.title}</Text>
-  //       <Text animation='flipInY' delay={400} style={styles.datetime}> {props.startTime} - {props.endTime}</Text>
-  //       <Text animation='flipInY' delay={400} style={styles.datetime}>{props.location}</Text>
-  //       <Text animation='flipInY' delay={400} style={styles.description}>{props.description}</Text>
