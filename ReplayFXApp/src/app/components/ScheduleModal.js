@@ -22,7 +22,7 @@ const ScheduleModal=(props)=> {
             <Text style ={styles.modaldatetime}>{props.modalLocation}</Text>
             <ScrollView>
             <View style ={{alignItems: 'center'}}>
-                <Image source={{uri: props.modalImage}} style={styles.modalimage}/>
+                <Image source={{uri: props.modalImage !== null ? props.modalImage : ''}} style={styles.modalimage}/>
            </View>
             <Text style = {styles.modaldescription}>{props.modalDescription}</Text>
           </ScrollView>

@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
   container: {
     justifyContent: 'center',
-    alignItems: 'center',
+    //alignItems: 'center',
     backgroundColor: stylechoice.regbackground
   },
   welcome: {
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
 
   description: {
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: stylechoice.fontName,
     color: stylechoice.regtextcolor,
     paddingBottom: 1
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     //flexDirection: 'row',
     //justifyContent: 'space-between',
     textAlign: 'left',
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: 'bold',
     color: stylechoice.timeColor,
     paddingBottom: 2
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   info: {
     borderColor: stylechoice.bordercolor,
     borderBottomWidth: 2,
-    width: Dimensions.get('window').width,
+    //width: Dimensions.get('window').width,
     paddingTop: 0,
     paddingRight: 10,
     paddingBottom: 0,
