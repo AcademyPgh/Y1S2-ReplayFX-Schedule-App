@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
   container: {
     justifyContent: 'center',
-    alignItems: 'center',
+    //alignItems: 'center',
     backgroundColor: stylechoice.regbackground
   },
   welcome: {
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   info: {
     borderColor: stylechoice.bordercolor,
     borderBottomWidth: 2,
-    width: Dimensions.get('window').width,
+    //width: Dimensions.get('window').width,
     paddingTop: 0,
     paddingRight: 10,
     paddingBottom: 0,
