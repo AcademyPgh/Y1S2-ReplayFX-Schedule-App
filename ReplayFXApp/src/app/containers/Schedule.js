@@ -40,7 +40,7 @@ export default class Schedule extends Component {
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
-    setTimeout(this.loadLocalTypes, 1000);
+    setTimeout(this.loadLocalTypes, 1400);
     setTimeout(this.loadTypes, 2700);
     this.loadLocalSchedule();
     this.loadSchedule();
