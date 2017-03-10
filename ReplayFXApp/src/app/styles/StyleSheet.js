@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
 
   description: {
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: stylechoice.fontName,
     color: stylechoice.regtextcolor,
     paddingBottom: 1
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     //flexDirection: 'row',
     //justifyContent: 'space-between',
     textAlign: 'left',
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: 'bold',
     color: stylechoice.timeColor,
     paddingBottom: 2
