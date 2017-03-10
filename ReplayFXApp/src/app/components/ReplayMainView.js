@@ -8,6 +8,7 @@ import {
     Image,
     BackAndroid
 } from 'react-native';
+import SplashScreen from 'react-native-splash-screen'
 
 export default class MainView extends Component {
 constructor(props) {
@@ -21,9 +22,12 @@ backButton() {
     });
 }
 
+componentDidMount() {
+        SplashScreen.hide();
+    }
+
 render() {
     return (
-        // Container that just centers our logo
       <View style= {{flex: 1}}>
         <View style= {styles.home}>
          {/* Loads our main logo image */}
@@ -33,7 +37,6 @@ render() {
       <Text style= {styles.academy}>App Built by Academy Pittsburgh</Text>
        <Schedule/>
        {/* Shows our "main content" */}
-
       </View>
     );
   }
