@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
   gameTitleLocation:{
     borderColor: stylechoice.bordercolor,
     borderBottomWidth: 2,
-    width: Dimensions.get('window').width,
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingLeft: 7,
