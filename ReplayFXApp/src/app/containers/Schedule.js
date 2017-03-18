@@ -83,10 +83,10 @@ export default class Schedule extends Component {
   loadLocalTypes() {
    //AsyncStorage.removeItem('types');
     AsyncStorage.getItem('types', (err, value) => {
-      if (value !== null) {
+      // if (value !== null) {
         this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});
 
-      }
+      // }
     });
   }
 
