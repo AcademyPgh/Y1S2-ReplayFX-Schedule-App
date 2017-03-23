@@ -40,8 +40,8 @@ export default class Schedule extends Component {
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
-    setTimeout(this.loadLocalTypes, 1400);
-    setTimeout(this.loadTypes, 2700);
+    this.loadTypes();
+    setTimeout(this.loadLocalTypes, 850);
     this.loadLocalSchedule();
     this.loadSchedule();
     this.loadFavorites();
@@ -83,10 +83,9 @@ export default class Schedule extends Component {
   loadLocalTypes() {
    //AsyncStorage.removeItem('types');
     AsyncStorage.getItem('types', (err, value) => {
-      // if (value !== null) {
-        this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});
-
-      // }
+      if (value !== null) {
+        this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});
+      }
     });
   }
 
