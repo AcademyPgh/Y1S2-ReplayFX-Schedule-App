@@ -9,7 +9,7 @@ import _ from 'lodash';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import NewTabBar from '../utils/replay_scroll_tab_view';
 import ScheduleListView from './ScheduleListView';
-import ScheduleData, {Types} from '../utils/ReplayFX_Axios';
+import ScheduleData, {Types, GameData} from '../utils/ReplayFX_Axios';
 import Games from './Games';
 
 //This is a class that has all the info for our swipeable nav bar
