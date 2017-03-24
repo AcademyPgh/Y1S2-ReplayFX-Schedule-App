@@ -75,11 +75,11 @@ export default class Games extends Component {
       modalVisible: visible,
       modalTitle: title,
       modalLocation: location,
-      modalOverview: overview,
-      modalReleaseDate: releaseDate,
-      modalDeveloper: developer,
-      modalGenre: genre,
-      modalPlayers: players
+      //modalOverview: overview,
+      //modalReleaseDate: releaseDate,
+    //  modalDeveloper: developer,
+      //modalGenre: genre,
+      //modalPlayers: players
       });
   }
 
@@ -99,7 +99,9 @@ export default class Games extends Component {
              return (
 
                <TouchableHighlight onPress= {() => {
-                 this.setModalVisible(true, game.gameTitle, game.location, game.overview, game.releaseDate, game.developer, game.genre, game.players);
+                 //this.setModalVisible(true, game.gameTitle, game.location, game.overview, game.releaseDate, game.developer, game.genre, game.players);
+                 this.setModalVisible(true, game.gameTitle, game.location);
+
                }}>
                <View style= {styles.gameTitleLocation} key= {game.id}>
                 <Text style={styles.title}>{game.gameTitle}</Text>
