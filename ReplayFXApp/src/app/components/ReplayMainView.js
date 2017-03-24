@@ -1,7 +1,8 @@
 //This was "hello"
 import React, {Component} from 'react';
 import styles from '../styles/StyleSheet';
-import Schedule from '../containers/Schedule'
+import Schedule from '../containers/Schedule';
+import SplashScreen from 'react-native-splash-screen';
 import {
     Text,
     View,
@@ -10,6 +11,11 @@ import {
 } from 'react-native';
 
 export default class MainView extends Component {
+  // componentDidMount() {
+  //       // do anything while splash screen keeps, use await to wait for an async task.
+  //        SplashScreen.hide();
+  //    }
+
 constructor(props) {
     super(props);
     this.backButton=this.backButton.bind(this);

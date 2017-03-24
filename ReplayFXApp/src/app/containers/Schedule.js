@@ -9,7 +9,7 @@ import _ from 'lodash';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import NewTabBar from '../utils/replay_scroll_tab_view';
 import ScheduleListView from './ScheduleListView';
-import ScheduleData, {Types} from '../utils/ReplayFX_Axios';
+import ScheduleData, {Types, GameData} from '../utils/ReplayFX_Axios';
 import Games from './Games';
 
 //This is a class that has all the info for our swipeable nav bar
@@ -27,7 +27,8 @@ export default class Schedule extends Component {
         {DisplayName: 'My Schedule', Name: 'favorites'},
         {DisplayName: 'Games', Name: 'Games'}
       ],
-      baseSchedule: []
+      baseSchedule: [],
+      baseGames: []
     };
 
     //binding so we know what 'this' is in reference to the class
@@ -38,10 +39,13 @@ export default class Schedule extends Component {
     this.loadTypes = this.loadTypes.bind(this);
     this.loadLocalSchedule = this.loadLocalSchedule.bind(this);
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
+    this.loadGames = this.loadGames.bind(this);
 
     //callbacks
-    setTimeout(this.loadLocalTypes, 1400);
-    setTimeout(this.loadTypes, 2700);
+    this.loadTypes();
+    setTimeout(this.loadLocalTypes, 850);
+    this.loadLocalGames();
+    this.loadGames();
     this.loadLocalSchedule();
     this.loadSchedule();
     this.loadFavorites();
@@ -71,6 +75,21 @@ export default class Schedule extends Component {
       }
     });
   }
+  loadGames () {
+    GameData().then((results) => {
+      this.setState({baseGames: results.data});
+      AsyncStorage.setItem('games', JSON.stringify(results.data));
+    });
+  }
+
+  loadLocalGames() {
+    AsyncStorage.getItem('games', (err,value) => {
+      if (value !== null) {
+        this.setState({baseGames: JSON.parse(value)});
+      }
+    });
+  }
+
 
   //Axios call that receives category types and stores the data
   loadTypes() {
@@ -84,8 +103,7 @@ export default class Schedule extends Component {
    //AsyncStorage.removeItem('types');
     AsyncStorage.getItem('types', (err, value) => {
       if (value !== null) {
-        this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});
-
+        this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});
       }
     });
   }
