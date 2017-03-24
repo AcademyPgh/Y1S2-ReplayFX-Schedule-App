@@ -54,7 +54,7 @@ export default class Games extends Component {
   modalReleaseDate: '',
   modalDeveloper: '',
   modalGenre: '',
-  modalPlayers
+  modalPlayers:''
 
   };
 
