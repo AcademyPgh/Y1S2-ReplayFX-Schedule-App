@@ -4,6 +4,7 @@ import {View, Text} from 'react-native-animatable';
 import Accordion from 'react-native-collapsible/Accordion';
 import styles, {stylechoice} from '../styles/StyleSheet';
 import CloseIcon from '../utils/closeIcon';
+import _ from 'lodash';
 
 export default class Games extends Component {
   constructor(props){

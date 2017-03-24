@@ -27,7 +27,8 @@ export default class Schedule extends Component {
         {DisplayName: 'My Schedule', Name: 'favorites'},
         {DisplayName: 'Games', Name: 'Games'}
       ],
-      baseSchedule: []
+      baseSchedule: [],
+      baseGames: []
     };
 
     //binding so we know what 'this' is in reference to the class
@@ -38,10 +39,13 @@ export default class Schedule extends Component {
     this.loadTypes = this.loadTypes.bind(this);
     this.loadLocalSchedule = this.loadLocalSchedule.bind(this);
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
+    this.loadGames = this.loadGames.bind(this);
 
     //callbacks
     this.loadTypes();
     setTimeout(this.loadLocalTypes, 850);
+    this.loadLocalGames();
+    this.loadGames();
     this.loadLocalSchedule();
     this.loadSchedule();
     this.loadFavorites();
@@ -71,6 +75,21 @@ export default class Schedule extends Component {
       }
     });
   }
+  loadGames () {
+    GameData().then((results) => {
+      this.setState({baseGames: results.data});
+      AsyncStorage.setItem('games', JSON.stringify(results.data));
+    });
+  }
+
+  loadLocalGames() {
+    AsyncStorage.getItem('games', (err,value) => {
+      if (value !== null) {
+        this.setState({baseGames: JSON.parse(value)});
+      }
+    });
+  }
+
 
   //Axios call that receives category types and stores the data
   loadTypes() {
