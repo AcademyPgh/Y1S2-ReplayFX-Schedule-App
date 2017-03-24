@@ -37,6 +37,8 @@ export default class Schedule extends Component {
     this.loadSchedule = this.loadSchedule.bind(this);
     this.loadFavorites = this.loadFavorites.bind(this);
     this.loadTypes = this.loadTypes.bind(this);
+    this.loadGames = this.loadGames.bind(this);
+    this.loadLocalGames = this.loadLocalGames.bind(this);
     this.loadLocalSchedule = this.loadLocalSchedule.bind(this);
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
     this.loadGames = this.loadGames.bind(this);
@@ -44,6 +46,7 @@ export default class Schedule extends Component {
     //callbacks
     this.loadTypes();
     setTimeout(this.loadLocalTypes, 850);
+
     this.loadLocalGames();
     this.loadGames();
     this.loadLocalSchedule();
@@ -104,6 +107,21 @@ export default class Schedule extends Component {
     AsyncStorage.getItem('types', (err, value) => {
       if (value !== null) {
         this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});
+      }
+    });
+  }
+
+  loadGames () {
+    GameData().then((results) => {
+      this.setState({baseGames: results.data});
+      AsyncStorage.setItem('games', JSON.stringify(results.data));
+    });
+  }
+
+  loadLocalGames() {
+    AsyncStorage.getItem('games', (err,value) => {
+      if (value !== null) {
+        this.setState({baseGames: JSON.parse(value)});
       }
     });
   }

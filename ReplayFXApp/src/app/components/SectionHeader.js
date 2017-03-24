@@ -7,7 +7,7 @@ const SectionHeader = ({sectionData, category}) => {
   let d = new Date(category);
 
   const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  let n = weekday[d.getDay()];
+  let n = weekday[d.getUTCDay()];
   
   return (<View animation= 'bounceIn' delay= {400}>
     <Text style={styles.header}>{n}</Text>
