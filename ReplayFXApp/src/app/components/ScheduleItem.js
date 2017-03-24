@@ -10,7 +10,6 @@ import MoreInfoButton from './MoreInfoButton';
 import AddFavoriteButton from './AddFavoriteButton';
 
 function ScheduleItem(props) {
-
   return (
       <View style = {styles.info}>
         <Text animation='flipInY' delay={400} style={styles.title}>{props.item.title}</Text>
@@ -30,5 +29,6 @@ function ScheduleItem(props) {
       </View>
     );
   }
-
+  
   export default ScheduleItem;
+
