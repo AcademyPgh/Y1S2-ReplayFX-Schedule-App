@@ -37,18 +37,17 @@ export default class Schedule extends Component {
     this.loadSchedule = this.loadSchedule.bind(this);
     this.loadFavorites = this.loadFavorites.bind(this);
     this.loadTypes = this.loadTypes.bind(this);
-    this.loadGames = this.loadGames.bind(this);
-    this.loadLocalGames = this.loadLocalGames.bind(this);
+    // this.loadGames = this.loadGames.bind(this);
+    // this.loadLocalGames = this.loadLocalGames.bind(this);
     this.loadLocalSchedule = this.loadLocalSchedule.bind(this);
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
-    this.loadGames = this.loadGames.bind(this);
 
     //callbacks
     this.loadTypes();
     setTimeout(this.loadLocalTypes, 1050);
 
-    this.loadLocalGames();
-    this.loadGames();
+    // this.loadLocalGames();
+    // this.loadGames();
     this.loadLocalSchedule();
     this.loadSchedule();
     this.loadFavorites();
@@ -78,20 +77,20 @@ export default class Schedule extends Component {
       }
     });
   }
-  loadGames () {
-    GameData().then((results) => {
-      this.setState({baseGames: results.data});
-      AsyncStorage.setItem('games', JSON.stringify(results.data));
-    });
-  }
-
-  loadLocalGames() {
-    AsyncStorage.getItem('games', (err,value) => {
-      if (value !== null) {
-        this.setState({baseGames: JSON.parse(value)});
-      }
-    });
-  }
+  // loadGames () {
+  //   GameData().then((results) => {
+  //     this.setState({baseGames: results.data});
+  //     AsyncStorage.setItem('games', JSON.stringify(results.data));
+  //   });
+  // }
+  //
+  // loadLocalGames() {
+  //   AsyncStorage.getItem('games', (err,value) => {
+  //     if (value !== null) {
+  //       this.setState({baseGames: JSON.parse(value)});
+  //     }
+  //   });
+  // }
 
 
   //Axios call that receives category types and stores the data
@@ -111,20 +110,6 @@ export default class Schedule extends Component {
     });
   }
 
-  loadGames () {
-    GameData().then((results) => {
-      this.setState({baseGames: results.data});
-      AsyncStorage.setItem('games', JSON.stringify(results.data));
-    });
-  }
-
-  loadLocalGames() {
-    AsyncStorage.getItem('games', (err,value) => {
-      if (value !== null) {
-        this.setState({baseGames: JSON.parse(value)});
-      }
-    });
-  }
 
   //changes the state of favorites to add a new event id
   addFavorite(id)
