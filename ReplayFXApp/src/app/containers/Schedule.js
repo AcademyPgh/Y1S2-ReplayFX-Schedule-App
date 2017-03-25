@@ -9,7 +9,7 @@ import _ from 'lodash';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import NewTabBar from '../utils/replay_scroll_tab_view';
 import ScheduleListView from './ScheduleListView';
-import ScheduleData, {Types, GameData} from '../utils/ReplayFX_Axios';
+import ScheduleData, {Types, GameData, GameTypes} from '../utils/ReplayFX_Axios';
 import Games from './Games';
 
 //This is a class that has all the info for our swipeable nav bar
@@ -28,6 +28,7 @@ export default class Schedule extends Component {
         {DisplayName: 'Games', Name: 'Games'}
       ],
       baseSchedule: [],
+      baseGameTypes: [],
       baseGames: []
     };
 
@@ -39,12 +40,16 @@ export default class Schedule extends Component {
     this.loadTypes = this.loadTypes.bind(this);
     this.loadGames = this.loadGames.bind(this);
     this.loadLocalGames = this.loadLocalGames.bind(this);
+    this.loadGameTypes = this.loadGameTypes.bind(this);
+    this.loadLocalGameTypes = this.loadLocalGameTypes.bind(this);
     this.loadLocalSchedule = this.loadLocalSchedule.bind(this);
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
     setTimeout(this.loadLocalTypes, 1400);
     setTimeout(this.loadTypes, 2700);
+    this.loadLocalGameTypes();
+    this.loadGameTypes();
     this.loadLocalGames();
     this.loadGames();
     this.loadLocalSchedule();
@@ -99,6 +104,7 @@ export default class Schedule extends Component {
     GameData().then((results) => {
       this.setState({baseGames: results.data});
       AsyncStorage.setItem('games', JSON.stringify(results.data));
+      console.log("Here are Cindy's " + {results});
     });
   }
 
@@ -106,6 +112,19 @@ export default class Schedule extends Component {
     AsyncStorage.getItem('games', (err,value) => {
       if (value !== null) {
         this.setState({baseGames: JSON.parse(value)});
+      }
+    });
+  }
+loadGameTypes() {
+  GameTypes().then((results) => {
+    this.setState({baseGameTypes: results.data});
+    AsyncStorage.setItem('gametypes', JSON.stringify(results.data));
+  });
+}
+  loadLocalGameTypes () {
+    AsyncStorage.getItem('gametypes', (err,value) => {
+      if (value !== null) {
+        this.setState({baseGameTypes: JSON.parse(value)});
       }
     });
   }
@@ -136,7 +155,9 @@ export default class Schedule extends Component {
             <View style={styles.slide} tabLabel= {item.DisplayName} key = {index} >
             {/* Passing the state of the length of the favorites so it's displayed in the
             'my schedule' section on the swipeable nav bar */}
-            {item.DisplayName == 'Games' ? <Games/> : null}
+            {item.DisplayName == 'Games' ? <Games
+            baseGameTypes={this.state.baseGameTypes}
+            baseGames={this.state.baseGames}/> : null}
             <ScheduleListView
               //rendering the state based on whether an item is in the favorites array or not
               typeIs={item.Name}
