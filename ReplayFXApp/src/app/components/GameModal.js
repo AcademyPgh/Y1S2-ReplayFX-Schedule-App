@@ -14,23 +14,20 @@ const GameModal=(props)=> {
           animationType={'slide'}
           transparent={false}
           visible={props.gameModalVisible}
-          onRequestClose ={() => props.onSetGameModalVisible(props)}>
+          onRequestClose ={() => props.setModalVisible(props)}>
           <View style= {styles.innerContainer}>
-            <Text style={styles.modaltitle}>{props.gameModalTitle}</Text>
-            <Text style={styles.modaldatetime}>{props.gameModalReleaseDate}</Text>
-            <Text style ={styles.modaldatetime}>{props.gameModalLocation}</Text>
-            <Text style ={styles.modaldatetime}>{props.gameModalDeveloper}</Text>
-            <Text style ={styles.modaldatetime}>{props.gameModalGenre}</Text>
-            <Text style ={styles.modaldatetime}>Number of Players: {players}</Text>
+            <Text style={styles.modaltitle}>Title: {props.gameModalTitle}</Text>
+            <Text style={styles.modaldatetime}>Release Date: {props.gameModalReleaseDate}</Text>
+            <Text style ={styles.modaldatetime}>Location: {props.gameModalLocation}</Text>
+            <Text style ={styles.modaldatetime}>Developer: {props.gameModalDeveloper}</Text>
+            <Text style ={styles.modaldatetime}>Genre: {props.gameModalGenre}</Text>
+            <Text style ={styles.modaldatetime}>Number of Players: {props.gameModalPlayers}</Text>
             <ScrollView>
-            <View style ={{alignItems: 'center'}}>
-                <Image source={{uri: props.gameModalImage !== null ? props.gameModalImage : ''}} style={styles.modalimage}/>
-           </View>
-            <Text style = {styles.gamemodaldescription}>{props.gameModalOverview}</Text>
+            <Text style = {styles.gamemodaldescription}>Additional Information: {props.gameModalOverview}</Text>
           </ScrollView>
             <View style ={styles.center}>
             <TouchableHighlight onPress={() => {
-              props.onSetGameModalVisible(props);
+              props.setModalVisible(props);
             }}>
               <View><CloseIcon/></View>
             </TouchableHighlight>

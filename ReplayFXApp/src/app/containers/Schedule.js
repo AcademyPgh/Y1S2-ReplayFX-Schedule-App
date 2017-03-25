@@ -104,7 +104,6 @@ export default class Schedule extends Component {
     GameData().then((results) => {
       this.setState({baseGames: results.data});
       AsyncStorage.setItem('games', JSON.stringify(results.data));
-      console.log("Here are Cindy's " + {results});
     });
   }
 

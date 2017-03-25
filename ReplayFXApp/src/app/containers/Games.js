@@ -1,20 +1,18 @@
 import React, {Component} from 'react';
-import {} from 'react-native';
+import {TouchableHighlight} from 'react-native';
 import {View, Text} from 'react-native-animatable';
 import Accordion from 'react-native-collapsible/Accordion';
 import styles, {stylechoice} from '../styles/StyleSheet';
 import CloseIcon from '../utils/closeIcon';
-import GameModal from '../components/ScheduleModal';
+import GameModal from '../components/GameModal';
 import _ from 'lodash';
-import MoreInfoButton from '../components/MoreInfoButton';
 import GameDivider from '../utils/GameDivider';
 
 export default class Games extends Component {
   constructor(props){
   super(props);
   this.state = {
-  games: GameDivider(this.props.baseGameTypes, this.props.baseGames),
-  gameTypes: this.props.baseGameTypes,
+  gamesByGameType: GameDivider(this.props.baseGameTypes, this.props.baseGames),
   gameModalVisible: false,
   gameModalTitle: '',
   gameModalReleaseDate: '',
@@ -28,11 +26,11 @@ export default class Games extends Component {
 
   this._renderHeader = this._renderHeader.bind(this);
   this._renderContent = this._renderContent.bind(this);
-  this.handleGameModalVisible = this.handleGameModalVisible.bind(this);
+  this.setModalVisible = this.setModalVisible.bind(this);
   }
 
 
-  handleGameModalVisible(visible, gameTitle, releaseDate, location, developer, genre, players, overview) {
+  setModalVisible(visible, gameTitle, releaseDate, location, developer, genre, players, overview) {
     this.setState({
       gameModalVisible: visible,
       gameModalTitle: gameTitle,
@@ -46,33 +44,29 @@ export default class Games extends Component {
   }
 
 
-  _renderHeader(gameTypes) {
+  _renderHeader(section,index) {
+    // console.log("Cindy seeks info on " + {section});
     return (
-      <View animation= 'bounceIn' delay= {400}>
-        { gametypes.map((gametype, id) => {
-          return (
-            <View key={gametype.id}>
-            <Text style={styles.header}>{gametype}</Text>
-            </View>
-          );
-          })
-        }
-        </View>
-        )}
-   _renderContent(games) {
+      <View animation= 'bounceIn' delay= {400} key={section.index}>
+        <Text style={styles.header}>{section.title}</Text>
+    </View> 
+    );
+  }
+
+   _renderContent(section) {
      return (
        <View>
-         {
-           games.map((game, id) => {
+         {   section.content.map((item, index) => {
              return (
-               <View style= {styles.gameTitleLocation} key= {game.id}>
-                <Text style={styles.title}>{game.gameTitle}</Text>
-                <Text style={styles.title}>{game.location}</Text>
-                <MoreInfoButton/>
-              </View>
-             );
-           })
 
+               <TouchableHighlight onPress= {() => this.setModalVisible(true, item.gameTitle, item.releaseDate, item.replayGameLocations[0].location, item.developer, item.genre, item.players, item.overview)}>
+               <View style= {styles.gameTitleLocation} key= {item.id}>
+                <Text style={styles.title}>{item.gameTitle}</Text>
+                <Text style={styles.title}>{item.replayGameLocations[0].location}</Text>
+              </View>
+              </TouchableHighlight>
+             );
+             })
        }
        </View>
      );
@@ -82,18 +76,18 @@ export default class Games extends Component {
      return (
        <View>
        <GameModal
-        gameModalVisible={this.state.modalVisible}
-        gameModalTitle={this.state.modalTitle}
-        gameModalReleaseDate={this.state.modalReleaseDate}
-        gameModalLocation={this.state.modalLocation}  
-        gameModalDeveloper={this.state.modalDeveloper}
-        gameModalGenre={this.state.modalGenre}
-        gameModalPlayers={this.state.modalPlayers}
-        gameModalOverview={this.state.modalOverview}
-        onSetModalVisible={() => this.handleGameModalVisible(false)}
+        gameModalVisible={this.state.gameModalVisible}
+        gameModalTitle={this.state.gameModalTitle}
+        gameModalReleaseDate={this.state.gameModalReleaseDate}
+        gameModalLocation={this.state.gameModalLocation}  
+        gameModalDeveloper={this.state.gameModalDeveloper}
+        gameModalGenre={this.state.gameModalGenre}
+        gameModalPlayers={this.state.gameModalPlayers}
+        gameModalOverview={this.state.gameModalOverview}
+        setModalVisible={() => this.setModalVisible(false)}
       />
        <Accordion
-         sections={this.state.games}
+         sections={this.state.gamesByGameType}
          renderHeader={this._renderHeader}
          renderContent={this._renderContent}
        />
