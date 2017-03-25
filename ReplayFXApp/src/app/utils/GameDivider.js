@@ -9,7 +9,7 @@ const GameDivider = (gametypes, games) => {
                 sections.filter((obj) => {
                     if (!obj.title)
                     return;
-                    if (obj.title === game.replayGameType.name);
+                    if (obj.title === game.replayGameType.name)
                         obj.content.push(game);
             });
          }
