@@ -44,11 +44,10 @@ export default class Games extends Component {
   }
 
 
-  _renderHeader(section,index) {
-    // console.log("Cindy seeks info on " + {section});
+  _renderHeader(section, index) {
     return (
-      <View animation= 'bounceIn' delay= {400} key={section.index}>
-        <Text style={styles.header}>{section.title}</Text>
+      <View animation= 'bounceIn' delay= {400} key={section.title}>
+        <Text style={styles.gamesHeader}>{section.title}</Text>
     </View> 
     );
   }
@@ -56,11 +55,11 @@ export default class Games extends Component {
    _renderContent(section) {
      return (
        <View>
-         {   section.content.map((item, index) => {
+         {   section.content.map((item) => {
              return (
 
-               <TouchableHighlight onPress= {() => this.setModalVisible(true, item.gameTitle, item.releaseDate, item.replayGameLocations[0].location, item.developer, item.genre, item.players, item.overview)}>
-               <View style= {styles.gameTitleLocation} key= {item.id}>
+               <TouchableHighlight key = {item.id} onPress= {() => this.setModalVisible(true, item.gameTitle, item.releaseDate, item.replayGameLocations[0].location, item.developer, item.genre, item.players, item.overview)}>
+               <View style= {styles.gameTitleLocation}>
                 <Text style={styles.title}>{item.gameTitle}</Text>
                 <Text style={styles.title}>{item.replayGameLocations[0].location}</Text>
               </View>

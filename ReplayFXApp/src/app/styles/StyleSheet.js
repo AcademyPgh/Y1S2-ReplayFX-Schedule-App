@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: stylechoice.fontName,
     paddingBottom: 2,
-    paddingTop: 3
+    paddingTop: 3,
+    fontWeight: 'bold'
   },
 
   description: {
@@ -71,8 +72,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingLeft: 7,
-    paddingRight: 7
+    paddingLeft: 15,
+    paddingRight: 15,
+
   },
 
   datetime: {
@@ -85,14 +87,44 @@ const styles = StyleSheet.create({
     paddingBottom: 2
   },
 
-  modaldatetime: {
-    //flexDirection: 'row',
-    //justifyContent: 'space-between',
+gameModalContainer: {
+    marginTop: 25,
+    backgroundColor: stylechoice.regbackground,
+    marginLeft: 15,
+    marginRight: 15,
+    borderColor: stylechoice.accentcolor,
+    borderWidth: 5,
+    paddingBottom: 5,
+    paddingTop: 5,
+    paddingRight: 5,
+    paddingLeft: 20
+
+},
+
+  gameModalItem: {
     textAlign: 'left',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: stylechoice.timeColor,
-    paddingBottom: 2
+    color: stylechoice.regtextcolor,
+    paddingBottom: 1
+},
+
+ gamesHeader: {
+    color: stylechoice.lightaccent,
+    backgroundColor: stylechoice.accentcolor,
+    paddingTop: 2,
+    paddingRight: 8,
+    paddingBottom: 2,
+    paddingLeft: 8,
+    fontSize: 26,
+    fontFamily: stylechoice.fontName,
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 40,
+    borderColor: stylechoice.bordercolor,
+    borderWidth: 2,
+
   },
 
   header: {
@@ -145,8 +177,8 @@ const styles = StyleSheet.create({
     // alignItems: 'flex-start',
     marginTop: 25,
     backgroundColor: stylechoice.regbackground,
-    marginLeft: 10,
-    marginRight: 10
+    marginLeft: 15,
+    marginRight: 15
   },
 
   info: {
@@ -162,8 +194,8 @@ const styles = StyleSheet.create({
 
   infoIcon: {
     zIndex: 1,
-    paddingTop: 3,
-    paddingBottom: 3,
+    paddingTop: 1,
+    paddingBottom: 1,
     paddingRight: 3,
     paddingLeft: 3
   },
