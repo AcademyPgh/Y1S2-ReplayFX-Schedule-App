@@ -39,6 +39,7 @@
 		B2233FD81E6F8EFD0009E92B /* Voces-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2233FD71E6F8EFC0009E92B /* Voces-Regular.ttf */; };
 		B2505F541E8568B9003BCE0F /* IMG_9367 in Resources */ = {isa = PBXBuildFile; fileRef = B2505F531E8568B9003BCE0F /* IMG_9367 */; };
 		B2505F561E857A20003BCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2505F551E857A20003BCE0F /* LaunchScreen.storyboard */; };
+		B2505F581E88BC4A003BCE0F /* image1 in Resources */ = {isa = PBXBuildFile; fileRef = B2505F571E88BC49003BCE0F /* image1 */; };
 		B2E7318C1E6093E200944BE5 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2E7318B1E6093E200944BE5 /* Ionicons.ttf */; };
 /* End PBXBuildFile section */
 
@@ -269,6 +270,7 @@
 		B2233FD71E6F8EFC0009E92B /* Voces-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Voces-Regular.ttf"; path = "fonts/Voces/Voces-Regular.ttf"; sourceTree = "<group>"; };
 		B2505F531E8568B9003BCE0F /* IMG_9367 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_9367; sourceTree = "<group>"; };
 		B2505F551E857A20003BCE0F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2505F571E88BC49003BCE0F /* image1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = image1; sourceTree = "<group>"; };
 		B2E7318B1E6093E200944BE5 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -409,6 +411,7 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				B2505F571E88BC49003BCE0F /* image1 */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				B2505F531E8568B9003BCE0F /* IMG_9367 */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -879,6 +882,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B2505F581E88BC4A003BCE0F /* image1 in Resources */,
 				B2E7318C1E6093E200944BE5 /* Ionicons.ttf in Resources */,
 				B2505F561E857A20003BCE0F /* LaunchScreen.storyboard in Resources */,
 				B2233FD81E6F8EFD0009E92B /* Voces-Regular.ttf in Resources */,
