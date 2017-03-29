@@ -15,4 +15,8 @@ export const GameData = () => {
 };
 
 
+export const GameTypes = () => {
+  return axios('https://replayfxcalendar.azurewebsites.net/public/gametypes');
+}
+
 export default ScheduleData;
