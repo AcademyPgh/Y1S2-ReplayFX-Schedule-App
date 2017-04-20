@@ -41,6 +41,8 @@
 		B2505F561E857A20003BCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2505F551E857A20003BCE0F /* LaunchScreen.storyboard */; };
 		B2505F581E88BC4A003BCE0F /* image1 in Resources */ = {isa = PBXBuildFile; fileRef = B2505F571E88BC49003BCE0F /* image1 */; };
 		B2E7318C1E6093E200944BE5 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2E7318B1E6093E200944BE5 /* Ionicons.ttf */; };
+		B2F7028D1EA86FCC00CEC029 /* nativeimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2F7028C1EA86FCC00CEC029 /* nativeimg.jpg */; };
+		B2F702A91EA8709500CEC029 /* nativemain in Resources */ = {isa = PBXBuildFile; fileRef = B2F702A81EA8709500CEC029 /* nativemain */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,6 +274,8 @@
 		B2505F551E857A20003BCE0F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2505F571E88BC49003BCE0F /* image1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = image1; sourceTree = "<group>"; };
 		B2E7318B1E6093E200944BE5 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		B2F7028C1EA86FCC00CEC029 /* nativeimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nativeimg.jpg; sourceTree = "<group>"; };
+		B2F702A81EA8709500CEC029 /* nativemain */ = {isa = PBXFileReference; lastKnownFileType = file; path = nativemain; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +411,8 @@
 		13B07FAE1A68108700A75B9A /* ReplayFXApp */ = {
 			isa = PBXGroup;
 			children = (
+				B2F702A81EA8709500CEC029 /* nativemain */,
+				B2F7028C1EA86FCC00CEC029 /* nativeimg.jpg */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -882,8 +888,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B2F702A91EA8709500CEC029 /* nativemain in Resources */,
 				B2505F581E88BC4A003BCE0F /* image1 in Resources */,
 				B2E7318C1E6093E200944BE5 /* Ionicons.ttf in Resources */,
+				B2F7028D1EA86FCC00CEC029 /* nativeimg.jpg in Resources */,
 				B2505F561E857A20003BCE0F /* LaunchScreen.storyboard in Resources */,
 				B2233FD81E6F8EFD0009E92B /* Voces-Regular.ttf in Resources */,
 				B2505F541E8568B9003BCE0F /* IMG_9367 in Resources */,
