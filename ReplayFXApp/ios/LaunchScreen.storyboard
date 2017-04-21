@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nativeimg" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-nm-kU8">
-                                <rect key="frame" x="19.333333333333258" y="134.66666666666697" width="374" height="466.99999999999983"/>
+                                <rect key="frame" x="19" y="187.66666666666686" width="374" height="362"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -35,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="nativeimg" width="1545" height="2060"/>
+        <image name="nativeimg" width="381" height="352"/>
     </resources>
 </document>

@@ -108,7 +108,7 @@ return timeValue;
      <View>
       <ScheduleItem
             timeConverter={this.timeConverter}
-            item={item} //passing whole object
+            item={item} 
             onSetModalVisible= {() => this.handleModalVisible(true, item.title, this.timeConverter(item.startTime), this.timeConverter(item.endTime), item.location, item.extendedDescription, item.image)} //need to redefine the function otherwise tries to change state during render
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />
