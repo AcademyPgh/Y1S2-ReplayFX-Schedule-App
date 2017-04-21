@@ -7,7 +7,7 @@ export default class PushController extends Component {
     super(props);
     this.state = {
       seconds: 5,
-      faves: {}
+      fifteenMinTil: new Date(Date.now)
     };
     this.handleAppStateChange = this.handleAppStateChange.bind(this);
   }
@@ -27,13 +27,16 @@ export default class PushController extends Component {
   }
 
   handleAppStateChange(appState) {
-    let _date = new Date(this.props.item.date);
-    let fiftenMinTil =  new Date(
-      _date.getFullYear()+"-0"+ _date.getMonth()+"-"+
-      _date.getDate()+"T"+this.props.item.startTime + "-"+"03:45");
     if (appState === 'background') {
       if (this.props.item.isFavorite) {
-        console.log(fiftenMinTil);
+        let _date = new Date(this.props.item.date);
+
+        this.setState({fiftenMinTil: new Date(
+          _date.getFullYear()+"-0"+ _date.getMonth()+"-"+
+          _date.getDate()+"T"+this.props.item.startTime + "-"+"03:45")});
+
+        console.log(this.state.fiftenMinTil);
+
         PushNotification.localNotificationSchedule({
           message: this.props.item.title + ' is about to begin in 15 minutes',
           date: new Date(Date.now() + (this.state.seconds * 1000))
