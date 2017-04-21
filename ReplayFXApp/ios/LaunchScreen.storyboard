@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nativemain" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-nm-kU8">
-                                <rect key="frame" x="31" y="8" width="363" height="728"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nativeimg" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-nm-kU8">
+                                <rect key="frame" x="19.333333333333258" y="134.66666666666697" width="374" height="466.99999999999983"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -35,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="nativemain" width="1545" height="2060"/>
+        <image name="nativeimg" width="1545" height="2060"/>
     </resources>
 </document>
