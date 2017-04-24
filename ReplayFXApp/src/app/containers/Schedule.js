@@ -46,6 +46,25 @@ export default class Schedule extends Component {
     location: "Hall B, Pinburgh",
     image: null
   }],
+  secondTestNotificator: [{
+    replayEventTypes: [
+  {
+    id: 4,
+    name: "competitions",
+    displayName: "Compete"
+  }
+  ],
+  id: 766,
+  title: "Second Testing Push Notifications",
+  date: "2017-04-24T20:00:00",
+  startTime: "16:52",
+  endTime: "23:00",
+  description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
+  extendedDescription: null,
+  location: "Hall B, Pinburgh",
+  image: null
+  }],
+
       baseGameTypes: [],
       baseGames: []
     };
@@ -88,14 +107,14 @@ export default class Schedule extends Component {
   //Axios call that gives baseSchedule its state and stores the data
   loadSchedule() {
     ScheduleData().then((results) => {
-      this.setState({baseSchedule: [...this.state.testNotificator, ...results.data]});
+      this.setState({baseSchedule: [...this.state.testNotificator,...this.state.secondTestNotificator, ...results.data]});
       AsyncStorage.setItem('all', JSON.stringify(results.data));
     });
   }
   loadLocalSchedule() {
     AsyncStorage.getItem('all', (err, value) => {
       if (value !== null) {
-        this.setState({baseSchedule: [...this.state.testNotificator, JSON.parse(value || [])]});
+        this.setState({baseSchedule: [...this.state.testNotificator,...this.state.secondTestNotificator, JSON.parse(value || [])]});
       }
     });
   }
