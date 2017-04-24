@@ -22,6 +22,7 @@
       android:name=".MainApplication"
       android:allowBackup="true"
       android:label="@string/app_name"
+      android:launchMode="singleTop"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
       <activity
@@ -62,3 +63,4 @@
     </application>
 
 </manifest>
+

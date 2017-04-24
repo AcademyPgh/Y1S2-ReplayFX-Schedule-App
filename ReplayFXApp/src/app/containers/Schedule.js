@@ -28,6 +28,24 @@ export default class Schedule extends Component {
         {DisplayName: 'Games', Name: 'Games'}
       ],
       baseSchedule: [],
+      testNotificator: [{
+        replayEventTypes: [
+      {
+        id: 3,
+        name: "competitions",
+        displayName: "Compete"
+      }
+    ],
+    id: 666,
+    title: "Pinburgh Machine Testing",
+    date: "2017-04-23T00:00:00",
+    startTime: "22:45",
+    endTime: "23:00",
+    description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
+    extendedDescription: null,
+    location: "Hall B, Pinburgh",
+    image: null
+  }],
       baseGameTypes: [],
       baseGames: []
     };
@@ -55,7 +73,7 @@ export default class Schedule extends Component {
     this.loadLocalSchedule();
     this.loadSchedule();
     this.loadFavorites();
-
+    
   }
 
   //function that loads favorites from local storage
@@ -70,14 +88,14 @@ export default class Schedule extends Component {
   //Axios call that gives baseSchedule its state and stores the data
   loadSchedule() {
     ScheduleData().then((results) => {
-      this.setState({baseSchedule: results.data});
+      this.setState({baseSchedule: [...this.state.testNotificator, ...results.data]});
       AsyncStorage.setItem('all', JSON.stringify(results.data));
     });
   }
   loadLocalSchedule() {
     AsyncStorage.getItem('all', (err, value) => {
       if (value !== null) {
-        this.setState({baseSchedule: JSON.parse(value)});
+        this.setState({baseSchedule: [...this.state.testNotificator, JSON.parse(value || [])]});
       }
     });
   }
@@ -93,7 +111,7 @@ export default class Schedule extends Component {
    //AsyncStorage.removeItem('types');
     AsyncStorage.getItem('types', (err, value) => {
       if (value !== null) {
-        this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});
+        this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});
       }
     });
   }

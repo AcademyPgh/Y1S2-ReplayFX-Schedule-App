@@ -7,7 +7,6 @@ export default class PushController extends Component {
     super(props);
     this.state = {
       fifteenMinutesUntil: new Date(Date.now),
-      seconds: 45
     };
     this.handleAppStateChange = this.handleAppStateChange.bind(this);
   }
@@ -20,11 +19,11 @@ export default class PushController extends Component {
       },
        popInitialNotification: true,
     });
-
   }
+  
   componentWillUnmount() {
     AppState.removeEventListener('change', this.handleAppStateChange);
-  }
+ }
 
   handleAppStateChange(appState) {
     if (appState === 'background') {
@@ -32,20 +31,22 @@ export default class PushController extends Component {
         let _date = new Date(this.props.item.date);
 
         this.setState({fifteenMinutesUntil: new Date(
-          _date.getFullYear() +"-0"+ (_date.getMonth()+1)+"-"+_date.getDate()+"T"+this.props.item.startTime+ "-"+"03:45"
+          _date.getFullYear() +"-0"+ (_date.getMonth()+1)+"-"+(_date.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45"
           )});
-          console.log("favorite event time is:" + this.state.fifteenMinutesUntil);
+           console.log("Notification will happen at :" + this.state.fifteenMinutesUntil);
+           let adate = new Date(this.state.fifteenMinutesUntil)
+            console.log("Time might be "  + adate.getTime() );
         
         PushNotification.localNotificationSchedule({
           message: this.props.item.title + ' will begin in 15 minutes',
-          date: new Date(Date.now() + (this.state.seconds * 1000)) //this is where the fire date, based on fifteenMinutesUntil will go
+          date: new Date(this.state.fifteenMinutesUntil), 
+         
         });
+        // PushNotification.cancelAllLocalNotifications();
       }
-    }
+  }
   }
   render() {
     return null;
   }
 }
-
-//Mon Jun 26 2017 08:45:00 GMT-0400 (EDT)
