@@ -39,7 +39,7 @@ export default class PushController extends Component {
 
         PushNotification.localNotificationSchedule({
           message: this.props.item.title + ' is about to begin in 15 minutes',
-          date: new Date(Date.now() + (this.state.seconds * 1000))
+          date: new Date(Date.now() + (this.state.seconds * 10000))
         });
       }
     }
