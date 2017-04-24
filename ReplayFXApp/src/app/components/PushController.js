@@ -6,7 +6,7 @@ export default class PushController extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seconds: 5,
+      seconds: 3,
       fifteenMinTil: new Date(Date.now)
     };
     this.handleAppStateChange = this.handleAppStateChange.bind(this);
@@ -18,7 +18,7 @@ export default class PushController extends Component {
       onNotification: function(notification) {
         console.log('NOTIFICATION:', notification);
       },
-       popInitialNotification: false,
+      //  popInitialNotification: false,
     });
 
   }
@@ -27,22 +27,21 @@ export default class PushController extends Component {
   }
 
   handleAppStateChange(appState) {
+    console.log("Triggered")
     if (appState === 'background') {
       if (this.props.item.isFavorite) {
         let _date = new Date(this.props.item.date);
-
         this.setState({fiftenMinTil: new Date(
           _date.getFullYear()+"-0"+ _date.getMonth()+"-"+
           _date.getDate()+"T"+this.props.item.startTime + "-"+"03:45")});
 
-        console.log(this.state.fiftenMinTil);
-
         PushNotification.localNotificationSchedule({
           message: this.props.item.title + ' is about to begin in 15 minutes',
-          date: new Date(Date.now() + (this.state.seconds * 10000))
+          date: new Date(Date.now() + (this.state.seconds * 1000))
         });
       }
     }
+
   }
   render() {
     return null;
