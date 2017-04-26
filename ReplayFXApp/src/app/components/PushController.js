@@ -6,46 +6,52 @@ export default class PushController extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fifteenMinutesUntil: new Date(Date.now),
+      fifteenMinutesUntil: new Date(Date.now()),
     };
-    this.handleAppStateChange = this.handleAppStateChange.bind(this);
+    this.handleNotification = this.handleNotification.bind(this);
   }
 
   componentDidMount() {
-    AppState.addEventListener('change', this.handleAppStateChange);
+   AppState.addEventListener('change', this.handleNotification);
     PushNotification.configure({
       onNotification: function(notification) {
-        console.log('NOTIFICATION:', notification);
+        // console.log('NOTIFICATION:', notification);      
       },
-       popInitialNotification: true,
     });
   }
   
   componentWillUnmount() {
-    AppState.removeEventListener('change', this.handleAppStateChange);
+   AppState.removeEventListener('change', this.handleNotification);
  }
 
-  handleAppStateChange(appState) {
-    if (appState === 'background') {
+  handleNotification(appState) {
+   if (appState=="background" || appState=="active") {
       if (this.props.item.isFavorite) {
         let _date = new Date(this.props.item.date);
+        //getting time of favorite events
 
         this.setState({fifteenMinutesUntil: new Date(
           _date.getFullYear() +"-0"+ (_date.getMonth()+1)+"-"+(_date.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45"
           )});
+          //converting date to a 15 minutes before the event happens
            console.log("Notification will happen at :" + this.state.fifteenMinutesUntil);
            let adate = new Date(this.state.fifteenMinutesUntil)
             console.log("Time might be "  + adate.getTime() );
-        
-        PushNotification.localNotificationSchedule({
+            //seeing if the time is as it should be (15 minutes before the event)
+
+        if(this.state.fifteenMinutesUntil.getTime() >= Date.now()){
+          PushNotification.localNotificationSchedule({		      
           message: this.props.item.title + ' will begin in 15 minutes',
           date: new Date(this.state.fifteenMinutesUntil), 
+          //setting the push notification to fire for each event at the right time
          
         });
-        // PushNotification.cancelAllLocalNotifications();
+        }
       }
+    }
   }
-  }
+  
+  
   render() {
     return null;
   }

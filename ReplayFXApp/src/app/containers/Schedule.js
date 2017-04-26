@@ -38,8 +38,26 @@ export default class Schedule extends Component {
     ],
     id: 666,
     title: "Pinburgh Machine Testing",
-    date: "2017-04-23T00:00:00",
-    startTime: "22:45",
+    date: "2017-04-25T00:00:00",
+    startTime: "21:27",
+    endTime: "23:00",
+    description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
+    extendedDescription: null,
+    location: "Hall B, Pinburgh",
+    image: null
+  },
+  {
+        replayEventTypes: [
+      {
+        id: 3,
+        name: "competitions",
+        displayName: "Compete"
+      }
+    ],
+    id: 234,
+    title: "Testing Testing",
+    date: "2017-04-25T00:00:00",
+    startTime: "21:28",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
