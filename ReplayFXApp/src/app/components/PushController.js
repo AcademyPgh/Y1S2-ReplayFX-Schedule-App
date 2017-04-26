@@ -1,7 +1,7 @@
 import {Component} from 'react';
-import {AppState} from 'react-native';
+import {AppState, PushNotificationIOS} from 'react-native';
 import PushNotification from 'react-native-push-notification';
-
+import PushNotificationAndroid from 'react-native-push-notification';
 export default class PushController extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +14,8 @@ export default class PushController extends Component {
 
   componentDidMount() {
     AppState.addEventListener('change', this.handleAppStateChange);
+    // PushNotificationIOS.addEventListener('localNotification', this.handlePushNotification);
+    // PushNotificationIOS.addEventListener('notification', this.handlePushNotification);
     PushNotification.configure({
       onNotification: function(notification) {
         console.log('NOTIFICATION:', notification);
@@ -23,11 +25,16 @@ export default class PushController extends Component {
   }
   componentWillUnmount() {
     AppState.removeEventListener('change', this.handleAppStateChange);
+
+  }
+
+  handlePushNotification(){
+    console.log("Push it: PPUSH IT REAL GOOD!!!");
   }
 
   handleAppStateChange(appState) {
     //if app state is in background then trigger scheduled notification
-    if (appState === 'background') {
+    // if (appState === 'background') {
 
       //if prop is favorited then proceed to notification
       if (this.props.item.isFavorite) {
@@ -41,11 +48,11 @@ export default class PushController extends Component {
           _date.getDate()+"T"+this.props.item.startTime + "-"+"03:45")});
 
           //Logging the numeric value of our fifteenMinTil state
-       console.log(this.state.fifteenMinTil.getTime());
+       console.log(this.state.fifteenMinTil);
 
        //Logging the numeric value of the current Date
        console.log(Date.now());
-       
+
        // If our fifteenMinTil state is greater than or equal to our current date then trigger our notification
        // other wise our notifications will trigger after fifteen mintues until
        if(this.state.fifteenMinTil.getTime() >= Date.now()){
@@ -55,7 +62,7 @@ export default class PushController extends Component {
         });
         }
       }
-    }
+    // }
 
   }
   render() {
