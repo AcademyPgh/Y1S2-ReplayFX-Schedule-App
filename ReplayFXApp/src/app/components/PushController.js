@@ -50,10 +50,11 @@ export default class PushController extends Component {
           )});
          //converting date to a 15 minutes before the event happens
         }
-        if (Platform.OS == 'ios')
+        else if (Platform.OS == 'ios')
         {this.setState({fifteenMinutesUntil: new Date(
-          favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate())+"T"+this.props.item.startTime+ "-"+"03:45"
+          favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45"
           )});}
+
           console.log(this.state.fifteenMinutesUntil);
         if(this.state.fifteenMinutesUntil >= Date.now()){
            PushNotification.localNotificationSchedule({
