@@ -6,7 +6,7 @@ import  {View, Text} from 'react-native-animatable';
 
 const AddFavoriteButton = (props) => {
         return (
- <TouchableHighlight onPress={() => props.onFavoriteButtonPress(props.item)}>
+ <TouchableHighlight underlayColor="#ffffff" onPress={() => props.onFavoriteButtonPress(props.item)}>
           <View style={styles.infoIcon} animation={props.item.isFavorite ? 'bounce' : 'shake'} delay={400}>
              <Ionicons name= 'ios-game-controller-b' size={36} color={props.item.isFavorite ? stylechoice.accentcolor : stylechoice.inactive}/>
              </View>
@@ -17,4 +17,3 @@ const AddFavoriteButton = (props) => {
 //proptypes?
 
 export default AddFavoriteButton;
-

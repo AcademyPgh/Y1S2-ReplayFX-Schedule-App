@@ -198,7 +198,7 @@ gameModalContainer: {
     paddingTop: 1,
     paddingBottom: 1,
     paddingRight: 3,
-    paddingLeft: 3
+    paddingLeft: 3,
   },
 
   gamecontroller: {
@@ -208,7 +208,7 @@ gameModalContainer: {
     paddingTop: 3,
     paddingBottom: 3,
     paddingRight: 3,
-    paddingLeft: 3
+    paddingLeft: 3,
 
   },
 
@@ -261,6 +261,8 @@ gameModalContainer: {
   tabs: {
     flexDirection: 'row',
     justifyContent: 'space-around'
+  },
+  touchable_highlight:{
   },
 
   tabUnderline: {
