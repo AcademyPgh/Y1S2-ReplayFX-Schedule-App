@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import {
   View,
-  AsyncStorage
+  AsyncStorage,
+  Platform
 } from 'react-native';
 import styles from '../styles/StyleSheet';
 import _ from 'lodash';
@@ -129,7 +130,10 @@ export default class Schedule extends Component {
    //AsyncStorage.removeItem('types');
     AsyncStorage.getItem('types', (err, value) => {
       if (value !== null) {
-        this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});
+        if (Platform.OS=='android')
+        {this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});}
+        if (Platform.OS=='ios')
+        {{this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});}}
       }
     });
   }

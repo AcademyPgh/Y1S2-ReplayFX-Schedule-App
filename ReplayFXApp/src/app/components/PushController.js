@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppState} from 'react-native';
+import {AppState, Platform} from 'react-native';
 import PushNotification from 'react-native-push-notification';
 
 export default class PushController extends Component {
@@ -45,11 +45,16 @@ export default class PushController extends Component {
         let id = (this.props.item.id).toString();
         
         //getting date of favorite events
-
+        if (Platform.OS == 'android') {
       this.setState({fifteenMinutesUntil: new Date(
           favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45"
           )});
          //converting date to a 15 minutes before the event happens
+        }
+        if (Platform.OS == 'ios') 
+        {this.setState({fifteenMinutesUntil: new Date(
+          favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate())+"T"+this.props.item.startTime+ "-"+"03:45"
+          )});}
 
         if(this.state.fifteenMinutesUntil >= Date.now()){
            PushNotification.localNotificationSchedule({	
@@ -70,14 +75,21 @@ export default class PushController extends Component {
       if (appState=='active') {
       if (this.props.item.isFavorite) {
         let favoriteDate = new Date(this.props.item.date);
+                //getting date of favorite events
+
         let id = (this.props.item.id).toString();
         
-        //getting date of favorite events
-
+         if (Platform.OS == 'android') {
       this.setState({inAppFifteen: new Date(
           favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45"
           )});
+         }
          //converting date to a 15 minutes before the event happens
+          if (Platform.OS == 'ios') {
+            this.setState({inAppFifteen: new Date(
+          favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45"
+          )});
+          }
 
         if(this.state.inAppFifteen >= Date.now()){
            PushNotification.localNotificationSchedule({		 
