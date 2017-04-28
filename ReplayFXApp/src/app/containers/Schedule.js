@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import {
   View,
-  AsyncStorage
+  AsyncStorage,
+  Platform
 } from 'react-native';
 import styles from '../styles/StyleSheet';
 import _ from 'lodash';
@@ -39,7 +40,7 @@ export default class Schedule extends Component {
     id: 432,
     title: "Pinburgh Machine Testing",
     date: "2017-04-28T00:00:00",
-    startTime: "16:30",
+    startTime: "12:01",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -57,7 +58,7 @@ export default class Schedule extends Component {
     id: 234,
     title: "Testing Testing",
     date: "2017-04-28T00:00:00",
-    startTime: "17:10",
+    startTime: "12:02",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -113,7 +114,7 @@ export default class Schedule extends Component {
   loadLocalSchedule() {
     AsyncStorage.getItem('all', (err, value) => {
       if (value !== null) {
-        this.setState({baseSchedule: [...this.state.testNotificator, JSON.parse(value || [])]});
+        this.setState({baseSchedule: [...this.state.testNotificator, JSON.parse(value)]});
       }
     });
   }
@@ -129,7 +130,10 @@ export default class Schedule extends Component {
    //AsyncStorage.removeItem('types');
     AsyncStorage.getItem('types', (err, value) => {
       if (value !== null) {
-        this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});
+        if (Platform.OS=='android')
+        {this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value)]});}
+        if (Platform.OS=='ios')
+        {{this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});}}
       }
     });
   }
