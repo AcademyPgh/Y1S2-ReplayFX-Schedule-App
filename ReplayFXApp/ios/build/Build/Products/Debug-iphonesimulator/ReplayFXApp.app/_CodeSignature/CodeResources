@@ -36,10 +36,6 @@
 		<data>
 		ef3nAhBLNSKnVhxovX5CuWDP7ek=
 		</data>
-		<key>Base.lproj/LaunchScreen.nib</key>
-		<data>
-		PUOaJjCSXbW6EnLKbbqhZLTJGlQ=
-		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
 		nrRG7weUQrYVE+0w3BdYNpbMByg=
@@ -233,13 +229,57 @@
 		<data>
 		7CH1/KJU9SrBKfYaYHRGR7EUW0E=
 		</data>
+		<key>IMG_9367</key>
+		<data>
+		0JEY6mlm33lVHUHnZBZssIQM2+8=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		W1jsazSlNL2V4/dJRbs1DJvOMVk=
+		A3ENOhJkpLNevRpGEFW+/S6B4ZA=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
 		D3lWcE/mG0nEHqGiIFEkD3AKK0Q=
+		</data>
+		<key>LaunchImage-568h@2x.png</key>
+		<data>
+		7tdAGzR/yPgvS9SastVk+O2U/TU=
+		</data>
+		<key>LaunchImage-700-568h@2x.png</key>
+		<data>
+		7tdAGzR/yPgvS9SastVk+O2U/TU=
+		</data>
+		<key>LaunchImage-700@2x.png</key>
+		<data>
+		5Q6fk1slSGx9+heDgHg7tO5MQ7o=
+		</data>
+		<key>LaunchImage-800-667h@2x.png</key>
+		<data>
+		DecP2opYCPX5B3eBEZHb19awbko=
+		</data>
+		<key>LaunchImage-800-Portrait-736h@3x.png</key>
+		<data>
+		pplg9P8uiUbjqjC45uZlwbxjz6k=
+		</data>
+		<key>LaunchImage.png</key>
+		<data>
+		QoOvt7OhYCY/MrCfunzDTA8DlEU=
+		</data>
+		<key>LaunchImage@2x.png</key>
+		<data>
+		5Q6fk1slSGx9+heDgHg7tO5MQ7o=
+		</data>
+		<key>LaunchScreen.storyboardc/Info.plist</key>
+		<data>
+		+ZLAIGc1xBpym+p/1dXVk5DORJM=
+		</data>
+		<key>LaunchScreen.storyboardc/UIViewController-YzW-4Y-7sa.nib</key>
+		<data>
+		9EVQc0qDpk2U4aJCHfHsZ34ypqQ=
+		</data>
+		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
+		<data>
+		FOGn8Ibprt+F6O8y3uQT69MYBrY=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -260,6 +300,18 @@
 		<key>Voces-Regular.ttf</key>
 		<data>
 		6u7FD/sdyB1bSWXB+FynOmnSOH4=
+		</data>
+		<key>image1</key>
+		<data>
+		WmHAsZBS0HuwVCIRLiH4P3VCnRU=
+		</data>
+		<key>nativeimg</key>
+		<data>
+		OGr7/ACuzbuNlZLGvdPPyqQS7mw=
+		</data>
+		<key>nativemain</key>
+		<data>
+		cUx4Gv6XnRLkBkdkYnsditvi/rA=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -350,17 +402,6 @@
 			<key>hash2</key>
 			<data>
 			a4WWIOegz8Sbw6LKONmL5cK+z9POZ8T4iG0cSr2zOJM=
-			</data>
-		</dict>
-		<key>Base.lproj/LaunchScreen.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PUOaJjCSXbW6EnLKbbqhZLTJGlQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			fGkcJ6jgqDu06VR32Gh2nzRui0ETteaIB/VveyRsPKo=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
@@ -887,6 +928,17 @@
 			2BanKnt7gC1jB4FCuFmi7nCn5PgitWzcSbrpKZWmJOc=
 			</data>
 		</dict>
+		<key>IMG_9367</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0JEY6mlm33lVHUHnZBZssIQM2+8=
+			</data>
+			<key>hash2</key>
+			<data>
+			QcEVdVTG4m4kMzf3nc5A4GAJr3sMclZGYQ/ylnXVeFY=
+			</data>
+		</dict>
 		<key>Ionicons.ttf</key>
 		<dict>
 			<key>hash</key>
@@ -896,6 +948,116 @@
 			<key>hash2</key>
 			<data>
 			u0dnmwuuuEgbf1HGitM65aUmc2y1CxcXzGD/a2X5CKM=
+			</data>
+		</dict>
+		<key>LaunchImage-568h@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7tdAGzR/yPgvS9SastVk+O2U/TU=
+			</data>
+			<key>hash2</key>
+			<data>
+			1W4GdoMUhbXPZ55YHwI5EvsM7PX8snuvmFZzgbeZ2os=
+			</data>
+		</dict>
+		<key>LaunchImage-700-568h@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7tdAGzR/yPgvS9SastVk+O2U/TU=
+			</data>
+			<key>hash2</key>
+			<data>
+			1W4GdoMUhbXPZ55YHwI5EvsM7PX8snuvmFZzgbeZ2os=
+			</data>
+		</dict>
+		<key>LaunchImage-700@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5Q6fk1slSGx9+heDgHg7tO5MQ7o=
+			</data>
+			<key>hash2</key>
+			<data>
+			EwOS/0+pbKqJOn5MuCu2d1EXZYGueODgR/eAeSvHR1k=
+			</data>
+		</dict>
+		<key>LaunchImage-800-667h@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			DecP2opYCPX5B3eBEZHb19awbko=
+			</data>
+			<key>hash2</key>
+			<data>
+			KO4KYBXIm03aakDhG0Dr8ZmKF9vAtOtS2n4hYYOu3r4=
+			</data>
+		</dict>
+		<key>LaunchImage-800-Portrait-736h@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			pplg9P8uiUbjqjC45uZlwbxjz6k=
+			</data>
+			<key>hash2</key>
+			<data>
+			aTiC65y6opq/0OdcYG+dQk1tdRAEr5WrDoW73POSxLU=
+			</data>
+		</dict>
+		<key>LaunchImage.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QoOvt7OhYCY/MrCfunzDTA8DlEU=
+			</data>
+			<key>hash2</key>
+			<data>
+			61jrbT/rIQhpgXCxqxkorWJuvX1ZDh5qdnzGKbqdzqg=
+			</data>
+		</dict>
+		<key>LaunchImage@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5Q6fk1slSGx9+heDgHg7tO5MQ7o=
+			</data>
+			<key>hash2</key>
+			<data>
+			EwOS/0+pbKqJOn5MuCu2d1EXZYGueODgR/eAeSvHR1k=
+			</data>
+		</dict>
+		<key>LaunchScreen.storyboardc/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+ZLAIGc1xBpym+p/1dXVk5DORJM=
+			</data>
+			<key>hash2</key>
+			<data>
+			4s6CbhxIA4dtuu9Qec3rjhZUaIw1QN8ll6KpTweAmfU=
+			</data>
+		</dict>
+		<key>LaunchScreen.storyboardc/UIViewController-YzW-4Y-7sa.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9EVQc0qDpk2U4aJCHfHsZ34ypqQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			Z3YE56PB4GMM6ZBkfHFgTzqNBCHS2WgzzbWgtJwcTgo=
+			</data>
+		</dict>
+		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FOGn8Ibprt+F6O8y3uQT69MYBrY=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZXJVfvqAeZ8M8KKw+Fddrj26sqvYCAAB7ZLH1Iejplk=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest/Info.plist</key>
@@ -940,6 +1102,39 @@
 			<key>hash2</key>
 			<data>
 			sstWXp3wtxcUk95wwImrf6USfWePDnzmt15MiDrfisk=
+			</data>
+		</dict>
+		<key>image1</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WmHAsZBS0HuwVCIRLiH4P3VCnRU=
+			</data>
+			<key>hash2</key>
+			<data>
+			61PY4sumP0ySqi/jXLGE3VPZXRGKeKiQxy9MAoqzCtQ=
+			</data>
+		</dict>
+		<key>nativeimg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OGr7/ACuzbuNlZLGvdPPyqQS7mw=
+			</data>
+			<key>hash2</key>
+			<data>
+			vlzfcNj4d6TfuqNy1DJB19jJvkO3nChizofCB8SZpZo=
+			</data>
+		</dict>
+		<key>nativemain</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cUx4Gv6XnRLkBkdkYnsditvi/rA=
+			</data>
+			<key>hash2</key>
+			<data>
+			d3QC47DaXnIxwX5OpEUcwBPGwJtx7AF5msnqpw5FIAA=
 			</data>
 		</dict>
 	</dict>

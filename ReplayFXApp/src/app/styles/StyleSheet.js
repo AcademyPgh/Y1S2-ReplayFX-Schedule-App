@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   },
 
   modaldescription: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: stylechoice.fontName,
     color: stylechoice.regtextcolor,
     paddingBottom: 2
@@ -175,7 +175,8 @@ gameModalContainer: {
   },
   innerContainer: {
     // alignItems: 'flex-start',
-    marginTop: 25,
+    marginTop: 15,
+    //marginBottom: 50,
     backgroundColor: stylechoice.regbackground,
     marginLeft: 15,
     marginRight: 15
@@ -231,12 +232,14 @@ gameModalContainer: {
     alignItems: 'center'
   },
   modalimage: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').width * .5625,
+    //width: Dimensions.get('window').width,
+    //height: Dimensions.get('window').width * .5625,
+    width: 200,
+    height: 150,
     resizeMode: 'contain',
     borderWidth: 1,
     borderColor: stylechoice.regbackground,
-    borderRadius: 10
+    borderRadius: 10,
   },
 
   tab: {

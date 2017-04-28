@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import {
   View,
-  AsyncStorage
+  AsyncStorage,
+  Platform
 } from 'react-native';
 import styles from '../styles/StyleSheet';
 import _ from 'lodash';
@@ -28,6 +29,42 @@ export default class Schedule extends Component {
         {DisplayName: 'Games', Name: 'Games'}
       ],
       baseSchedule: [],
+      testNotificator: [{
+        replayEventTypes: [
+      {
+        id: 3,
+        name: "competitions",
+        displayName: "Compete"
+      }
+    ],
+    id: 432,
+    title: "Pinburgh Machine Testing",
+    date: "2017-04-28T00:00:00",
+    startTime: "18:30",
+    endTime: "23:00",
+    description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
+    extendedDescription: null,
+    location: "Hall B, Pinburgh",
+    image: null
+  },
+  {
+        replayEventTypes: [
+      {
+        id: 3,
+        name: "competitions",
+        displayName: "Compete"
+      }
+    ],
+    id: 234,
+    title: "Testing Testing",
+    date: "2017-04-29T00:00:00",
+    startTime: "10:00",
+    endTime: "23:00",
+    description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
+    extendedDescription: null,
+    location: "Hall B, Pinburgh",
+    image: null
+  }],
       baseGameTypes: [],
       baseGames: []
     };
@@ -46,7 +83,7 @@ export default class Schedule extends Component {
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
-    this.loadTypes();
+    setTimeout(this.loadTypes, 950);
     setTimeout(this.loadLocalTypes, 1050);
     this.loadLocalGameTypes();
     this.loadGameTypes();
@@ -70,14 +107,14 @@ export default class Schedule extends Component {
   //Axios call that gives baseSchedule its state and stores the data
   loadSchedule() {
     ScheduleData().then((results) => {
-      this.setState({baseSchedule: results.data});
+      this.setState({baseSchedule: [...this.state.testNotificator, ...results.data]});
       AsyncStorage.setItem('all', JSON.stringify(results.data));
     });
   }
   loadLocalSchedule() {
     AsyncStorage.getItem('all', (err, value) => {
       if (value !== null) {
-        this.setState({baseSchedule: JSON.parse(value)});
+        this.setState({baseSchedule: [...this.state.testNotificator, JSON.parse(value)]});
       }
     });
   }
@@ -93,7 +130,10 @@ export default class Schedule extends Component {
    //AsyncStorage.removeItem('types');
     AsyncStorage.getItem('types', (err, value) => {
       if (value !== null) {
-        this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});
+        if (Platform.OS=='android')
+        {this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value)]});}
+        if (Platform.OS=='ios')
+        {{this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});}}
       }
     });
   }

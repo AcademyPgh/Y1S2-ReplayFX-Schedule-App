@@ -12,6 +12,8 @@ import ScheduleItem from '../components/ScheduleItem';
 //import AddFavoriteButton from '../components/AddFavoriteButton';
 import ScheduleModal from '../components/ScheduleModal';
 import SectionHeader from '../components/SectionHeader';
+import PushController from '../components/PushController';
+
 
 
 export default class ScheduleListView extends Component {
@@ -37,7 +39,6 @@ export default class ScheduleListView extends Component {
     this.handleModalVisible = this.handleModalVisible.bind(this);
    this.handleFavoriteButtonPress=this.handleFavoriteButtonPress.bind(this);
    this.timeConverter=this.timeConverter.bind(this);
-
   }
   componentWillReceiveProps(nextProps) {
     const ds = new ListView.DataSource({
@@ -76,6 +77,8 @@ export default class ScheduleListView extends Component {
       modalDescription: extendedDescription,
       modalImage: image});
   }
+
+
   timeConverter(time) {
     if(time){
     let times = time.split(':'); // convert to array
@@ -103,12 +106,16 @@ return timeValue;
 
  renderScheduleItem(item) {
    return(
+     <View>
       <ScheduleItem
             timeConverter={this.timeConverter}
-            item={item} //passing whole object
+            item={item} 
             onSetModalVisible= {() => this.handleModalVisible(true, item.title, this.timeConverter(item.startTime), this.timeConverter(item.endTime), item.location, item.extendedDescription, item.image)} //need to redefine the function otherwise tries to change state during render
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
-            />)}
+            />
+            <PushController item= {item}/>
+    </View>
+          )}
 
   renderSectionHeader(sectionData, category) {
     return (
@@ -133,6 +140,7 @@ return timeValue;
           renderRow={this.renderScheduleItem}
           renderSectionHeader={this.renderSectionHeader}
       />
+
       </View>
     );
   }
