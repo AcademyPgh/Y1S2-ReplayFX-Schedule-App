@@ -18,6 +18,7 @@ export default class PushController extends Component {
     PushNotification.configure({
       onNotification: function(notification) {
          console.log('NOTIFICATION:', notification);
+
       },
     });
     // for notifications in the background
@@ -31,7 +32,6 @@ export default class PushController extends Component {
   }
   // for notifications in App
 
-
    componentWillUnmount() {
   AppState.removeEventListener('change', this.backgroundNotification);
   AppState.removeEventListener('change', this.inAppNotification);
@@ -43,7 +43,6 @@ export default class PushController extends Component {
       if (this.props.item.isFavorite) {
         let favoriteDate = new Date(this.props.item.date);
         let id = (this.props.item.id).toString();
-
         //getting date of favorite events
         if (Platform.OS == 'android') {
       this.setState({fifteenMinutesUntil: new Date(
@@ -64,7 +63,6 @@ export default class PushController extends Component {
 
             //sending an id so notification is only sent once
            //setting the push notification to fire for each event at the right time
-
          });
     }
    }
@@ -99,13 +97,11 @@ export default class PushController extends Component {
 
             //sending an id so notification is only sent once
            //setting the push notification to fire for each event at the right time
-
          });
     }
    }
  }
   }
-
 
   render() {
     return null;
