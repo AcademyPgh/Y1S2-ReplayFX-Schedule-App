@@ -134,7 +134,6 @@ export default class Schedule extends Component {
         {this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value)]});}
         if (Platform.OS=='ios')
         {{this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});}}
-
       }
     });
   }
