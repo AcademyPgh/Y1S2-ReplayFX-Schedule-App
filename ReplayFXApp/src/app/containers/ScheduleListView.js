@@ -39,7 +39,6 @@ export default class ScheduleListView extends Component {
     this.handleModalVisible = this.handleModalVisible.bind(this);
    this.handleFavoriteButtonPress=this.handleFavoriteButtonPress.bind(this);
    this.timeConverter=this.timeConverter.bind(this);
-
   }
   componentWillReceiveProps(nextProps) {
     const ds = new ListView.DataSource({
@@ -78,6 +77,8 @@ export default class ScheduleListView extends Component {
       modalDescription: extendedDescription,
       modalImage: image});
   }
+
+
   timeConverter(time) {
     if(time){
     let times = time.split(':'); // convert to array
@@ -113,7 +114,6 @@ return timeValue;
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />
             <PushController item= {item}/>
-
     </View>
           )}
 

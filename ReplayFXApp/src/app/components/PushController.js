@@ -7,28 +7,42 @@ export default class PushController extends Component {
     super(props);
     this.state = {
       fifteenMinutesUntil: new Date(Date.now),
+      inAppFifteen: new Date(Date.now)
     };
-    this.handleNotification = this.handleNotification.bind(this);
+    this.backgroundNotification = this.backgroundNotification.bind(this);
+    this.inAppNotification = this.inAppNotification.bind(this);
   }
 
   componentDidMount() {
-  AppState.addEventListener('change', this.handleNotification);
+  AppState.addEventListener('change', this.backgroundNotification);
     PushNotification.configure({
       onNotification: function(notification) {
-         console.log('NOTIFICATION:', notification);      
+         console.log('NOTIFICATION:', notification);         
       },
     });
-    this.handleNotification();
+    // for notifications in the background
+
+    AppState.addEventListener('change', this.inAppNotification);
+    PushNotification.configure({
+      onNotification: function(notification) {
+         console.log('In APP NOTIFICATION:', notification);   
+      },
+    });
   }
+  // for notifications in App
+
   
    componentWillUnmount() {
-  AppState.removeEventListener('change', this.handleNotification);
+  AppState.removeEventListener('change', this.backgroundNotification);
+  AppState.removeEventListener('change', this.inAppNotification);
    }
 
-  handleNotification(appState) {
+
+  backgroundNotification(appState) {
       if (appState=='background') {
       if (this.props.item.isFavorite) {
         let favoriteDate = new Date(this.props.item.date);
+        let id = (this.props.item.id).toString();
         
         //getting date of favorite events
 
@@ -36,16 +50,42 @@ export default class PushController extends Component {
           favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45"
           )});
          //converting date to a 15 minutes before the event happens
-         console.log("Notification will happen at :" + this.state.fifteenMinutesUntil);
-         let adate = new Date(this.state.fifteenMinutesUntil)
-          console.log("Time might be "  + adate.getTime() );
-         //seeing if the time is as it should be (15 minutes before the event)
 
         if(this.state.fifteenMinutesUntil >= Date.now()){
-           PushNotification.localNotificationSchedule({		      
-           message: this.props.item.title + ' will begin in 15 minutes',
-           date: new Date(this.state.fifteenMinutesUntil), 
+           PushNotification.localNotificationSchedule({	
+            id: id,	      
+            message: this.props.item.title + ' will begin in 15 minutes',
+            date: new Date(this.state.fifteenMinutesUntil), 
+           
+            //sending an id so notification is only sent once
+           //setting the push notification to fire for each event at the right time
+         
+         });
+    }
+   }
+ }
+  }
 
+ inAppNotification(appState) {
+      if (appState=='active') {
+      if (this.props.item.isFavorite) {
+        let favoriteDate = new Date(this.props.item.date);
+        let id = (this.props.item.id).toString();
+        
+        //getting date of favorite events
+
+      this.setState({inAppFifteen: new Date(
+          favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45"
+          )});
+         //converting date to a 15 minutes before the event happens
+
+        if(this.state.inAppFifteen >= Date.now()){
+           PushNotification.localNotificationSchedule({		 
+            id: id,     
+           message: this.props.item.title + ' will begin in 15 minutes',
+           date: new Date(this.state.inAppFifteen),
+
+            //sending an id so notification is only sent once
            //setting the push notification to fire for each event at the right time
          
          });
