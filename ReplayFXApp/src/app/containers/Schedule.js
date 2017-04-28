@@ -39,7 +39,7 @@ export default class Schedule extends Component {
     id: 666,
     title: "Testing Push Notifications",
     date: "2017-04-26T20:00:00",
-    startTime: "12:02",
+    startTime: "18:37",
     endTime: "24:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -57,7 +57,7 @@ export default class Schedule extends Component {
   id: 766,
   title: "Second Testing Push Notifications",
   date: "2017-04-26T20:00:00",
-  startTime: "12:03",
+  startTime: "18:38",
   endTime: "24:00",
   description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
   extendedDescription: null,
@@ -114,7 +114,7 @@ export default class Schedule extends Component {
   loadLocalSchedule() {
     AsyncStorage.getItem('all', (err, value) => {
       if (value !== null) {
-        this.setState({baseSchedule: [...this.state.testNotificator,...this.state.secondTestNotificator, JSON.parse(value || [])]});
+        this.setState({baseSchedule: [...this.state.testNotificator,...this.state.secondTestNotificator, JSON.parse(value)]});
       }
     });
   }
@@ -130,7 +130,7 @@ export default class Schedule extends Component {
    //AsyncStorage.removeItem('types');
     AsyncStorage.getItem('types', (err, value) => {
       if (value !== null) {
-        this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value || [])]});
+        this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value)]});
       }
     });
   }

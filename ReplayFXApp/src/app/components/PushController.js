@@ -1,7 +1,6 @@
 import {Component} from 'react';
-import {AppState, PushNotificationIOS} from 'react-native';
+import {AppState} from 'react-native';
 import PushNotification from 'react-native-push-notification';
-import PushNotificationAndroid from 'react-native-push-notification';
 export default class PushController extends Component {
   constructor(props) {
     super(props);
@@ -14,8 +13,7 @@ export default class PushController extends Component {
 
   componentDidMount() {
     AppState.addEventListener('change', this.handleAppStateChange);
-    // PushNotificationIOS.addEventListener('localNotification', this.handlePushNotification);
-    // PushNotificationIOS.addEventListener('notification', this.handlePushNotification);
+
     PushNotification.configure({
       onNotification: function(notification) {
         console.log('NOTIFICATION:', notification);
