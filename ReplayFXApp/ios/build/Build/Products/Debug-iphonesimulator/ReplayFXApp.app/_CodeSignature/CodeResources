@@ -235,7 +235,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		A3ENOhJkpLNevRpGEFW+/S6B4ZA=
+		grp9hZrGavE23Du1kybkXAHh5Sk=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -287,15 +287,15 @@
 		</data>
 		<key>PlugIns/ReplayFXAppTests.xctest/Info.plist</key>
 		<data>
-		Kd1WUUD6dFIsaAidY1t2E6p5r6U=
+		SlW4VAZRgcCCoX7gnz3YS3yWuBg=
 		</data>
 		<key>PlugIns/ReplayFXAppTests.xctest/ReplayFXAppTests</key>
 		<data>
-		vi4zUT01QLwtWNStPu8KJehX0Ss=
+		9bE7GyX13lCTPOPl2IdaRnORyP8=
 		</data>
 		<key>PlugIns/ReplayFXAppTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		b8ar3GtWeb9ONUq0Io2NjSrsAm4=
+		fQazMkTi3Jgxo1nGk7hiFq4jT5o=
 		</data>
 		<key>Voces-Regular.ttf</key>
 		<data>
@@ -1064,33 +1064,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Kd1WUUD6dFIsaAidY1t2E6p5r6U=
+			SlW4VAZRgcCCoX7gnz3YS3yWuBg=
 			</data>
 			<key>hash2</key>
 			<data>
-			y2C6ADG5pDXHays+khetnmx1A1qiRlCSbWF6gWnKKSg=
+			Nzlp3O9vnefO/oc6dN47Emv/fZTrn7ahZ96fsHLBN2U=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest/ReplayFXAppTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vi4zUT01QLwtWNStPu8KJehX0Ss=
+			9bE7GyX13lCTPOPl2IdaRnORyP8=
 			</data>
 			<key>hash2</key>
 			<data>
-			q/J+z1sXXN439N7FizrZ9LqVWJB1JQ54gU2Ub/Dhbpk=
+			+HnoVDWGdVpA9vpHs8K3ZH/keEwfEOIV4jvH4wdyCgk=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			b8ar3GtWeb9ONUq0Io2NjSrsAm4=
+			fQazMkTi3Jgxo1nGk7hiFq4jT5o=
 			</data>
 			<key>hash2</key>
 			<data>
-			4ABc11nTU1xdVy1h4bo4VKqLgJy4Q3Cx67DWdLxCD+0=
+			J7hjyVF3JUp8NzuONzqIddRHiUUseDoOgpwvbpnqTKk=
 			</data>
 		</dict>
 		<key>Voces-Regular.ttf</key>
