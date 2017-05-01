@@ -45,8 +45,7 @@ const styles = StyleSheet.create({
   },
   modaltitle: {
     color: stylechoice.regtextcolor,
-    marginTop: 15,
-    fontSize: 20,
+    fontSize: 24,
     fontFamily: stylechoice.fontName,
     paddingBottom: 2,
     paddingTop: 3,
