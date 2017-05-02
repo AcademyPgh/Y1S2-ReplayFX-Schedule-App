@@ -128,6 +128,7 @@ return timeValue;
       <View style={styles.container}>
         <ScheduleModal
         modalVisible={this.state.modalVisible}
+        modalTitle={this.state.modalTitle}
         modalStartTime={this.state.modalStartTime}
         modalEndTime={this.state.modalEndTime}
         modalLocation={this.state.modalLocation}
