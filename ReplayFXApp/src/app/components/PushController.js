@@ -47,18 +47,20 @@ export default class PushController extends Component {
         let fifteen_min_until = this.state.fifteenMinutesUntil;
         //getting date of favorite events
         if(previous_notification!= id){
+          let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
+          let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
 
-          if (Platform.OS == 'android') {
-            fifteen_min_until = new Date( favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45");
-         //converting date to a 15 minutes before the event happens
-          }
-
-          else if (Platform.OS == 'ios')
-          {
-            fifteen_min_until = new Date( favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45");
-          }
+        //   if (Platform.OS == 'android') {
+        //     fifteen_min_until = new Date( favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-0"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45");
+        //  //converting date to a 15 minutes before the event happens
+        //   }
+          // else if (Platform.OS == 'ios')
+          // {
+            fifteen_min_until = new Date( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+this.props.item.startTime+ "-"+"03:45");
+          // }
 
             console.log(fifteen_min_until);
+            console.log(favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-0"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45");
             previous_notification = id;
 
         if(fifteen_min_until >= Date.now()){
