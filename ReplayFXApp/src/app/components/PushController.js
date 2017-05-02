@@ -42,22 +42,25 @@ export default class PushController extends Component {
       if (appState=='background') {
       if (this.props.item.isFavorite) {
         let favoriteDate = new Date(this.props.item.date);
+        let favoriteMonth = '';
+        let favorite = '';
         let id = (this.props.item.id).toString();
         let previous_notification = this.state.previousNotificationsID;
         let fifteen_min_until = this.state.fifteenMinutesUntil;
         //getting date of favorite events
         if(previous_notification!= id){
-          let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
+          favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
+          if (Platform.OS == 'android') {
           let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
+          }
+        else if (Platform.OS == 'ios')
+        {
+          favoriteDay  = (favoriteDate.getDate()) >=10 ? "-"+(favoriteDate.getDate()) : "-0"+(favoriteDate.getDate());
 
-        //   if (Platform.OS == 'android') {
-        //     fifteen_min_until = new Date( favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-0"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45");
-        //  //converting date to a 15 minutes before the event happens
-        //   }
-          // else if (Platform.OS == 'ios')
-          // {
+        }
+         //converting date to a 15 minutes before the event happens
+
             fifteen_min_until = new Date( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+this.props.item.startTime+ "-"+"03:45");
-          // }
 
             console.log(fifteen_min_until);
             previous_notification = id;
@@ -73,7 +76,7 @@ export default class PushController extends Component {
     }
   }
   else{
-    console.log("Previous Notificatons: " + previous_notification);
+    console.log("Previous Remote Notificatons: " + previous_notification);
   }
   this.setState({fifteenMinutesUntil: fifteen_min_until, previousNotificationsID: previous_notification});
    }
@@ -109,7 +112,7 @@ export default class PushController extends Component {
       }
     }
     else{
-      console.log("Previous Notificatons: " + previous_notification);
+      console.log("Previous Local Notificatons: " + previous_notification);
     }
     this.setState({fifteenMinutesUntil: fifteen_min_until, previousNotificationsID: previous_notification});
      }
