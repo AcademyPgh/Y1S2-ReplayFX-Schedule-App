@@ -60,7 +60,6 @@ export default class PushController extends Component {
           // }
 
             console.log(fifteen_min_until);
-            console.log(favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-0"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45");
             previous_notification = id;
 
         if(fifteen_min_until >= Date.now()){
