@@ -37,10 +37,10 @@ export default class Schedule extends Component {
         displayName: "Compete"
       }
     ],
-    id: 432,
+    id: 442,
     title: "Pinburgh Machine Testing",
     date: "2017-05-02T00:00:00",
-    startTime: "15:05",
+    startTime: "17:45",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -55,10 +55,10 @@ export default class Schedule extends Component {
         displayName: "Compete"
       }
     ],
-    id: 234,
+    id: 244,
     title: "Testing Testing",
     date: "2017-05-02T00:00:00",
-    startTime: "15:06",
+    startTime: "18:00",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
