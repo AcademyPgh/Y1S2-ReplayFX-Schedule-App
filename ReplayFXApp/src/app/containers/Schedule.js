@@ -40,7 +40,7 @@ export default class Schedule extends Component {
     id: 432,
     title: "Pinburgh Machine Testing",
     date: "2017-05-02T00:00:00",
-    startTime: "9:30",
+    startTime: "15:30",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -58,7 +58,7 @@ export default class Schedule extends Component {
     id: 234,
     title: "Testing Testing",
     date: "2017-05-02T00:00:00",
-    startTime: "10:00",
+    startTime: "16:00",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -133,7 +133,7 @@ export default class Schedule extends Component {
         if (Platform.OS=='android')
         {this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value)]});}
         if (Platform.OS=='ios')
-        {{this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});}}
+        {this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});}
       }
     });
   }

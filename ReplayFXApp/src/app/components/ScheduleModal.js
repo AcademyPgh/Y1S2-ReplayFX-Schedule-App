@@ -27,7 +27,7 @@ const ScheduleModal=(props)=> {
             <Text style = {styles.modaldescription}>{props.modalDescription}</Text>
           </ScrollView>
             <View style ={styles.center}>
-            <TouchableHighlight onPress={() => {
+            <TouchableHighlight underlayColor="#ffffff" onPress={() => {
               props.onSetModalVisible(props);
             }}>
               <View><CloseIcon/></View>
