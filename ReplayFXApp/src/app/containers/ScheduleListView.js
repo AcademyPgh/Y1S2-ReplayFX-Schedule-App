@@ -13,6 +13,7 @@ import ScheduleItem from '../components/ScheduleItem';
 import ScheduleModal from '../components/ScheduleModal';
 import SectionHeader from '../components/SectionHeader';
 import PushController from '../components/PushController';
+import PushNotification from 'react-native-push-notification';
 
 
 
@@ -57,12 +58,25 @@ export default class ScheduleListView extends Component {
     if (item.isFavorite){
             this.props.removeFavorite(item.id);
           //  Alert.alert('Item has been removed from your schedule');
+          
           }
           else {
             this.props.addFavorite(item.id);
             if(this.props.favorites.length < 1){
                  Alert.alert('Item has been added to your schedule');
              }
+            let favoriteDate = new Date(item.date);
+            let id = (item.id).toString();
+            let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
+            let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
+            let fifteenMinutesUntil = new Date ( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+item.startTime+ "-"+"03:45");
+            if( fifteenMinutesUntil >= Date.now()){
+              PushNotification.localNotificationSchedule({
+              id: id,
+              message: item.title + ' will begin in 15 minutes',
+              date: new Date(fifteenMinutesUntil),
+           });
+        }
           }
     }
 
@@ -114,7 +128,8 @@ return timeValue;
               this.timeConverter(item.endTime), item.location, item.extendedDescription, item.image)} //need to redefine the function otherwise tries to change state during render
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />
-            <PushController item= {item}/>
+            <PushController />
+
     </View>
           )}
 

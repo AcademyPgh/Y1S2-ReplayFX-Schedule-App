@@ -37,10 +37,10 @@ export default class Schedule extends Component {
         displayName: "Compete"
       }
     ],
-    id: 432,
+    id: 999,
     title: "Pinburgh Machine Testing",
-    date: "2017-05-02T00:00:00",
-    startTime: "15:30",
+    date: "2017-05-03T00:00:00",
+    startTime: "16:51",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -55,10 +55,10 @@ export default class Schedule extends Component {
         displayName: "Compete"
       }
     ],
-    id: 234,
+    id: 888,
     title: "Testing Testing",
-    date: "2017-05-02T00:00:00",
-    startTime: "16:00",
+    date: "2017-05-03T00:00:00",
+    startTime: "16:52",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -84,7 +84,7 @@ export default class Schedule extends Component {
 
     //callbacks
     setTimeout(this.loadTypes, 950);
-    setTimeout(this.loadLocalTypes, 1050);
+    setTimeout(this.loadLocalTypes, 2050);
     this.loadLocalGameTypes();
     this.loadGameTypes();
     this.loadLocalGames();
