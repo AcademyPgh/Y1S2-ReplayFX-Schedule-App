@@ -9,9 +9,10 @@ export default class PushController extends Component {
       fifteenMinutesUntil: new Date(Date.now),
       inAppFifteen: new Date(Date.now),
       previousNotificationsID: 0
+      // inappPreviousNotificationsID:0
     };
     this.backgroundNotification = this.backgroundNotification.bind(this);
-    this.inAppNotification = this.inAppNotification.bind(this);
+    // this.inAppNotification = this.inAppNotification.bind(this);
   }
 
   componentDidMount() {
@@ -23,18 +24,18 @@ export default class PushController extends Component {
     });
     // for notifications in the background
 
-    AppState.addEventListener('change', this.inAppNotification);
-    PushNotification.configure({
-      onNotification: function(notification) {
-         console.log('In APP NOTIFICATION:', notification);
-      }
-    });
+    // AppState.addEventListener('change', this.inAppNotification);
+    // PushNotification.configure({
+    //   onNotification: function(notification) {
+    //      console.log('In APP NOTIFICATION:', notification);
+    //   }
+    // });
   }
   // for notifications in App
 
    componentWillUnmount() {
   AppState.removeEventListener('change', this.backgroundNotification);
-  AppState.removeEventListener('change', this.inAppNotification);
+  // AppState.removeEventListener('change', this.inAppNotification);
    }
 
 
@@ -43,31 +44,30 @@ export default class PushController extends Component {
       if (this.props.item.isFavorite) {
         let favoriteDate = new Date(this.props.item.date);
         let favoriteMonth = '';
-        let favorite = '';
+        let favoriteDay = '';
         let id = (this.props.item.id).toString();
         let previous_notification = this.state.previousNotificationsID;
         let fifteen_min_until = this.state.fifteenMinutesUntil;
         //getting date of favorite events
         if(previous_notification!= id){
           favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
-          if (Platform.OS == 'android') {
-          let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
-          }
-        else if (Platform.OS == 'ios')
-        {
-          favoriteDay  = (favoriteDate.getDate()) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate());
+        //   if (Platform.OS == 'android') {
+        //   let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
+        //   }
+        // else if (Platform.OS == 'ios')
+        // {
+          favoriteDay  = (favoriteDate.getDate()) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
 
-        }
+        // }
          //converting date to a 15 minutes before the event happens
 
             fifteen_min_until = new Date( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+this.props.item.startTime+ "-"+"03:45");
 
-            console.log(fifteen_min_until);
+            // console.log(fifteen_min_until);
             previous_notification = id;
 
         if(fifteen_min_until >= Date.now()){
            PushNotification.localNotificationSchedule({
-            id: id,
             message: this.props.item.title + ' will begin in 15 minutes',
             date: new Date(fifteen_min_until),
             //sending an id so notification is only sent once
@@ -75,49 +75,49 @@ export default class PushController extends Component {
          });
     }
   }
-  else{
-    console.log("Previous Remote Notificatons: " + previous_notification);
-  }
+  // else{
+  //   console.log("Previous Remote Notificatons: " + previous_notification);
+  // }
   this.setState({fifteenMinutesUntil: fifteen_min_until, previousNotificationsID: previous_notification});
    }
  }
   }
 
- inAppNotification(appState) {
-      if (appState=='active') {
-        if (this.props.item.isFavorite) {
-          let favoriteDate = new Date(this.props.item.date);
-          let id = (this.props.item.id).toString();
-          let previous_notification = this.state.previousNotificationsID;
-          let fifteen_min_until = this.state.fifteenMinutesUntil;
-          //getting date of favorite events
-          if(previous_notification!= id){
-            let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
-            let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
-
-              fifteen_min_until = new Date( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+this.props.item.startTime+ "-"+"03:45");
-
-              console.log(fifteen_min_until);
-              console.log(favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-0"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45");
-              previous_notification = id;
-
-          if(fifteen_min_until >= Date.now()){
-             PushNotification.localNotificationSchedule({
-              id: id,
-              message: this.props.item.title + ' will begin in 15 minutes',
-              date: new Date(fifteen_min_until),
-              //sending an id so notification is only sent once
-             //setting the push notification to fire for each event at the right time
-           });
-      }
-    }
-    else{
-      console.log("Previous Local Notificatons: " + previous_notification);
-    }
-    this.setState({fifteenMinutesUntil: fifteen_min_until, previousNotificationsID: previous_notification});
-     }
- }
-  }
+ // inAppNotification(appState) {
+ //      if (appState=='active') {
+ //        if (this.props.item.isFavorite) {
+ //          let favoriteDate = new Date(this.props.item.date);
+ //          let id = (this.props.item.id).toString();
+ //          let inapp_previous_notification = this.state.inappPreviousNotificationsID;
+ //          let fifteen_min_until = this.state.fifteenMinutesUntil;
+ //          //getting date of favorite events
+ //          if(inapp_previous_notification!= id){
+ //            let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
+ //            let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
+ //
+ //              fifteen_min_until = new Date( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+this.props.item.startTime+ "-"+"03:45");
+ //
+ //              console.log(appState);
+ //              console.log(favoriteDate.getFullYear() +"-0"+ (favoriteDate.getMonth()+1)+"-0"+(favoriteDate.getDate()+1)+"T"+this.props.item.startTime+ "-"+"03:45");
+ //              inapp_previous_notification = id;
+ //
+ //          if(fifteen_min_until >= Date.now()){
+ //             PushNotification.localNotificationSchedule({
+ //              id: id,
+ //              message: this.props.item.title + ' will begin in 15 minutes',
+ //              date: new Date(fifteen_min_until),
+ //              //sending an id so notification is only sent once
+ //             //setting the push notification to fire for each event at the right time
+ //           });
+ //      }
+ //    }
+ //    // else{
+ //    //   console.log("Previous Local Notificatons: " + previous_notification);
+ //    // }
+ //    this.setState({fifteenMinutesUntil: fifteen_min_until, inappPreviousNotificationsID: inapp_previous_notification});
+ //     }
+ // }
+ //  }
 
   render() {
     return null;
