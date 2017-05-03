@@ -55,7 +55,7 @@ export default class PushController extends Component {
           }
         else if (Platform.OS == 'ios')
         {
-          favoriteDay  = (favoriteDate.getDate()) >=10 ? "-"+(favoriteDate.getDate()) : "-0"+(favoriteDate.getDate());
+          favoriteDay  = (favoriteDate.getDate()) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate());
 
         }
          //converting date to a 15 minutes before the event happens
