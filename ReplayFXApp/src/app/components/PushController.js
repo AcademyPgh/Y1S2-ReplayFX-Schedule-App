@@ -49,9 +49,10 @@ export default class PushController extends Component {
 
           if(fifteen_min_until >= Date.now()){
              PushNotification.localNotificationSchedule({
+             id:id,
              message: this.props.item.title + ' will begin in 15 minutes',
              date: new Date(fifteen_min_until),
-             userInfo: {'id':id}
+             userInfo: {id:id}
             //sending an id so notification is only sent once
            //setting the push notification to fire for each event at the right time
          });
@@ -59,7 +60,7 @@ export default class PushController extends Component {
   }
    }
       else if(!this.props.item.isFavorite && id == previous_notification){
-              PushNotification.cancelLocalNotifications({'id': id});
+              PushNotification.cancelLocalNotifications({id: id});
               previous_notification = -1;
    }
    this.setState({fifteenMinutesUntil: fifteen_min_until, previousNotificationsID: previous_notification});
