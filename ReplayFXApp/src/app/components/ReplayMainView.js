@@ -7,7 +7,8 @@ import {
     Text,
     View,
     Image,
-    BackHandler
+    BackHandler,
+    Platform
 } from 'react-native';
 
 export default class MainView extends Component {
@@ -22,9 +23,10 @@ constructor(props) {
     this.backButton();
 }
 backButton() {
+  if (Platform.OS=='android'){
     BackHandler.addEventListener('hardwareBackPress', () => {
       BackHandler.exitApp(0);
-    });
+    });}
 }
 
 componentDidMount() {
