@@ -33,13 +33,14 @@ export default class ScheduleListView extends Component {
       modalImage: '',
       modalStartTime: '',
       modalEndTime: '',
-      modalLocation: ''
-
+      modalLocation: '',
+      refreshing: false
     };
   this.renderScheduleItem = this.renderScheduleItem.bind(this);
     this.handleModalVisible = this.handleModalVisible.bind(this);
    this.handleFavoriteButtonPress=this.handleFavoriteButtonPress.bind(this);
    this.timeConverter=this.timeConverter.bind(this);
+  //  this._onRefresh=this._onRefresh.bind(this);
   }
   componentWillReceiveProps(nextProps) {
     const ds = new ListView.DataSource({
@@ -52,12 +53,24 @@ export default class ScheduleListView extends Component {
     });
   }
 
+_onRefresh() {
+  this.setState({refreshing: true});
+  this.props.reCallData().then(() => {
+    this.setState({refreshing: false});
+  });
 
+}
   handleFavoriteButtonPress(item){
 
     if (item.isFavorite){
+
             this.props.removeFavorite(item.id);
           //  Alert.alert('Item has been removed from your schedule');
+          let id = (item.id).toString();
+          PushNotification.cancelLocalNotifications({
+            id: id,
+            userInfo: {'id': id}
+          });
           
           }
           else {
@@ -73,6 +86,7 @@ export default class ScheduleListView extends Component {
             if( fifteenMinutesUntil >= Date.now()){
               PushNotification.localNotificationSchedule({
               id: id,
+              userInfo: {'id':id},
               message: item.title + ' will begin in 15 minutes',
               date: new Date(fifteenMinutesUntil),
            });
@@ -152,6 +166,15 @@ return timeValue;
         onSetModalVisible={() => this.handleModalVisible(false)}
          />
         <ListView
+          /*refreshControl={
+            <RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this._onRefresh}
+            title="Loading..."
+            titleColor="#00ff00"
+            colors={['#ff0000', '#00ff00', '#0000ff']}
+            progressBackgroundColor="#ffff00"/>
+          }*/
           styles={styles.container}
           dataSource={this.state.dataSource}
           renderRow={this.renderScheduleItem}
