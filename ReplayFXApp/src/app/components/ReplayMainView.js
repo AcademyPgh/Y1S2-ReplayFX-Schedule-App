@@ -8,7 +8,6 @@ import {
     View,
     Image,
     BackAndroid,
-    Platform
 } from 'react-native';
 
 export default class MainView extends Component {
