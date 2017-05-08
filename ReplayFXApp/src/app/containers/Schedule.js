@@ -19,6 +19,7 @@ export default class Schedule extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isRefreshing: false,
       //this array gets filled when people start "starring" their schedule
       favorites: [],
       //Array of types of events that will become the names of the tabs
@@ -39,9 +40,9 @@ export default class Schedule extends Component {
     ],
     id: 999,
     title: "Pinburgh Machine Testing",
-    date: "2017-05-03T00:00:00",
-    startTime: "16:51",
-    endTime: "23:00",
+    date: "2017-05-08T00:00:00",
+    startTime: "18:56",
+    endTime: "20:24",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
     location: "Hall B, Pinburgh",
@@ -57,8 +58,8 @@ export default class Schedule extends Component {
     ],
     id: 888,
     title: "Testing Testing",
-    date: "2017-05-03T00:00:00",
-    startTime: "16:52",
+    date: "2017-05-08T00:00:00",
+    startTime: "18:57",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -83,16 +84,11 @@ export default class Schedule extends Component {
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
-    setTimeout(this.loadTypes, 950);
-    setTimeout(this.loadLocalTypes, 2050);
-    this.loadLocalGameTypes();
-    this.loadGameTypes();
-    this.loadLocalGames();
-    this.loadGames();
-    this.loadLocalSchedule();
+    setTimeout(this.loadTypes, 3000);
     this.loadSchedule();
+    this.loadGameTypes();
+    this.loadGames();
     this.loadFavorites();
-
   }
 
   //function that loads favorites from local storage
@@ -106,15 +102,16 @@ export default class Schedule extends Component {
   }
   //Axios call that gives baseSchedule its state and stores the data
   loadSchedule() {
-    ScheduleData().then((results) => {
+      ScheduleData().then((results) => {
       this.setState({baseSchedule: [...this.state.testNotificator, ...results.data]});
       AsyncStorage.setItem('all', JSON.stringify(results.data));
-    });
+    }).then(setTimeout(this.loadLocalSchedule, 1500));
   }
+
   loadLocalSchedule() {
     AsyncStorage.getItem('all', (err, value) => {
       if (value !== null) {
-        this.setState({baseSchedule: [...this.state.testNotificator, JSON.parse(value)]});
+        this.setState({baseSchedule: [...this.state.testNotificator, ...JSON.parse(value)]});
       }
     });
   }
@@ -123,31 +120,29 @@ export default class Schedule extends Component {
     Types().then((results) => {
       this.setState({tabs: [...this.state.baseTabs, ...results.data]});
       AsyncStorage.setItem('types', JSON.stringify(results.data));
-    });
+      console.log("Reloading types");
+    }).then(setTimeout(this.loadLocalTypes, 500));
   }
 
   loadLocalTypes() {
-   //AsyncStorage.removeItem('types');
     AsyncStorage.getItem('types', (err, value) => {
       if (value !== null) {
-        if (Platform.OS=='android')
-        {this.setState({tabs: [...this.state.baseTabs, ...JSON.parse(value)]});}
-        if (Platform.OS=='ios')
-        {this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});}
-      }
+       this.setState({baseTabs: [...this.state.baseTabs, ...JSON.parse(value)]});}
     });
   }
   loadGames () {
     GameData().then((results) => {
       this.setState({baseGames: results.data});
       AsyncStorage.setItem('games', JSON.stringify(results.data));
-    });
+      console.log("I am refreshing Games");
+    }).then(setTimeout(this.loadLocalGames, 1000));
   }
 
   loadLocalGames() {
     AsyncStorage.getItem('games', (err,value) => {
       if (value !== null) {
         this.setState({baseGames: JSON.parse(value)});
+        console.log("I am loading LOCAL Games")
       }
     });
   }
@@ -155,7 +150,7 @@ loadGameTypes() {
   GameTypes().then((results) => {
     this.setState({baseGameTypes: results.data});
     AsyncStorage.setItem('gametypes', JSON.stringify(results.data));
-  });
+  }).then(setTimeout(this.loadLocalGameTypes, 1500));
 }
   loadLocalGameTypes () {
     AsyncStorage.getItem('gametypes', (err,value) => {
@@ -200,7 +195,11 @@ loadGameTypes() {
               favorites={this.state.favorites}
               removeFavorite={this.removeFavorite}
               addFavorite={this.addFavorite}
-              baseSchedule={this.state.baseSchedule}/>
+              baseSchedule={this.state.baseSchedule}
+              loadSchedule={this.loadSchedule}
+              loadTypes={this.loadTypes}
+              loadGames={this.loadGames}
+              />
           </View>
 
         );})}
