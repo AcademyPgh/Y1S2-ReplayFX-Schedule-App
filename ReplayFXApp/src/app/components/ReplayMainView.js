@@ -7,7 +7,7 @@ import {
     Text,
     View,
     Image,
-    BackHandler,
+    BackAndroid,
     Platform
 } from 'react-native';
 
@@ -23,10 +23,9 @@ constructor(props) {
     this.backButton();
 }
 backButton() {
-  if (Platform.OS=='android'){
-    BackHandler.addEventListener('hardwareBackPress', () => {
-      BackHandler.exitApp(0);
-    });}
+    BackAndroid.addEventListener('hardwareBackPress', () => {
+      BackAndroid.exitApp(0);
+    });
 }
 
 componentDidMount() {
