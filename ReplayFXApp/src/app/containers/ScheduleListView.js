@@ -3,7 +3,9 @@ import React, {Component} from 'react';
 import {
   ListView,
   Alert,
-  View
+  View,
+  Platform,
+  RefreshControl
 } from 'react-native';
 import styles, {stylechoice} from '../styles/StyleSheet';
 import ScheduleDataDivider from '../utils/ScheduleDataDivider';
@@ -13,6 +15,7 @@ import ScheduleItem from '../components/ScheduleItem';
 import ScheduleModal from '../components/ScheduleModal';
 import SectionHeader from '../components/SectionHeader';
 import PushController from '../components/PushController';
+import PushNotification from 'react-native-push-notification';
 
 
 
@@ -32,13 +35,15 @@ export default class ScheduleListView extends Component {
       modalImage: '',
       modalStartTime: '',
       modalEndTime: '',
-      modalLocation: ''
-
+      modalLocation: '',
+      isRefreshing: false,
+      // isEnabled: false
     };
   this.renderScheduleItem = this.renderScheduleItem.bind(this);
     this.handleModalVisible = this.handleModalVisible.bind(this);
    this.handleFavoriteButtonPress=this.handleFavoriteButtonPress.bind(this);
    this.timeConverter=this.timeConverter.bind(this);
+    this.onRefresh=this.onRefresh.bind(this);
   }
   componentWillReceiveProps(nextProps) {
     const ds = new ListView.DataSource({
@@ -51,18 +56,46 @@ export default class ScheduleListView extends Component {
     });
   }
 
-
+onRefresh() {
+  this.setState({isRefreshing: true})
+  console.log("I am refreshing when you pull down! and isRefreshing is " + this.state.isRefreshing);
+  this.props.loadSchedule();
+  this.props.loadGames();
+  setTimeout(() => {
+    this.setState({isRefreshing: false});
+}, 5000);
+}
   handleFavoriteButtonPress(item){
 
     if (item.isFavorite){
+
             this.props.removeFavorite(item.id);
-          //  Alert.alert('Item has been removed from your schedule');
-          }
+          // Alert.alert('Item has been removed from your schedule');
+          let id = (item.id).toString();
+          PushNotification.cancelLocalNotifications({
+            id: id
+          });
+        }
+
           else {
             this.props.addFavorite(item.id);
             if(this.props.favorites.length < 1){
                  Alert.alert('Item has been added to your schedule');
              }
+            let favoriteDate = new Date(item.date);
+            let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
+            let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
+            let fifteenMinutesUntil = new Date ( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+item.startTime+ "-"+"03:45");
+            console.log(fifteenMinutesUntil);
+
+            let id = (item.id).toString();
+            if( fifteenMinutesUntil >= Date.now()){
+              PushNotification.localNotificationSchedule({
+              id: id,
+              userInfo: {id: id},
+              message: item.title + ' will begin in 15 minutes',
+              date: new Date(fifteenMinutesUntil),
+           });}
           }
     }
 
@@ -114,7 +147,8 @@ return timeValue;
               this.timeConverter(item.endTime), item.location, item.extendedDescription, item.image)} //need to redefine the function otherwise tries to change state during render
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />
-            <PushController item= {item}/>
+            <PushController />
+
     </View>
           )}
 
@@ -137,13 +171,26 @@ return timeValue;
         onSetModalVisible={() => this.handleModalVisible(false)}
          />
         <ListView
+          refreshControl = {
+            <RefreshControl
+              refreshing={this.state.isRefreshing}
+              onRefresh={this.onRefresh}
+              />}
           styles={styles.container}
           dataSource={this.state.dataSource}
           renderRow={this.renderScheduleItem}
           renderSectionHeader={this.renderSectionHeader}
-      />
+          >
+      </ListView>
 
       </View>
     );
   }
 }
+
+              {/*enabled={this.state.isEnabled}
+
+              title="Loading..."
+              titleColor="#00ff00"
+              colors={['#ff0000', '#00ff00', '#0000ff']}
+              progressBackgroundColor="#ffff00"*/}

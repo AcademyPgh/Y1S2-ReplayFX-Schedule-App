@@ -7,7 +7,7 @@ import {
     Text,
     View,
     Image,
-    BackAndroid
+    BackAndroid,
 } from 'react-native';
 
 export default class MainView extends Component {
