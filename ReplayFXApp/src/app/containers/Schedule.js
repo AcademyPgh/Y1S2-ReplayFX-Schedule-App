@@ -41,7 +41,7 @@ export default class Schedule extends Component {
     id: 999,
     title: "Pinburgh Machine Testing",
     date: "2017-05-08T00:00:00",
-    startTime: "18:56",
+    startTime: "21:34",
     endTime: "20:24",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -59,7 +59,7 @@ export default class Schedule extends Component {
     id: 888,
     title: "Testing Testing",
     date: "2017-05-08T00:00:00",
-    startTime: "18:57",
+    startTime: "21:35",
     endTime: "23:00",
     description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
     extendedDescription: null,
@@ -84,7 +84,7 @@ export default class Schedule extends Component {
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
-    setTimeout(this.loadTypes, 3000);
+    setTimeout(this.loadTypes, 950);
     this.loadSchedule();
     this.loadGameTypes();
     this.loadGames();

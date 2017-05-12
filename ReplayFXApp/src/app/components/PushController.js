@@ -9,7 +9,6 @@ export default class PushController extends Component {
       }
     });
   }
-
     render() {
       return null;
   }

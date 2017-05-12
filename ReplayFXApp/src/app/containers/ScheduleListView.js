@@ -70,13 +70,13 @@ onRefresh() {
     if (item.isFavorite){
 
             this.props.removeFavorite(item.id);
-          //  Alert.alert('Item has been removed from your schedule');
+          // Alert.alert('Item has been removed from your schedule');
           let id = (item.id).toString();
           PushNotification.cancelLocalNotifications({
-            id: id,
+            id: id
           });
         }
-          
+
           else {
             this.props.addFavorite(item.id);
             if(this.props.favorites.length < 1){
@@ -86,15 +86,16 @@ onRefresh() {
             let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
             let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
             let fifteenMinutesUntil = new Date ( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+item.startTime+ "-"+"03:45");
-          
-            let id = (item.id).toString(); 
+            console.log(fifteenMinutesUntil);
+
+            let id = (item.id).toString();
             if( fifteenMinutesUntil >= Date.now()){
               PushNotification.localNotificationSchedule({
               id: id,
               userInfo: {id: id},
               message: item.title + ' will begin in 15 minutes',
               date: new Date(fifteenMinutesUntil),
-           });} 
+           });}
           }
     }
 
@@ -188,7 +189,7 @@ return timeValue;
 }
 
               {/*enabled={this.state.isEnabled}
-             
+
               title="Loading..."
               titleColor="#00ff00"
               colors={['#ff0000', '#00ff00', '#0000ff']}
