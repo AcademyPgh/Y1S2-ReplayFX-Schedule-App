@@ -84,7 +84,7 @@ export default class Schedule extends Component {
     this.loadLocalTypes = this.loadLocalTypes.bind(this);
 
     //callbacks
-    setTimeout(this.loadTypes, 3000);
+    setTimeout(this.loadTypes, 950);
     this.loadSchedule();
     this.loadGameTypes();
     this.loadGames();
