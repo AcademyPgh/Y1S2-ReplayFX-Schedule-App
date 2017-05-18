@@ -275,11 +275,11 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-YzW-4Y-7sa.nib</key>
 		<data>
-		9EVQc0qDpk2U4aJCHfHsZ34ypqQ=
+		rDE5iFfrP4myiPlMVED/b+ryJeM=
 		</data>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<data>
-		FOGn8Ibprt+F6O8y3uQT69MYBrY=
+		nLJxBJj6VOXI6fsghqbczEl2QtI=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -304,10 +304,6 @@
 		<key>image1</key>
 		<data>
 		WmHAsZBS0HuwVCIRLiH4P3VCnRU=
-		</data>
-		<key>nativeimg</key>
-		<data>
-		OGr7/ACuzbuNlZLGvdPPyqQS7mw=
 		</data>
 		<key>nativemain</key>
 		<data>
@@ -1042,22 +1038,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9EVQc0qDpk2U4aJCHfHsZ34ypqQ=
+			rDE5iFfrP4myiPlMVED/b+ryJeM=
 			</data>
 			<key>hash2</key>
 			<data>
-			Z3YE56PB4GMM6ZBkfHFgTzqNBCHS2WgzzbWgtJwcTgo=
+			6Wb+Hg52yG6c3LpqlbRV41GWRMFJGIvvVp6h/56rGAE=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FOGn8Ibprt+F6O8y3uQT69MYBrY=
+			nLJxBJj6VOXI6fsghqbczEl2QtI=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZXJVfvqAeZ8M8KKw+Fddrj26sqvYCAAB7ZLH1Iejplk=
+			+EzoeCKAAZN/X4vdOHyDTTLIQ3UEB4ED/KuHT8Ax5mw=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest/Info.plist</key>
@@ -1113,17 +1109,6 @@
 			<key>hash2</key>
 			<data>
 			61PY4sumP0ySqi/jXLGE3VPZXRGKeKiQxy9MAoqzCtQ=
-			</data>
-		</dict>
-		<key>nativeimg</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OGr7/ACuzbuNlZLGvdPPyqQS7mw=
-			</data>
-			<key>hash2</key>
-			<data>
-			vlzfcNj4d6TfuqNy1DJB19jJvkO3nChizofCB8SZpZo=
 			</data>
 		</dict>
 		<key>nativemain</key>

@@ -41,7 +41,7 @@
 		B2505F561E857A20003BCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2505F551E857A20003BCE0F /* LaunchScreen.storyboard */; };
 		B2505F581E88BC4A003BCE0F /* image1 in Resources */ = {isa = PBXBuildFile; fileRef = B2505F571E88BC49003BCE0F /* image1 */; };
 		B2E7318C1E6093E200944BE5 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2E7318B1E6093E200944BE5 /* Ionicons.ttf */; };
-		B2F7028D1EA86FCC00CEC029 /* nativeimg in Resources */ = {isa = PBXBuildFile; fileRef = B2F7028C1EA86FCC00CEC029 /* nativeimg */; };
+		B2F7028D1EA86FCC00CEC029 /* nativeimg.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F7028C1EA86FCC00CEC029 /* nativeimg.png */; };
 		B2F702A91EA8709500CEC029 /* nativemain in Resources */ = {isa = PBXBuildFile; fileRef = B2F702A81EA8709500CEC029 /* nativemain */; };
 		B2F702B31EAA3DD200CEC029 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F702B01EAA3D1300CEC029 /* libRCTPushNotification.a */; };
 /* End PBXBuildFile section */
@@ -289,7 +289,7 @@
 		B2505F551E857A20003BCE0F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2505F571E88BC49003BCE0F /* image1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = image1; sourceTree = "<group>"; };
 		B2E7318B1E6093E200944BE5 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		B2F7028C1EA86FCC00CEC029 /* nativeimg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nativeimg; sourceTree = "<group>"; };
+		B2F7028C1EA86FCC00CEC029 /* nativeimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeimg.png; sourceTree = "<group>"; };
 		B2F702A81EA8709500CEC029 /* nativemain */ = {isa = PBXFileReference; lastKnownFileType = file; path = nativemain; sourceTree = "<group>"; };
 		B2F702AA1EAA3D1200CEC029 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -429,7 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				B2F702A81EA8709500CEC029 /* nativemain */,
-				B2F7028C1EA86FCC00CEC029 /* nativeimg */,
+				B2F7028C1EA86FCC00CEC029 /* nativeimg.png */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -936,7 +936,7 @@
 				B2F702A91EA8709500CEC029 /* nativemain in Resources */,
 				B2505F581E88BC4A003BCE0F /* image1 in Resources */,
 				B2E7318C1E6093E200944BE5 /* Ionicons.ttf in Resources */,
-				B2F7028D1EA86FCC00CEC029 /* nativeimg in Resources */,
+				B2F7028D1EA86FCC00CEC029 /* nativeimg.png in Resources */,
 				B2505F561E857A20003BCE0F /* LaunchScreen.storyboard in Resources */,
 				B2233FD81E6F8EFD0009E92B /* Voces-Regular.ttf in Resources */,
 				B2505F541E8568B9003BCE0F /* IMG_9367 in Resources */,
