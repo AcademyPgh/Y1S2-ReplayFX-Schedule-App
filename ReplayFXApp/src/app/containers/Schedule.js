@@ -30,42 +30,6 @@ export default class Schedule extends Component {
         {DisplayName: 'Games', Name: 'Games'}
       ],
       baseSchedule: [],
-      testNotificator: [{
-        replayEventTypes: [
-      {
-        id: 3,
-        name: "competitions",
-        displayName: "Compete"
-      }
-    ],
-    id: 999,
-    title: "Pinburgh Machine Testing",
-    date: "2017-05-08T00:00:00",
-    startTime: "21:34",
-    endTime: "20:24",
-    description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
-    extendedDescription: null,
-    location: "Hall B, Pinburgh",
-    image: null
-  },
-  {
-        replayEventTypes: [
-      {
-        id: 3,
-        name: "competitions",
-        displayName: "Compete"
-      }
-    ],
-    id: 888,
-    title: "Testing Testing",
-    date: "2017-05-08T00:00:00",
-    startTime: "21:35",
-    endTime: "23:00",
-    description: "Players are permitted to practice on tournament machines and help locate potential problems prior to the tournament beginning.",
-    extendedDescription: null,
-    location: "Hall B, Pinburgh",
-    image: null
-  }],
       baseGameTypes: [],
       baseGames: []
     };
@@ -103,7 +67,7 @@ export default class Schedule extends Component {
   //Axios call that gives baseSchedule its state and stores the data
   loadSchedule() {
       ScheduleData().then((results) => {
-      this.setState({baseSchedule: [...this.state.testNotificator, ...results.data]});
+      this.setState({baseSchedule: [...results.data]});
       AsyncStorage.setItem('all', JSON.stringify(results.data));
     }).then(setTimeout(this.loadLocalSchedule, 1500));
   }
@@ -111,7 +75,7 @@ export default class Schedule extends Component {
   loadLocalSchedule() {
     AsyncStorage.getItem('all', (err, value) => {
       if (value !== null) {
-        this.setState({baseSchedule: [...this.state.testNotificator, ...JSON.parse(value)]});
+        this.setState({baseSchedule: [...JSON.parse(value)]});
       }
     });
   }

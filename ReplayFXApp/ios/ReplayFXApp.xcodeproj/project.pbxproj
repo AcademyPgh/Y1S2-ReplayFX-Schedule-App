@@ -459,9 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				B24A4FCC1ECDDD1F00FE7B2B /* spashscreen.png */,
-
 				5F4002471ECBD7B9007F1A8F /* ReplayFXApp.entitlements */,
-
 				B2F702A81EA8709500CEC029 /* nativemain */,
 				B2F7028C1EA86FCC00CEC029 /* nativeimg.png */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
