@@ -275,11 +275,11 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-YzW-4Y-7sa.nib</key>
 		<data>
-		rDE5iFfrP4myiPlMVED/b+ryJeM=
+		v6zHDLRrk/0e0YPwyYbUipeOzWw=
 		</data>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<data>
-		nLJxBJj6VOXI6fsghqbczEl2QtI=
+		KImqaPRngbTxtHxz+pZywTzOP3w=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -308,6 +308,10 @@
 		<key>nativemain</key>
 		<data>
 		cUx4Gv6XnRLkBkdkYnsditvi/rA=
+		</data>
+		<key>spashscreen.png</key>
+		<data>
+		HgEJ0TXKKupWC1s2H0oi0FBWpKY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -1038,22 +1042,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rDE5iFfrP4myiPlMVED/b+ryJeM=
+			v6zHDLRrk/0e0YPwyYbUipeOzWw=
 			</data>
 			<key>hash2</key>
 			<data>
-			6Wb+Hg52yG6c3LpqlbRV41GWRMFJGIvvVp6h/56rGAE=
+			mJ0rI3GNy8yeoI4O63dJ/PuRYhUBleTDIEMJoYmVW9A=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nLJxBJj6VOXI6fsghqbczEl2QtI=
+			KImqaPRngbTxtHxz+pZywTzOP3w=
 			</data>
 			<key>hash2</key>
 			<data>
-			+EzoeCKAAZN/X4vdOHyDTTLIQ3UEB4ED/KuHT8Ax5mw=
+			ihUShop3FNnHpi+LXa6DYJfdW8q+hsAD00Jt/o2bXic=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest/Info.plist</key>
@@ -1120,6 +1124,17 @@
 			<key>hash2</key>
 			<data>
 			d3QC47DaXnIxwX5OpEUcwBPGwJtx7AF5msnqpw5FIAA=
+			</data>
+		</dict>
+		<key>spashscreen.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HgEJ0TXKKupWC1s2H0oi0FBWpKY=
+			</data>
+			<key>hash2</key>
+			<data>
+			04t3so/n1mNtfc9PM4rXnPHuZLafWtYLTpSGfBvs5TA=
 			</data>
 		</dict>
 	</dict>

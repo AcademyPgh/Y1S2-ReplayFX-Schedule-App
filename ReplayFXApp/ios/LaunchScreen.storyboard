@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YzW-4Y-7sa">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="eD0-UQ-gK8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8PV-QG-0ih">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nativeimg.png" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-nm-kU8">
-                                <rect key="frame" x="144" y="28.666666666666629" width="447" height="357"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-nm-kU8">
+                                <rect key="frame" x="48" y="14" width="271" height="640"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -31,10 +31,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXb-ow-flN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-120.65217391304348" y="-23.188405797101453"/>
+            <point key="canvasLocation" x="-124" y="-25.637181409295355"/>
         </scene>
     </scenes>
     <resources>
-        <image name="nativeimg.png" width="381" height="352"/>
+        <image name="spashscreen.png" width="1080" height="1920"/>
     </resources>
 </document>
