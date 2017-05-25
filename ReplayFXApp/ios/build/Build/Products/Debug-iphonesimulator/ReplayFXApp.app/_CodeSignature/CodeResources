@@ -56,6 +56,26 @@
 		<data>
 		glimZR9g23UWmtfTfpa3DtRU32o=
 		</data>
+		<key>Frameworks/XCTest.framework/Headers/XCTDarwinNotificationExpectation.h</key>
+		<data>
+		cq2OidDxmin/mbKi6qNqqZl+4yo=
+		</data>
+		<key>Frameworks/XCTest.framework/Headers/XCTKVOExpectation.h</key>
+		<data>
+		MpnTTvqbkjI3kuWmDtipWhtw2WA=
+		</data>
+		<key>Frameworks/XCTest.framework/Headers/XCTNSNotificationExpectation.h</key>
+		<data>
+		u/LggGB3I6wfnnlUa5mPkJCA9bs=
+		</data>
+		<key>Frameworks/XCTest.framework/Headers/XCTNSPredicateExpectation.h</key>
+		<data>
+		fL8MaoMO5+LeOubZMVzYha1NzjA=
+		</data>
+		<key>Frameworks/XCTest.framework/Headers/XCTWaiter.h</key>
+		<data>
+		bOSJIWezBQr6OEEYadE7L/vje+Q=
+		</data>
 		<key>Frameworks/XCTest.framework/Headers/XCTest.h</key>
 		<data>
 		FeItRoIRWX9yeukRVtg0l8vKWu0=
@@ -164,6 +184,10 @@
 		<data>
 		GuQMu1KdZMJO3/yRBQHEbrVVv38=
 		</data>
+		<key>Frameworks/XCTest.framework/Headers/XCUISiriService.h</key>
+		<data>
+		fVJ3PtXuJns5zMfsX79rN7CnrEg=
+		</data>
 		<key>Frameworks/XCTest.framework/Info.plist</key>
 		<data>
 		WFOEyP6DjIjonDn4Gd07FOETurc=
@@ -235,7 +259,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+RTjTlSo7nzTqUU/Cds7pEzTp3Y=
+		/tfyV/II1uuINqJM1/1lXy29IGg=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -275,15 +299,23 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-YzW-4Y-7sa.nib</key>
 		<data>
-		9EVQc0qDpk2U4aJCHfHsZ34ypqQ=
+		sIR5+z42MrB28V6GQ32Vobtoiwg=
 		</data>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<data>
-		FOGn8Ibprt+F6O8y3uQT69MYBrY=
+		AvdmxT2RISaNhdK4iycshv+JxX0=
 		</data>
 		<key>PkgInfo</key>
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
+		</data>
+		<key>PlugIns/ReplayFXAppTests.xctest.dSYM/Contents/Info.plist</key>
+		<data>
+		DRkC7dMJhgN4yO6yVh6jmoT2TdE=
+		</data>
+		<key>PlugIns/ReplayFXAppTests.xctest.dSYM/Contents/Resources/DWARF/ReplayFXAppTests</key>
+		<data>
+		k8sJ1hKni2FgLEaTYQaE+Sk8W+w=
 		</data>
 		<key>PlugIns/ReplayFXAppTests.xctest/Info.plist</key>
 		<data>
@@ -305,13 +337,13 @@
 		<data>
 		WmHAsZBS0HuwVCIRLiH4P3VCnRU=
 		</data>
-		<key>nativeimg</key>
-		<data>
-		OGr7/ACuzbuNlZLGvdPPyqQS7mw=
-		</data>
 		<key>nativemain</key>
 		<data>
 		cUx4Gv6XnRLkBkdkYnsditvi/rA=
+		</data>
+		<key>spashscreen.png</key>
+		<data>
+		HgEJ0TXKKupWC1s2H0oi0FBWpKY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -457,6 +489,61 @@
 			<key>hash2</key>
 			<data>
 			iJV+kqvtDhSFsj6V8IHHeUMh3uqAzOiOhNZJLxv/Yjo=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/Headers/XCTDarwinNotificationExpectation.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cq2OidDxmin/mbKi6qNqqZl+4yo=
+			</data>
+			<key>hash2</key>
+			<data>
+			uW113AaJ8wcT8rWHHZmgOtOk965q6en0J4aS6sP/ugw=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/Headers/XCTKVOExpectation.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MpnTTvqbkjI3kuWmDtipWhtw2WA=
+			</data>
+			<key>hash2</key>
+			<data>
+			s5hzRZcVZB9TYcynOYgP6pFwWMX5kusMS/ideMktyTI=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/Headers/XCTNSNotificationExpectation.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			u/LggGB3I6wfnnlUa5mPkJCA9bs=
+			</data>
+			<key>hash2</key>
+			<data>
+			duP+TIuKJED/IdbuUG8xFurxOwhEX7p7BCvASQpJNNo=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/Headers/XCTNSPredicateExpectation.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fL8MaoMO5+LeOubZMVzYha1NzjA=
+			</data>
+			<key>hash2</key>
+			<data>
+			uWNQkgSJ3dwEOTt+FyuiAKgWyhuFHlfN9V9v2qXUVO8=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/Headers/XCTWaiter.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bOSJIWezBQr6OEEYadE7L/vje+Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			z1fIy4NGVuoYB51IK8Wup91lqaHIVJE/JFXQF9CA3EM=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/Headers/XCTest.h</key>
@@ -756,6 +843,17 @@
 			OyKIhJNyDgDu6svFc+wfN7RH20nNS2xcd6wxQhKwNpc=
 			</data>
 		</dict>
+		<key>Frameworks/XCTest.framework/Headers/XCUISiriService.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fVJ3PtXuJns5zMfsX79rN7CnrEg=
+			</data>
+			<key>hash2</key>
+			<data>
+			O51v3OJQiDdqv7ES/+Q9IHKlLXfv0r5Yl22/RODT548=
+			</data>
+		</dict>
 		<key>Frameworks/XCTest.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
@@ -1042,22 +1140,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9EVQc0qDpk2U4aJCHfHsZ34ypqQ=
+			sIR5+z42MrB28V6GQ32Vobtoiwg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Z3YE56PB4GMM6ZBkfHFgTzqNBCHS2WgzzbWgtJwcTgo=
+			cMqkwRoSMfU0PWFgDH0Hpv6/8n/NwAKi28jx+87GRuI=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FOGn8Ibprt+F6O8y3uQT69MYBrY=
+			AvdmxT2RISaNhdK4iycshv+JxX0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZXJVfvqAeZ8M8KKw+Fddrj26sqvYCAAB7ZLH1Iejplk=
+			nlrQwfSdFBB3LXCDtVl8hkWa0+iTXCWk+0zJEycCeTk=
+			</data>
+		</dict>
+		<key>PlugIns/ReplayFXAppTests.xctest.dSYM/Contents/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			DRkC7dMJhgN4yO6yVh6jmoT2TdE=
+			</data>
+			<key>hash2</key>
+			<data>
+			YTor5B7/0EPCODlE84VNw9zAp9X4dmOmQxcf852RaZw=
+			</data>
+		</dict>
+		<key>PlugIns/ReplayFXAppTests.xctest.dSYM/Contents/Resources/DWARF/ReplayFXAppTests</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			k8sJ1hKni2FgLEaTYQaE+Sk8W+w=
+			</data>
+			<key>hash2</key>
+			<data>
+			3DX+VeBUcLW6B2ibgIGvEc3CfDkgF5iu5DPvORpcIeQ=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest/Info.plist</key>
@@ -1115,17 +1235,6 @@
 			61PY4sumP0ySqi/jXLGE3VPZXRGKeKiQxy9MAoqzCtQ=
 			</data>
 		</dict>
-		<key>nativeimg</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OGr7/ACuzbuNlZLGvdPPyqQS7mw=
-			</data>
-			<key>hash2</key>
-			<data>
-			vlzfcNj4d6TfuqNy1DJB19jJvkO3nChizofCB8SZpZo=
-			</data>
-		</dict>
 		<key>nativemain</key>
 		<dict>
 			<key>hash</key>
@@ -1135,6 +1244,17 @@
 			<key>hash2</key>
 			<data>
 			d3QC47DaXnIxwX5OpEUcwBPGwJtx7AF5msnqpw5FIAA=
+			</data>
+		</dict>
+		<key>spashscreen.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HgEJ0TXKKupWC1s2H0oi0FBWpKY=
+			</data>
+			<key>hash2</key>
+			<data>
+			04t3so/n1mNtfc9PM4rXnPHuZLafWtYLTpSGfBvs5TA=
 			</data>
 		</dict>
 	</dict>
