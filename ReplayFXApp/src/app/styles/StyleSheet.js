@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     //alignItems: 'center',
-    backgroundColor: stylechoice.regbackground
+    backgroundColor: stylechoice.regbackground,
+    // flex: 0
   },
   welcome: {
     fontSize: 20,
