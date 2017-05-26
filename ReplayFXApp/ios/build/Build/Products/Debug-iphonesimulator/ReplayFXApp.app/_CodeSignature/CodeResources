@@ -259,7 +259,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/tfyV/II1uuINqJM1/1lXy29IGg=
+		rrQVUOXh4fA1xiLNILhdKoNVoBA=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -299,11 +299,11 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-YzW-4Y-7sa.nib</key>
 		<data>
-		sIR5+z42MrB28V6GQ32Vobtoiwg=
+		b3wLSXv9ujwwUfGnYK8wWtDRqYg=
 		</data>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<data>
-		AvdmxT2RISaNhdK4iycshv+JxX0=
+		thZ8YtbQr+brF0JzRGr4PkmwYIc=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -319,15 +319,15 @@
 		</data>
 		<key>PlugIns/ReplayFXAppTests.xctest/Info.plist</key>
 		<data>
-		SlW4VAZRgcCCoX7gnz3YS3yWuBg=
+		ECuLV7uJzmaeGHUzITsnvtdgDb4=
 		</data>
 		<key>PlugIns/ReplayFXAppTests.xctest/ReplayFXAppTests</key>
 		<data>
-		QH+JcXA5PPxjicdnulhTQAlDADA=
+		rHCNIebAgp80epTL7Q0KnDak/gI=
 		</data>
 		<key>PlugIns/ReplayFXAppTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		fQazMkTi3Jgxo1nGk7hiFq4jT5o=
+		VLiVyzTLK9vuwlQFH+CYR3TXXCg=
 		</data>
 		<key>Voces-Regular.ttf</key>
 		<data>
@@ -337,13 +337,9 @@
 		<data>
 		WmHAsZBS0HuwVCIRLiH4P3VCnRU=
 		</data>
-		<key>nativemain</key>
+		<key>spashscreen</key>
 		<data>
-		cUx4Gv6XnRLkBkdkYnsditvi/rA=
-		</data>
-		<key>spashscreen.png</key>
-		<data>
-		HgEJ0TXKKupWC1s2H0oi0FBWpKY=
+		6tPIDM50Vuo9RaHsIzkCtbq/NbU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -1140,22 +1136,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sIR5+z42MrB28V6GQ32Vobtoiwg=
+			b3wLSXv9ujwwUfGnYK8wWtDRqYg=
 			</data>
 			<key>hash2</key>
 			<data>
-			cMqkwRoSMfU0PWFgDH0Hpv6/8n/NwAKi28jx+87GRuI=
+			zIlqlAKDmn/DG9ziMQ9A4O/S9HII9H21WNa8u5nVQis=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AvdmxT2RISaNhdK4iycshv+JxX0=
+			thZ8YtbQr+brF0JzRGr4PkmwYIc=
 			</data>
 			<key>hash2</key>
 			<data>
-			nlrQwfSdFBB3LXCDtVl8hkWa0+iTXCWk+0zJEycCeTk=
+			fGfaToBE1G+p7tphVy7dPu1zQVM7RlAV/8XjRa4Ri+A=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest.dSYM/Contents/Info.plist</key>
@@ -1184,33 +1180,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SlW4VAZRgcCCoX7gnz3YS3yWuBg=
+			ECuLV7uJzmaeGHUzITsnvtdgDb4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Nzlp3O9vnefO/oc6dN47Emv/fZTrn7ahZ96fsHLBN2U=
+			BsbDh8PtPcoW6mdRFrBVtQDW3IrWIhO/MrHcaOF0LsE=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest/ReplayFXAppTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QH+JcXA5PPxjicdnulhTQAlDADA=
+			rHCNIebAgp80epTL7Q0KnDak/gI=
 			</data>
 			<key>hash2</key>
 			<data>
-			lEJFO75rnQnWRA6HKQM/wyaW2YH4B0vYU4nKGbg5ZJA=
+			bWBnnDx+aXtQgTipPNxw29ZktbPGuKrJWek8mdlapa4=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fQazMkTi3Jgxo1nGk7hiFq4jT5o=
+			VLiVyzTLK9vuwlQFH+CYR3TXXCg=
 			</data>
 			<key>hash2</key>
 			<data>
-			J7hjyVF3JUp8NzuONzqIddRHiUUseDoOgpwvbpnqTKk=
+			XIU4PHPprA91R2cYnILbUnyiWIkxIvrWG4oj07exGFg=
 			</data>
 		</dict>
 		<key>Voces-Regular.ttf</key>
@@ -1235,26 +1231,15 @@
 			61PY4sumP0ySqi/jXLGE3VPZXRGKeKiQxy9MAoqzCtQ=
 			</data>
 		</dict>
-		<key>nativemain</key>
+		<key>spashscreen</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cUx4Gv6XnRLkBkdkYnsditvi/rA=
+			6tPIDM50Vuo9RaHsIzkCtbq/NbU=
 			</data>
 			<key>hash2</key>
 			<data>
-			d3QC47DaXnIxwX5OpEUcwBPGwJtx7AF5msnqpw5FIAA=
-			</data>
-		</dict>
-		<key>spashscreen.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HgEJ0TXKKupWC1s2H0oi0FBWpKY=
-			</data>
-			<key>hash2</key>
-			<data>
-			04t3so/n1mNtfc9PM4rXnPHuZLafWtYLTpSGfBvs5TA=
+			Y+m+96MbwNzMHzt3Yzk9tQPpXz8C2ctKjCA679ZVQ5I=
 			</data>
 		</dict>
 	</dict>
