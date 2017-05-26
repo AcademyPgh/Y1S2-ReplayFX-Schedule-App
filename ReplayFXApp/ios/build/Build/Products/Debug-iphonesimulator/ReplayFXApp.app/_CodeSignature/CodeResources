@@ -253,10 +253,6 @@
 		<data>
 		7CH1/KJU9SrBKfYaYHRGR7EUW0E=
 		</data>
-		<key>IMG_9367</key>
-		<data>
-		0JEY6mlm33lVHUHnZBZssIQM2+8=
-		</data>
 		<key>Info.plist</key>
 		<data>
 		rrQVUOXh4fA1xiLNILhdKoNVoBA=
@@ -299,11 +295,11 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-YzW-4Y-7sa.nib</key>
 		<data>
-		b3wLSXv9ujwwUfGnYK8wWtDRqYg=
+		kewn1/gamdHP2U2XZv8TP3doo4U=
 		</data>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<data>
-		thZ8YtbQr+brF0JzRGr4PkmwYIc=
+		NnKG8kbfg9+QYmqzvgsn0ir4tpQ=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -333,11 +329,7 @@
 		<data>
 		6u7FD/sdyB1bSWXB+FynOmnSOH4=
 		</data>
-		<key>image1</key>
-		<data>
-		WmHAsZBS0HuwVCIRLiH4P3VCnRU=
-		</data>
-		<key>spashscreen</key>
+		<key>splashscreen</key>
 		<data>
 		6tPIDM50Vuo9RaHsIzkCtbq/NbU=
 		</data>
@@ -1022,17 +1014,6 @@
 			2BanKnt7gC1jB4FCuFmi7nCn5PgitWzcSbrpKZWmJOc=
 			</data>
 		</dict>
-		<key>IMG_9367</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0JEY6mlm33lVHUHnZBZssIQM2+8=
-			</data>
-			<key>hash2</key>
-			<data>
-			QcEVdVTG4m4kMzf3nc5A4GAJr3sMclZGYQ/ylnXVeFY=
-			</data>
-		</dict>
 		<key>Ionicons.ttf</key>
 		<dict>
 			<key>hash</key>
@@ -1136,22 +1117,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			b3wLSXv9ujwwUfGnYK8wWtDRqYg=
+			kewn1/gamdHP2U2XZv8TP3doo4U=
 			</data>
 			<key>hash2</key>
 			<data>
-			zIlqlAKDmn/DG9ziMQ9A4O/S9HII9H21WNa8u5nVQis=
+			ZAHgTLltu/8volhnxlHGJFSJ/kSUPw5mG2IA/uHYUwU=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/YzW-4Y-7sa-view-8PV-QG-0ih.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			thZ8YtbQr+brF0JzRGr4PkmwYIc=
+			NnKG8kbfg9+QYmqzvgsn0ir4tpQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			fGfaToBE1G+p7tphVy7dPu1zQVM7RlAV/8XjRa4Ri+A=
+			Wz10zSgUGvnUpBYEEXjwbsH+/lgFr+y3vAr/i9zY2CY=
 			</data>
 		</dict>
 		<key>PlugIns/ReplayFXAppTests.xctest.dSYM/Contents/Info.plist</key>
@@ -1220,18 +1201,7 @@
 			sstWXp3wtxcUk95wwImrf6USfWePDnzmt15MiDrfisk=
 			</data>
 		</dict>
-		<key>image1</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			WmHAsZBS0HuwVCIRLiH4P3VCnRU=
-			</data>
-			<key>hash2</key>
-			<data>
-			61PY4sumP0ySqi/jXLGE3VPZXRGKeKiQxy9MAoqzCtQ=
-			</data>
-		</dict>
-		<key>spashscreen</key>
+		<key>splashscreen</key>
 		<dict>
 			<key>hash</key>
 			<data>
