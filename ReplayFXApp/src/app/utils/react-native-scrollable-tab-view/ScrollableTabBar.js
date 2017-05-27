@@ -1,23 +1,19 @@
-//delete this one 
 const React = require('react');
-const ReactNative = require('react-native');
+const { ViewPropTypes } = ReactNative = require('react-native');
 const {
-//  View,
+  View,
   Animated,
   StyleSheet,
   ScrollView,
-//  Text,
+  Text,
   Platform,
-  Dimensions
+  Dimensions,
 } = ReactNative;
-const Button = require('../utils/Button');
-import {View, Text} from 'react-native-animatable';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import styles, {stylechoice} from '../styles/StyleSheet';
+const Button = require('./Button');
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
-const NewTabBar = React.createClass({
+const ScrollableTabBar = React.createClass({
   propTypes: {
     goToPage: React.PropTypes.func,
     activeTab: React.PropTypes.number,
@@ -26,25 +22,25 @@ const NewTabBar = React.createClass({
     activeTextColor: React.PropTypes.string,
     inactiveTextColor: React.PropTypes.string,
     scrollOffset: React.PropTypes.number,
-    //style: ViewPropTypes.style,
-    //tabStyle: ViewPropTypes.style,
+  //  style: ViewPropTypes.style,
+   // tabStyle: ViewPropTypes.style,
     //tabsContainerStyle: ViewPropTypes.style,
     textStyle: Text.propTypes.style,
     renderTab: React.PropTypes.func,
-    //underlineStyle: ViewPropTypes.style,
+   // underlineStyle: ViewPropTypes.style,
     onScroll:React.PropTypes.func,
   },
 
   getDefaultProps() {
     return {
       scrollOffset: 52,
-      activeTextColor: stylechoice.accentcolor,
-      inactiveTextColor: stylechoice.infocolor,
-      backgroundColor: 'transparent',
+      activeTextColor: 'navy',
+      inactiveTextColor: 'black',
+      backgroundColor: null,
       style: {},
       tabStyle: {},
       tabsContainerStyle: {},
-      underlineStyle: {}
+      underlineStyle: {},
     };
   },
 
@@ -53,7 +49,7 @@ const NewTabBar = React.createClass({
     return {
       _leftTabUnderline: new Animated.Value(0),
       _widthTabUnderline: new Animated.Value(0),
-      _containerWidth: null
+      _containerWidth: null,
     };
   },
 
@@ -98,11 +94,11 @@ const NewTabBar = React.createClass({
     newScrollX = newScrollX >= 0 ? newScrollX : 0;
 
     if (Platform.OS === 'android') {
-      this._scrollView.scrollTo({x: newScrollX, y: 0, animated: false});
+      this._scrollView.scrollTo({x: newScrollX, y: 0, animated: false, });
     } else {
       const rightBoundScroll = this._tabContainerMeasurements.width - (this._containerMeasurements.width);
       newScrollX = newScrollX > rightBoundScroll ? rightBoundScroll : newScrollX;
-      this._scrollView.scrollTo({x: newScrollX, y: 0, animated: false});
+      this._scrollView.scrollTo({x: newScrollX, y: 0, animated: false, });
     }
 
   },
@@ -125,23 +121,13 @@ const NewTabBar = React.createClass({
       this.state._widthTabUnderline.setValue(lineRight - lineLeft);
     }
   },
-  starCount(name) {
-    if (this.props.favoritesCount >= 0) {
-      return (
-name === 'My Schedule' ? <Ionicons name= 'ios-game-controller-b' style = {styles.gamecontroller}>
-      <Text> {this.props.favoritesCount} </Text>
-    </Ionicons> : ''
-      );
-    }
-  },
 
   renderTab(name, page, isTabActive, onPressHandler, onLayoutHandler) {
-    const {activeTextColor, inactiveTextColor, textStyle} = this.props;
+    const { activeTextColor, inactiveTextColor, textStyle, } = this.props;
     const textColor = isTabActive ? activeTextColor : inactiveTextColor;
+    const fontWeight = isTabActive ? 'bold' : 'normal';
 
-    //const fontWeight = isTabActive ? 'bold' : 'normal';
-
-    return (<Button
+    return <Button
       key={`${name}_${page}`}
       accessible={true}
       accessibilityLabel={name}
@@ -149,43 +135,37 @@ name === 'My Schedule' ? <Ionicons name= 'ios-game-controller-b' style = {styles
       onPress={() => onPressHandler(page)}
       onLayout={onLayoutHandler}
     >
-      <View style={[styles.tab, this.props.tabStyle]}>
-
-        <Text style={[{color: textColor}, {fontFamily: stylechoice.fontName}]}>
-          {name} <Text animation= 'flash' delay={400} iterationCount= {3}>
-              {this.starCount(name)}
-               </Text>
+      <View style={[styles.tab, this.props.tabStyle, ]}>
+        <Text style={[{color: textColor, fontWeight, }, textStyle, ]}>
+          {name}
         </Text>
       </View>
-    </Button>
-    );
+    </Button>;
   },
-//Moved textStyle out of <Text/> in replace of fontFamily: ...
+
   measureTab(page, event) {
-    const {x, width, height} = event.nativeEvent.layout;
-    this._tabsMeasurements[page] = {left: x, right: x + width, width, height};
-    this.updateView({value: this.props.scrollValue._value});
+    const { x, width, height, } = event.nativeEvent.layout;
+    this._tabsMeasurements[page] = {left: x, right: x + width, width, height, };
+    this.updateView({value: this.props.scrollValue._value, });
   },
 
   render() {
-    const tabUnderlineStyle = styles.tabUnderline;
-
-    // {
-    //   position: 'absolute',
-    //   height: 49,
-    //   backgroundColor: '#DBDDFF',
-    //   bottom: 0,
-    //   zIndex: -1};
+    const tabUnderlineStyle = {
+      position: 'absolute',
+      height: 4,
+      backgroundColor: 'navy',
+      bottom: 0,
+    };
 
     const dynamicTabUnderline = {
       left: this.state._leftTabUnderline,
-      width: this.state._widthTabUnderline
+      width: this.state._widthTabUnderline,
     };
 
     return <View
-      style={[styles.tabcontainer, {backgroundColor: this.props.backgroundColor}, this.props.style]}
-      onLayout={this.onContainerLayout}>
-
+      style={[styles.container, {backgroundColor: this.props.backgroundColor, }, this.props.style, ]}
+      onLayout={this.onContainerLayout}
+    >
       <ScrollView
         ref={(scrollView) => { this._scrollView = scrollView; }}
         horizontal={true}
@@ -193,17 +173,19 @@ name === 'My Schedule' ? <Ionicons name= 'ios-game-controller-b' style = {styles
         showsVerticalScrollIndicator={false}
         directionalLockEnabled={true}
         bounces={false}
-        scrollsToTop={false}>
+        scrollsToTop={false}
+      >
         <View
-          style={[styles.tabs, {width: this.state._containerWidth}, this.props.tabsContainerStyle]}
+          style={[styles.tabs, {width: this.state._containerWidth, }, this.props.tabsContainerStyle, ]}
           ref={'tabContainer'}
-          onLayout={this.onTabContainerLayout}>
+          onLayout={this.onTabContainerLayout}
+        >
           {this.props.tabs.map((name, page) => {
             const isTabActive = this.props.activeTab === page;
             const renderTab = this.props.renderTab || this.renderTab;
             return renderTab(name, page, isTabActive, this.props.goToPage, this.measureTab.bind(this, page));
           })}
-          <Animated.View style={[tabUnderlineStyle, dynamicTabUnderline, this.props.underlineStyle]} />
+          <Animated.View style={[tabUnderlineStyle, dynamicTabUnderline, this.props.underlineStyle, ]} />
         </View>
       </ScrollView>
     </View>;
@@ -212,7 +194,7 @@ name === 'My Schedule' ? <Ionicons name= 'ios-game-controller-b' style = {styles
   componentWillReceiveProps(nextProps) {
     // If the tabs change, force the width of the tabs container to be recalculated
     if (JSON.stringify(this.props.tabs) !== JSON.stringify(nextProps.tabs) && this.state._containerWidth) {
-      this.setState({_containerWidth: null});
+      this.setState({ _containerWidth: null, });
     }
   },
 
@@ -222,14 +204,36 @@ name === 'My Schedule' ? <Ionicons name= 'ios-game-controller-b' style = {styles
     if (width < WINDOW_WIDTH) {
       width = WINDOW_WIDTH;
     }
-    this.setState({_containerWidth: width});
-    this.updateView({value: this.props.scrollValue._value});
+    this.setState({ _containerWidth: width, });
+    this.updateView({value: this.props.scrollValue._value, });
   },
 
   onContainerLayout(e) {
     this._containerMeasurements = e.nativeEvent.layout;
-    this.updateView({value: this.props.scrollValue._value});
-  }
+    this.updateView({value: this.props.scrollValue._value, });
+  },
 });
 
-module.exports = NewTabBar;
+module.exports = ScrollableTabBar;
+
+const styles = StyleSheet.create({
+  tab: {
+    height: 49,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  container: {
+    height: 50,
+    borderWidth: 1,
+    borderTopWidth: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderColor: '#ccc',
+  },
+  tabs: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+});
