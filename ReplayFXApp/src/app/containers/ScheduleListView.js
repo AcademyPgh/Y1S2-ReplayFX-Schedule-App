@@ -85,7 +85,7 @@ onRefresh() {
             let favoriteDate = new Date(item.date);
             let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
             let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
-            let fifteenMinutesUntil = new Date ( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+item.startTime+ "-"+"03:45");
+            let fifteenMinutesUntil = new Date (favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+item.startTime+ "-"+"03:45");
             console.log(fifteenMinutesUntil);
 
             let id = (item.id).toString();
@@ -94,7 +94,7 @@ onRefresh() {
               id: id,
               userInfo: {id: id},
               message: item.title + ' will begin in 15 minutes',
-              date: new Date(fifteenMinutesUntil),
+              date: fifteenMinutesUntil
            });}
           }
     }
@@ -147,7 +147,7 @@ return timeValue;
               this.timeConverter(item.endTime), item.location, item.extendedDescription, item.image)} //need to redefine the function otherwise tries to change state during render
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />
-            <PushController />
+            <PushController/>
 
     </View>
           )}

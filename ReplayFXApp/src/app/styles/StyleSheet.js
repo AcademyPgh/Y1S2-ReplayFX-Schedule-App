@@ -142,7 +142,6 @@ gameModalContainer: {
 
   },
   tabheader: {
-    flex: 2,
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -158,11 +157,7 @@ gameModalContainer: {
     justifyContent: 'center',
     backgroundColor: stylechoice.slidealternate
   },
-  // slide3: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   backgroundColor: '#92BBD9'
+
   text: {
     color: stylechoice.alttext,
     fontSize: 24,
