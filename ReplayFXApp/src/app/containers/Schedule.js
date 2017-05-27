@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import styles from '../styles/StyleSheet';
 import _ from 'lodash';
-import ScrollableTabView from 'react-native-scrollable-tab-view';
+import ScrollableTabView from '../utils/react-native-scrollable-tab-view';
 import NewTabBar from '../utils/replay_scroll_tab_view';
 import ScheduleListView from './ScheduleListView';
 import ScheduleData, {Types, GameData, GameTypes} from '../utils/ReplayFX_Axios';

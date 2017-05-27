@@ -13,7 +13,7 @@
     "react-native-animatable": "^1.1.0",
     "react-native-collapsible": "^0.8.0",
     "react-native-push-notification": "^2.2.1",
-    "react-native-scrollable-tab-view": "0.6.6",
+  //  "react-native-scrollable-tab-view": "0.6.6",
     "react-native-splash-screen": "^2.0.0",
     "react-native-vector-icons": "^4.0.0"
   },
