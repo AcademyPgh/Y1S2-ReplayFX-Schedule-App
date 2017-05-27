@@ -175,7 +175,10 @@ return timeValue;
             <RefreshControl
               refreshing={this.state.isRefreshing}
               onRefresh={this.onRefresh}
-              progressViewOffset = {-30}
+              progressViewOffset = {-20}
+              title="Refreshing..."
+              tintColor="#3B3D68"
+              titleColor="#3B3D68"
               />}
           styles={styles.container}
           dataSource={this.state.dataSource}
