@@ -8,9 +8,29 @@
 		<data>
 		glimZR9g23UWmtfTfpa3DtRU32o=
 		</data>
+		<key>Headers/XCTDarwinNotificationExpectation.h</key>
+		<data>
+		cq2OidDxmin/mbKi6qNqqZl+4yo=
+		</data>
+		<key>Headers/XCTKVOExpectation.h</key>
+		<data>
+		MpnTTvqbkjI3kuWmDtipWhtw2WA=
+		</data>
+		<key>Headers/XCTNSNotificationExpectation.h</key>
+		<data>
+		u/LggGB3I6wfnnlUa5mPkJCA9bs=
+		</data>
+		<key>Headers/XCTNSPredicateExpectation.h</key>
+		<data>
+		fL8MaoMO5+LeOubZMVzYha1NzjA=
+		</data>
+		<key>Headers/XCTWaiter.h</key>
+		<data>
+		bOSJIWezBQr6OEEYadE7L/vje+Q=
+		</data>
 		<key>Headers/XCTest.h</key>
 		<data>
-		FeItRoIRWX9yeukRVtg0l8vKWu0=
+		Jpi/nex3ZdIWBtAHwiIjjvwyeNc=
 		</data>
 		<key>Headers/XCTestAssertions.h</key>
 		<data>
@@ -22,7 +42,7 @@
 		</data>
 		<key>Headers/XCTestCase+AsynchronousTesting.h</key>
 		<data>
-		PL1ZOdDhdZzPNjCxecLsCysb3OQ=
+		TCnu2z0rJmmXKGQjqMplBxuRc9I=
 		</data>
 		<key>Headers/XCTestCase.h</key>
 		<data>
@@ -34,7 +54,7 @@
 		</data>
 		<key>Headers/XCTestDefines.h</key>
 		<data>
-		Dz7Tri4hztdVrwGfOLzpE53H3kk=
+		RGi5XPxdAoKKSrcf8gVAjIMFk6E=
 		</data>
 		<key>Headers/XCTestErrors.h</key>
 		<data>
@@ -42,7 +62,7 @@
 		</data>
 		<key>Headers/XCTestExpectation.h</key>
 		<data>
-		dwE0LefMLJ+L/tF8PwAW0Adc7I0=
+		aQO2ZoWWNL/aTMErIST9ashorB0=
 		</data>
 		<key>Headers/XCTestLog.h</key>
 		<data>
@@ -86,11 +106,11 @@
 		</data>
 		<key>Headers/XCUIDevice.h</key>
 		<data>
-		9pxehhPyrWb03igVA7PwEtgkzLM=
+		S2MZR1YCDvuBR0hO3R7NMbbEGVQ=
 		</data>
 		<key>Headers/XCUIElement.h</key>
 		<data>
-		lCooSq4totv00z9Cpjsf3qZk1fw=
+		eTnIAvz15XM3LIQwqu7fvgeURoM=
 		</data>
 		<key>Headers/XCUIElementAttributes.h</key>
 		<data>
@@ -116,49 +136,49 @@
 		<data>
 		GuQMu1KdZMJO3/yRBQHEbrVVv38=
 		</data>
+		<key>Headers/XCUISiriService.h</key>
+		<data>
+		fVJ3PtXuJns5zMfsX79rN7CnrEg=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		WFOEyP6DjIjonDn4Gd07FOETurc=
+		+FpydJhwutQ2CN5WuRCJ/hqlsfA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		0hPLcrGRiL8HEYGWbYL+qhcqBZI=
 		</data>
-		<key>TextBasedStubs/XCTest.tbd</key>
-		<data>
-		+XAJppAQlFOMvL4pJ1uJfQ27CHU=
-		</data>
 		<key>XPCServices/XCUIRecorderService.xpc/Info.plist</key>
 		<data>
-		kJb1KpDD2Cv69x+OGw4eaXcNYD8=
+		gXl98PRsHnj5lmC2D5fgvPS28To=
 		</data>
 		<key>XPCServices/XCUIRecorderService.xpc/XCUIRecorderService</key>
 		<data>
-		1+2AMWNhfdvXspxVZVrwoH8cg+g=
+		ZZKLc6ZRxKUIBjHs2z1QNlWdCYU=
 		</data>
 		<key>XPCServices/XCUIRecorderService.xpc/_CodeSignature/CodeResources</key>
 		<data>
-		WDK3P4Ja6BoHwMYETP9XZXCp0Lo=
+		bNbksboNVOOhuq8Anm7iQGc3n9w=
 		</data>
 		<key>XPCServices/XCUIRecorderService.xpc/version.plist</key>
 		<data>
-		Pg5tQI7GcVX7I4xOONgKozs8Esg=
+		mbsMPuPV++McJcw2lEghJTGkw5g=
 		</data>
 		<key>XPCServices/xctestSymbolicator.xpc/Info.plist</key>
 		<data>
-		5KavkvgN0rkwBGPAXaztdnH8zqk=
+		zUybWWAy9BVyhhwqZrin9j97sy4=
 		</data>
 		<key>XPCServices/xctestSymbolicator.xpc/_CodeSignature/CodeResources</key>
 		<data>
-		Ye+6Torflr1JzpD1c/6W6Tr+Tzo=
+		0CzBxEB/FJsT//ElZRlEWxIJb5w=
 		</data>
 		<key>XPCServices/xctestSymbolicator.xpc/version.plist</key>
 		<data>
-		Pg5tQI7GcVX7I4xOONgKozs8Esg=
+		mbsMPuPV++McJcw2lEghJTGkw5g=
 		</data>
 		<key>XPCServices/xctestSymbolicator.xpc/xctestSymbolicator</key>
 		<data>
-		uEbnTFBvUdHVPCEU6oU+vRIy6z8=
+		8NdEXHZuIQ/ZcTdqCCyfvoaXFv0=
 		</data>
 		<key>en.lproj/InfoPlist.strings</key>
 		<dict>
@@ -171,7 +191,7 @@
 		</dict>
 		<key>version.plist</key>
 		<data>
-		7CH1/KJU9SrBKfYaYHRGR7EUW0E=
+		0frVurGOX6522Iba8IdTedJkiYo=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -180,9 +200,29 @@
 		<data>
 		glimZR9g23UWmtfTfpa3DtRU32o=
 		</data>
+		<key>Headers/XCTDarwinNotificationExpectation.h</key>
+		<data>
+		cq2OidDxmin/mbKi6qNqqZl+4yo=
+		</data>
+		<key>Headers/XCTKVOExpectation.h</key>
+		<data>
+		MpnTTvqbkjI3kuWmDtipWhtw2WA=
+		</data>
+		<key>Headers/XCTNSNotificationExpectation.h</key>
+		<data>
+		u/LggGB3I6wfnnlUa5mPkJCA9bs=
+		</data>
+		<key>Headers/XCTNSPredicateExpectation.h</key>
+		<data>
+		fL8MaoMO5+LeOubZMVzYha1NzjA=
+		</data>
+		<key>Headers/XCTWaiter.h</key>
+		<data>
+		bOSJIWezBQr6OEEYadE7L/vje+Q=
+		</data>
 		<key>Headers/XCTest.h</key>
 		<data>
-		FeItRoIRWX9yeukRVtg0l8vKWu0=
+		Jpi/nex3ZdIWBtAHwiIjjvwyeNc=
 		</data>
 		<key>Headers/XCTestAssertions.h</key>
 		<data>
@@ -194,7 +234,7 @@
 		</data>
 		<key>Headers/XCTestCase+AsynchronousTesting.h</key>
 		<data>
-		PL1ZOdDhdZzPNjCxecLsCysb3OQ=
+		TCnu2z0rJmmXKGQjqMplBxuRc9I=
 		</data>
 		<key>Headers/XCTestCase.h</key>
 		<data>
@@ -206,7 +246,7 @@
 		</data>
 		<key>Headers/XCTestDefines.h</key>
 		<data>
-		Dz7Tri4hztdVrwGfOLzpE53H3kk=
+		RGi5XPxdAoKKSrcf8gVAjIMFk6E=
 		</data>
 		<key>Headers/XCTestErrors.h</key>
 		<data>
@@ -214,7 +254,7 @@
 		</data>
 		<key>Headers/XCTestExpectation.h</key>
 		<data>
-		dwE0LefMLJ+L/tF8PwAW0Adc7I0=
+		aQO2ZoWWNL/aTMErIST9ashorB0=
 		</data>
 		<key>Headers/XCTestLog.h</key>
 		<data>
@@ -258,11 +298,11 @@
 		</data>
 		<key>Headers/XCUIDevice.h</key>
 		<data>
-		9pxehhPyrWb03igVA7PwEtgkzLM=
+		S2MZR1YCDvuBR0hO3R7NMbbEGVQ=
 		</data>
 		<key>Headers/XCUIElement.h</key>
 		<data>
-		lCooSq4totv00z9Cpjsf3qZk1fw=
+		eTnIAvz15XM3LIQwqu7fvgeURoM=
 		</data>
 		<key>Headers/XCUIElementAttributes.h</key>
 		<data>
@@ -288,50 +328,45 @@
 		<data>
 		GuQMu1KdZMJO3/yRBQHEbrVVv38=
 		</data>
+		<key>Headers/XCUISiriService.h</key>
+		<data>
+		fVJ3PtXuJns5zMfsX79rN7CnrEg=
+		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		0hPLcrGRiL8HEYGWbYL+qhcqBZI=
 		</data>
-		<key>TextBasedStubs/XCTest.tbd</key>
-		<data>
-		+XAJppAQlFOMvL4pJ1uJfQ27CHU=
-		</data>
-		<key>XCTest.tbd</key>
-		<dict>
-			<key>symlink</key>
-			<string>TextBasedStubs/XCTest.tbd</string>
-		</dict>
 		<key>XPCServices/XCUIRecorderService.xpc/Info.plist</key>
 		<data>
-		kJb1KpDD2Cv69x+OGw4eaXcNYD8=
+		gXl98PRsHnj5lmC2D5fgvPS28To=
 		</data>
 		<key>XPCServices/XCUIRecorderService.xpc/XCUIRecorderService</key>
 		<data>
-		1+2AMWNhfdvXspxVZVrwoH8cg+g=
+		ZZKLc6ZRxKUIBjHs2z1QNlWdCYU=
 		</data>
 		<key>XPCServices/XCUIRecorderService.xpc/_CodeSignature/CodeResources</key>
 		<data>
-		WDK3P4Ja6BoHwMYETP9XZXCp0Lo=
+		bNbksboNVOOhuq8Anm7iQGc3n9w=
 		</data>
 		<key>XPCServices/XCUIRecorderService.xpc/version.plist</key>
 		<data>
-		Pg5tQI7GcVX7I4xOONgKozs8Esg=
+		mbsMPuPV++McJcw2lEghJTGkw5g=
 		</data>
 		<key>XPCServices/xctestSymbolicator.xpc/Info.plist</key>
 		<data>
-		5KavkvgN0rkwBGPAXaztdnH8zqk=
+		zUybWWAy9BVyhhwqZrin9j97sy4=
 		</data>
 		<key>XPCServices/xctestSymbolicator.xpc/_CodeSignature/CodeResources</key>
 		<data>
-		Ye+6Torflr1JzpD1c/6W6Tr+Tzo=
+		0CzBxEB/FJsT//ElZRlEWxIJb5w=
 		</data>
 		<key>XPCServices/xctestSymbolicator.xpc/version.plist</key>
 		<data>
-		Pg5tQI7GcVX7I4xOONgKozs8Esg=
+		mbsMPuPV++McJcw2lEghJTGkw5g=
 		</data>
 		<key>XPCServices/xctestSymbolicator.xpc/xctestSymbolicator</key>
 		<data>
-		uEbnTFBvUdHVPCEU6oU+vRIy6z8=
+		8NdEXHZuIQ/ZcTdqCCyfvoaXFv0=
 		</data>
 		<key>en.lproj/InfoPlist.strings</key>
 		<dict>
@@ -344,7 +379,7 @@
 		</dict>
 		<key>version.plist</key>
 		<data>
-		7CH1/KJU9SrBKfYaYHRGR7EUW0E=
+		0frVurGOX6522Iba8IdTedJkiYo=
 		</data>
 	</dict>
 	<key>rules</key>
