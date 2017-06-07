@@ -21,6 +21,7 @@ export default class Games extends Component {
   gameModalGenre: '',
   gameModalPlayers: '',
   gameModalOverview: '',
+  gameModalImage: '',
   // modalImage: '',
 
 };
@@ -40,6 +41,7 @@ export default class Games extends Component {
       gameModalGenre: genre,
       gameModalPlayers: players,
       gameModalOverview: overview,
+      gameModalImage: image,
       });
   }
 
@@ -58,7 +60,7 @@ export default class Games extends Component {
          {   section.content.map((item) => {
              return (
 
-               <TouchableHighlight key ={item.id} onPress= {() => this.setModalVisible(true, item.gameTitle, item.releaseDate, item.replayGameLocations[0].location, item.developer, item.genre, item.players, item.overview)}>
+               <TouchableHighlight key ={item.id} onPress= {() => this.setModalVisible(true, item.gameTitle, item.releaseDate, item.replayGameLocations[0].location, item.developer, item.genre, item.players, item.overview, item.image)}>
                <View style= {styles.gameTitleLocation} >
                 <Text style={styles.title}>{item.gameTitle}</Text>
                 <Text style={styles.title}>{item.replayGameLocations[0].location}</Text>
@@ -83,6 +85,7 @@ export default class Games extends Component {
         gameModalGenre={this.state.gameModalGenre}
         gameModalPlayers={this.state.gameModalPlayers}
         gameModalOverview={this.state.gameModalOverview}
+        gameModalImage={this.state.gameModalImage}
         setModalVisible={() => this.setModalVisible(false)}
       />
        <Accordion
