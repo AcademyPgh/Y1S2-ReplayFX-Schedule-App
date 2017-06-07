@@ -17,10 +17,10 @@ const ScheduleModal=(props)=> {
           visible={props.modalVisible}
           onRequestClose ={() => props.onSetModalVisible(props)}>
           <View style= {styles.innerContainer}>
+            <ScrollView>
             <Text style={styles.modaltitle}>{props.modalTitle}</Text>
             <Text style={styles.modaldatetime}>{props.modalStartTime} - {props.modalEndTime}</Text>
             <Text style ={styles.modaldatetime}>{props.modalLocation}</Text>
-            <ScrollView>
             <View style ={{alignItems: 'center'}}>
               {props.modalImage ? <Image source={{uri: props.modalImage}} style={styles.modalimage}/> : null}
            </View>

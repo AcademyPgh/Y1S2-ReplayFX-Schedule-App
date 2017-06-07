@@ -17,6 +17,9 @@ const GameModal=(props)=> {
           onRequestClose ={() => props.setModalVisible(props)}>
           <View style= {styles.gameModalContainer}>
              <ScrollView>
+              <View style ={{alignItems: 'center'}}>
+              {props.modalImage ? <Image source={{uri: props.modalImage}} style={styles.modalimage}/> : null}
+           </View>
             <Text style={styles.modaltitle}>{props.gameModalTitle}</Text>
              <Text style ={styles.gameModalItem}>Location: {props.gameModalLocation}</Text>
             <Text style={styles.gameModalItem}>Release Date: {props.gameModalReleaseDate}</Text>
@@ -24,9 +27,6 @@ const GameModal=(props)=> {
             <Text style ={styles.gameModalItem}>Genre: {props.gameModalGenre}</Text>
             <Text style ={styles.gameModalItem}>Number of Players: {props.gameModalPlayers}</Text>
             <Text style = {styles.modaldescription}>{props.gameModalOverview}</Text>
-             <View style ={{alignItems: 'center'}}>
-              {props.modalImage ? <Image source={{uri: props.modalImage}} style={styles.modalimage}/> : null}
-           </View>
           </ScrollView>
             <View style ={styles.center}>
             <TouchableHighlight underlayColor="#ffffff" onPress={() => {

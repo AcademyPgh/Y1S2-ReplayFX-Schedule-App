@@ -31,7 +31,7 @@ export default class Games extends Component {
   }
 
 
-  setModalVisible(visible, gameTitle, releaseDate, location, developer, genre, players, overview) {
+  setModalVisible(visible, gameTitle, releaseDate, location, developer, genre, players, overview, image) {
     this.setState({
       gameModalVisible: visible,
       gameModalTitle: gameTitle,
