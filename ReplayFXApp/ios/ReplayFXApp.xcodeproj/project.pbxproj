@@ -44,7 +44,7 @@
 		A068F0311C9315D9C4152940 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B40DEB5EF69424F880E4A6 /* SystemConfiguration.framework */; };
 		B221BFAA1E844381005F1973 /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B221BFA91E84255E005F1973 /* libSplashScreen.a */; };
 		B2233FD81E6F8EFD0009E92B /* Voces-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2233FD71E6F8EFC0009E92B /* Voces-Regular.ttf */; };
-		B23253551ED84C2C0055DB9C /* splashscreen in Resources */ = {isa = PBXBuildFile; fileRef = B23253541ED84C2B0055DB9C /* splashscreen */; };
+		B23253551ED84C2C0055DB9C /* splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B23253541ED84C2B0055DB9C /* splashscreen.png */; };
 		B2505F561E857A20003BCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2505F551E857A20003BCE0F /* LaunchScreen.storyboard */; };
 		B2E7318C1E6093E200944BE5 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2E7318B1E6093E200944BE5 /* Ionicons.ttf */; };
 		B2F7028D1EA86FCC00CEC029 /* nativeimg.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F7028C1EA86FCC00CEC029 /* nativeimg.png */; };
@@ -301,7 +301,7 @@
 		A94C87A8A748427C3B5AAA75 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B1A46CE50E50C75A08EB1CE8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B2233FD71E6F8EFC0009E92B /* Voces-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Voces-Regular.ttf"; path = "fonts/Voces/Voces-Regular.ttf"; sourceTree = "<group>"; };
-		B23253541ED84C2B0055DB9C /* splashscreen */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashscreen; sourceTree = "<group>"; };
+		B23253541ED84C2B0055DB9C /* splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashscreen.png; sourceTree = "<group>"; };
 		B2505F551E857A20003BCE0F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2E7318B1E6093E200944BE5 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		B2F7028C1EA86FCC00CEC029 /* nativeimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeimg.png; sourceTree = "<group>"; };
@@ -452,7 +452,7 @@
 		13B07FAE1A68108700A75B9A /* ReplayFXApp */ = {
 			isa = PBXGroup;
 			children = (
-				B23253541ED84C2B0055DB9C /* splashscreen */,
+				B23253541ED84C2B0055DB9C /* splashscreen.png */,
 				5F4002471ECBD7B9007F1A8F /* ReplayFXApp.entitlements */,
 				B2F7028C1EA86FCC00CEC029 /* nativeimg.png */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -979,7 +979,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B23253551ED84C2C0055DB9C /* splashscreen in Resources */,
+				B23253551ED84C2C0055DB9C /* splashscreen.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				B2E7318C1E6093E200944BE5 /* Ionicons.ttf in Resources */,
 				B2F7028D1EA86FCC00CEC029 /* nativeimg.png in Resources */,
