@@ -25,7 +25,7 @@ const ScheduleModal=(props)=> {
               {props.modalImage ? <Image source={{uri: props.modalImage}} style={styles.modalimage}/> : null}
            </View>
             <Text style = {styles.modaldescription}>{props.modalDescription}</Text>
-          </ScrollView>
+
             <View style ={styles.center}>
             <TouchableHighlight underlayColor="#ffffff" onPress={() => {
               props.onSetModalVisible(props);
@@ -33,6 +33,7 @@ const ScheduleModal=(props)=> {
               <View><CloseIcon/></View>
             </TouchableHighlight>
           </View>
+          </ScrollView>
           </View>
         </Modal>
 

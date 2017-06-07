@@ -27,7 +27,6 @@ const GameModal=(props)=> {
             <Text style ={styles.gameModalItem}>Genre: {props.gameModalGenre}</Text>
             <Text style ={styles.gameModalItem}>Number of Players: {props.gameModalPlayers}</Text>
             <Text style = {styles.modaldescription}>{props.gameModalOverview}</Text>
-          </ScrollView>
             <View style ={styles.center}>
             <TouchableHighlight underlayColor="#ffffff" onPress={() => {
               props.setModalVisible(props);
@@ -35,6 +34,7 @@ const GameModal=(props)=> {
               <View><CloseIcon/></View>
             </TouchableHighlight>
           </View>
+          </ScrollView>
           </View>
         </Modal>
 
