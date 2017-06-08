@@ -39,11 +39,12 @@ export default class ScheduleListView extends Component {
       isRefreshing: false,
       // isEnabled: false
     };
+
   this.renderScheduleItem = this.renderScheduleItem.bind(this);
-    this.handleModalVisible = this.handleModalVisible.bind(this);
-   this.handleFavoriteButtonPress=this.handleFavoriteButtonPress.bind(this);
-   this.timeConverter=this.timeConverter.bind(this);
-    this.onRefresh=this.onRefresh.bind(this);
+  this.handleModalVisible = this.handleModalVisible.bind(this);
+  this.handleFavoriteButtonPress=this.handleFavoriteButtonPress.bind(this);
+  this.timeConverter=this.timeConverter.bind(this);
+  this.onRefresh=this.onRefresh.bind(this);
   }
   componentWillReceiveProps(nextProps) {
     const ds = new ListView.DataSource({
@@ -64,6 +65,17 @@ onRefresh() {
   setTimeout(() => {
     this.setState({isRefreshing: false});
 }, 5000);
+}
+show(message) {
+  console.log("SHOW METHOD FIRED!!")
+  Toast.show(message, {
+    duration: Toast.durations.LONG,
+    position: Toast.positions.BOTTOM,
+    shadow: true,
+    animation: true,
+    hideOnPress: true,
+    delay: 0
+  });
 }
   handleFavoriteButtonPress(item){
 
@@ -95,7 +107,9 @@ onRefresh() {
               userInfo: {id: id},
               message: item.title + ' will begin in 15 minutes',
               date: fifteenMinutesUntil
-           });}
+           });
+            //this.show();
+         }
           }
     }
 
@@ -147,7 +161,7 @@ return timeValue;
               this.timeConverter(item.endTime), item.location, item.extendedDescription, item.image)} //need to redefine the function otherwise tries to change state during render
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />
-            <PushController/>
+            <PushController show= {this.show}/>
 
     </View>
           )}
