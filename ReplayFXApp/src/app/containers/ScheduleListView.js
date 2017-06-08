@@ -16,7 +16,7 @@ import ScheduleModal from '../components/ScheduleModal';
 import SectionHeader from '../components/SectionHeader';
 import PushController from '../components/PushController';
 import PushNotification from 'react-native-push-notification';
-
+import Toast from 'react-native-root-toast';
 
 
 export default class ScheduleListView extends Component {
@@ -70,11 +70,13 @@ show(message) {
   console.log("SHOW METHOD FIRED!!")
   Toast.show(message, {
     duration: Toast.durations.LONG,
-    position: Toast.positions.BOTTOM,
+    position: Toast.positions.CENTER,
     shadow: true,
     animation: true,
     hideOnPress: true,
-    delay: 0
+    delay: 0,
+    backgroundColor: "#3B3D68",
+    textColor: "white"
   });
 }
   handleFavoriteButtonPress(item){
