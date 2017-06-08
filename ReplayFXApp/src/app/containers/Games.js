@@ -31,7 +31,7 @@ export default class Games extends Component {
   }
 
 
-  setModalVisible(visible, gameTitle, releaseDate, location, developer, genre, players, overview, image) {
+  setModalVisible(visible, gameTitle, releaseDate, location, developer, genre, players, overview, imageUrl) {
     this.setState({
       gameModalVisible: visible,
       gameModalTitle: gameTitle,
@@ -41,9 +41,17 @@ export default class Games extends Component {
       gameModalGenre: genre,
       gameModalPlayers: players,
       gameModalOverview: overview,
-      gameModalImage: image,
+      gameModalImage: imageUrl,
       });
   }
+
+renderLocationMap(locationArray) {
+return (locationArray.map(function(location){
+    return(
+      location.location
+    );
+}).join(', ')
+)}
 
 
   _renderHeader(section, index) {
@@ -60,10 +68,10 @@ export default class Games extends Component {
          {   section.content.map((item) => {
              return (
 
-               <TouchableHighlight key ={item.id} onPress= {() => this.setModalVisible(true, item.gameTitle, item.releaseDate, item.replayGameLocations[0].location, item.developer, item.genre, item.players, item.overview, item.image)}>
+               <TouchableHighlight key ={item.id} onPress= {() => this.setModalVisible(true, item.gameTitle, item.releaseDate, this.renderLocationMap(item.replayGameLocations), item.developer, item.genre, item.players, item.overview, item.imageUrl)}>
                <View style= {styles.gameTitleLocation} >
                 <Text style={styles.title}>{item.gameTitle}</Text>
-                <Text style={styles.title}>{item.replayGameLocations[0].location}</Text>
+                <Text>{this.renderLocationMap(item.replayGameLocations)}</Text>
               </View>
               </TouchableHighlight>
              );
