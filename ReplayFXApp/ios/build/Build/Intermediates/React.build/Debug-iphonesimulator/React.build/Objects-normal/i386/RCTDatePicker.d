@@ -1,8 +1,0 @@
-dependencies: \
-  /Users/craythomas/Documents/Y1S2-ReplayFX-Schedule-App/ReplayFXApp/node_modules/react-native/React/Views/RCTDatePicker.m \
-  /Users/craythomas/Documents/Y1S2-ReplayFX-Schedule-App/ReplayFXApp/node_modules/react-native/React/Views/RCTDatePicker.h \
-  /Users/craythomas/Documents/Y1S2-ReplayFX-Schedule-App/ReplayFXApp/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/craythomas/Documents/Y1S2-ReplayFX-Schedule-App/ReplayFXApp/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/craythomas/Documents/Y1S2-ReplayFX-Schedule-App/ReplayFXApp/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/craythomas/Documents/Y1S2-ReplayFX-Schedule-App/ReplayFXApp/node_modules/react-native/React/Views/UIView+React.h \
-  /Users/craythomas/Documents/Y1S2-ReplayFX-Schedule-App/ReplayFXApp/node_modules/react-native/React/Views/RCTComponent.h

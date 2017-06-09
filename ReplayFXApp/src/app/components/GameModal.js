@@ -4,7 +4,8 @@ import {
     ScrollView,
     View,
     TouchableHighlight,
-    Text
+    Text,
+    Image
 } from 'react-native';
 import styles, {stylechoice} from '../styles/StyleSheet';
 import CloseIcon from '../utils/closeIcon';
@@ -18,10 +19,10 @@ const GameModal=(props)=> {
           <View style= {styles.gameModalContainer}>
              <ScrollView>
               <View style ={{alignItems: 'center'}}>
-              {props.modalImage ? <Image source={{uri: props.modalImage}} style={styles.modalimage}/> : null}
+              {props.gameModalImage ? <Image source={{uri: props.gameModalImage}} style={styles.modalimage}/> : null}
            </View>
-            <Text style={styles.modaltitle}>{props.gameModalTitle}</Text>
-             <Text style ={styles.gameModalItem}>Location: {props.gameModalLocation}</Text>
+            <Text style={styles.modaltitle}>{props.gameModalTitle}</Text> 
+            <Text style={styles.gameModalItem}>Location: {props.gameModalLocation}</Text>
             <Text style={styles.gameModalItem}>Release Date: {props.gameModalReleaseDate}</Text>
             <Text style ={styles.gameModalItem}>Developer: {props.gameModalDeveloper}</Text>
             <Text style ={styles.gameModalItem}>Genre: {props.gameModalGenre}</Text>
