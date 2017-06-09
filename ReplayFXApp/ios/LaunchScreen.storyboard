@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-nm-kU8" userLabel="splashscreen.png">
-                                <rect key="frame" x="48" y="62.000000000000227" width="310" height="614"/>
+                                <rect key="frame" x="48" y="62" width="310" height="614"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
