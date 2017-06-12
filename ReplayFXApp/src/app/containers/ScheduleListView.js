@@ -16,7 +16,6 @@ import ScheduleModal from '../components/ScheduleModal';
 import SectionHeader from '../components/SectionHeader';
 import PushController from '../components/PushController';
 import PushNotification from 'react-native-push-notification';
-import Toast from 'react-native-root-toast';
 
 
 export default class ScheduleListView extends Component {
@@ -66,19 +65,7 @@ onRefresh() {
     this.setState({isRefreshing: false});
 }, 5000);
 }
-show(message) {
-  console.log("SHOW METHOD FIRED!!")
-  Toast.show(message, {
-    duration: Toast.durations.LONG,
-    position: Toast.positions.CENTER,
-    shadow: true,
-    animation: true,
-    hideOnPress: true,
-    delay: 0,
-    backgroundColor: "#3B3D68",
-    textColor: "white"
-  });
-}
+
   handleFavoriteButtonPress(item){
 
     if (item.isFavorite){
@@ -86,9 +73,9 @@ show(message) {
             this.props.removeFavorite(item.id);
           // Alert.alert('Item has been removed from your schedule');
           let id = (item.id).toString();
-          PushNotification.cancelLocalNotifications({
-            id: id
-          });
+        //   PushNotification.cancelLocalNotifications({
+        //     id: id
+        //   });
         }
 
           else {
@@ -96,22 +83,22 @@ show(message) {
             if(this.props.favorites.length < 1){
                  Alert.alert('Item has been added to your schedule');
              }
-            let favoriteDate = new Date(item.date);
-            let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
-            let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
-            let fifteenMinutesUntil = new Date (favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+item.startTime+ "-"+"03:45");
-            console.log(fifteenMinutesUntil);
-
-            let id = (item.id).toString();
-            if( fifteenMinutesUntil >= Date.now()){
-              PushNotification.localNotificationSchedule({
-              id: id,
-              userInfo: {id: id},
-              message: item.title + ' will begin in 15 minutes',
-              date: fifteenMinutesUntil
-           });
-            //this.show();
-         }
+        //     let favoriteDate = new Date(item.date);
+        //     let favoriteMonth  = (favoriteDate.getMonth()+1) >=10 ? "-"+(favoriteDate.getMonth()+1) : "-0"+(favoriteDate.getMonth()+1);
+        //     let favoriteDay  = (favoriteDate.getDate()+1) >=10 ? "-"+(favoriteDate.getDate()+1) : "-0"+(favoriteDate.getDate()+1);
+        //     let fifteenMinutesUntil = new Date (favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+item.startTime+ "-"+"03:45");
+        //     console.log(fifteenMinutesUntil);
+         //
+        //     let id = (item.id).toString();
+        //     if( fifteenMinutesUntil >= Date.now()){
+        //       PushNotification.localNotificationSchedule({
+        //       id: id,
+        //       userInfo: {id: id},
+        //       message: item.title + ' will begin in 15 minutes',
+        //       date: fifteenMinutesUntil
+        //    });
+        //     //this.show();
+        //  }
           }
     }
 
@@ -163,7 +150,7 @@ return timeValue;
               this.timeConverter(item.endTime), item.location, item.extendedDescription, item.image)} //need to redefine the function otherwise tries to change state during render
             onFavoriteButtonPress={this.handleFavoriteButtonPress}
             />
-            <PushController show= {this.show}/>
+            <PushController item = {item}/>
 
     </View>
           )}
