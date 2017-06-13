@@ -12,7 +12,8 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <React/RCTPushNotificationManager.h>
+#import "RCTPushNotificationManager.h"
+//#import <React/RCTPushNotificationManager.h>
 #import <BuddyBuildSDK/BuddyBuildSDK.h>
 
 
