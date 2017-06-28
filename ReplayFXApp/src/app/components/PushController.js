@@ -7,7 +7,7 @@ export default class PushController extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fifteenMinutesUntil: new Date(Date.now),
+      // fifteenMinutesUntil: new Date(Date.now),
       previousNotificationsID: -1
     };
     this.backgroundNotification = this.backgroundNotification.bind(this);
@@ -71,7 +71,7 @@ export default class PushController extends Component {
              date: fifteen_min_until,
              userInfo: {id: id},
              message: this.props.item.title + ' will begin in 15 minutes',
-            id: id
+             id: id
 
             //sending an id so notification is only sent once
            //setting the push notification to fire for each event at the right time
@@ -83,7 +83,8 @@ export default class PushController extends Component {
               PushNotification.cancelLocalNotifications({id: id});
               previous_notification = -1;
    }
-    this.setState({fifteenMinutesUntil: fifteen_min_until, previousNotificationsID: previous_notification});
+    // this.setState({fifteenMinutesUntil: fifteen_min_until, previousNotificationsID: previous_notification});
+    this.setState({previousNotificationsID: previous_notification});
 
   }
   }
