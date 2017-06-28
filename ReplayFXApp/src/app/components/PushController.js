@@ -31,10 +31,13 @@ export default class PushController extends Component {
   componentDidMount() {
   AppState.addEventListener('change', this.backgroundNotification);
     PushNotification.configure({
+      onRegister: function(token) {
+        console.log( 'TOKEN:', token );
+    },
       onNotification: function(notification) {
          console.log('NOTIFICATION:', notification);
           //  this.showToast(notification.message);
-      }
+      },
     });
   }
 
@@ -44,7 +47,7 @@ export default class PushController extends Component {
 
 
   backgroundNotification(appState) {
-      if (appState=='background') {
+      // if (appState=='background') {
         let favoriteDate = new Date(this.props.item.date);
         let favoriteMonth = '';
         let favoriteDay = '';
@@ -61,15 +64,16 @@ export default class PushController extends Component {
               //converting date to a 15 minutes before the event happens
               fifteen_min_until = new Date( favoriteDate.getFullYear()+favoriteMonth+favoriteDay+"T"+this.props.item.startTime+ "-"+"03:45");
 
-              console.log(fifteen_min_until);
               previous_notification = id;
 
           if(fifteen_min_until >= Date.now()){
+            console.log(fifteen_min_until);
              PushNotification.localNotificationSchedule({
-             id: id,
-             message: this.props.item.title + ' will begin in 15 minutes',
              date: new Date(fifteen_min_until),
-             userInfo: {id: id}
+             userInfo: {id: id},
+             message: this.props.item.title + ' will begin in 15 minutes',
+             id: id
+
             //sending an id so notification is only sent once
            //setting the push notification to fire for each event at the right time
          });
@@ -82,7 +86,7 @@ export default class PushController extends Component {
    }
    this.setState({fifteenMinutesUntil: fifteen_min_until, previousNotificationsID: previous_notification});
 
- }
+ // }
   }
   render() {
     return null;
