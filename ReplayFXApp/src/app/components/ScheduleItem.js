@@ -19,7 +19,7 @@ function ScheduleItem(props) {
       <View style={styles.iconrowstyle}>
       <MoreInfoButton
         extendedDescription={props.item.extendedDescription}
-        image={props.item.image}
+        image={props.item.imageUrl}
         onSetModalVisible={() => props.onSetModalVisible(props)}/>
       <AddFavoriteButton
         item={props.item}

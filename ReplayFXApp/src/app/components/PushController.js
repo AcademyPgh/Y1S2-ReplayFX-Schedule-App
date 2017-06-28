@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import {AppState, Platform} from 'react-native';
 import PushNotification from 'react-native-push-notification';
-import Toast from 'react-native-root-toast';
-
 
 export default class PushController extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -90,5 +88,6 @@ export default class PushController extends Component {
   }
   render() {
     return null;
+
   }
 }
