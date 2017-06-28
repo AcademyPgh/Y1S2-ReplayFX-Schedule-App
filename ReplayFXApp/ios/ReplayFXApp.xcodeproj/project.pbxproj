@@ -45,7 +45,6 @@
 		B2505F561E857A20003BCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2505F551E857A20003BCE0F /* LaunchScreen.storyboard */; };
 		B2A6D6521F035619009018F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		B2A6D6541F03596B009018F5 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A6D6531F03596B009018F5 /* BuddyBuildSDK.framework */; };
-		B2A6D6561F035BE1009018F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		B2E7318C1E6093E200944BE5 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2E7318B1E6093E200944BE5 /* Ionicons.ttf */; };
 		B2F7028D1EA86FCC00CEC029 /* nativeimg.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F7028C1EA86FCC00CEC029 /* nativeimg.png */; };
 		B2F702B31EAA3DD200CEC029 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F702B01EAA3D1300CEC029 /* libRCTPushNotification.a */; };
@@ -1067,7 +1066,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2A6D6561F035BE1009018F5 /* AppDelegate.m in Sources */,
 				B2A6D6521F035619009018F5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
