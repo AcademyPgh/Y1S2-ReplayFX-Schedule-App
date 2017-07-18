@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TouchableHighlight} from 'react-native';
+import {TouchableHighlight, ScrollView} from 'react-native';
 import {View, Text} from 'react-native-animatable';
 import Accordion from 'react-native-collapsible/Accordion';
 import styles, {stylechoice} from '../styles/StyleSheet';
@@ -67,8 +67,8 @@ return (locationArray.map(function(location){
        <View>
          {   section.content.map((item) => {
              return (
-
                <TouchableHighlight key ={item.id} onPress= {() => this.setModalVisible(true, item.gameTitle, item.releaseDate, this.renderLocationMap(item.replayGameLocations), item.developer, item.genre, item.players, item.overview, item.imageUrl)}>
+              
                <View style= {styles.gameTitleLocation} >
                 <Text style={styles.title}>{item.gameTitle}</Text>
                 <Text>{this.renderLocationMap(item.replayGameLocations)}</Text>
@@ -84,6 +84,7 @@ return (locationArray.map(function(location){
    render() {
      return (
        <View>
+         <ScrollView>
        <GameModal
         gameModalVisible={this.state.gameModalVisible}
         gameModalTitle={this.state.gameModalTitle}
@@ -101,6 +102,7 @@ return (locationArray.map(function(location){
          renderHeader={this._renderHeader}
          renderContent={this._renderContent}
        />
+       </ScrollView>
      </View>
      );
    }
