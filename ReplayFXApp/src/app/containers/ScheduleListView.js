@@ -185,6 +185,7 @@ return timeValue;
               />}
           styles={styles.container}
           dataSource={this.state.dataSource}
+          removeClippedSubviews={true}
           renderRow={this.renderScheduleItem}
           renderSectionHeader={this.renderSectionHeader}
           >
