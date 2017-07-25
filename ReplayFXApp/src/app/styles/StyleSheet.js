@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: 15,
     paddingRight: 15,
+    alignItems: 'center'
 
   },
 
@@ -106,7 +107,7 @@ gameModalContainer: {
   gameModalItem: {
     textAlign: 'left',
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '100',
     color: stylechoice.regtextcolor,
     paddingBottom: 1
 },
