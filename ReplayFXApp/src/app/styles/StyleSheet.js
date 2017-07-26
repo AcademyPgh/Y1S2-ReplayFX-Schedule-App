@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {StyleSheet, Dimensions, Platform} from 'react-native';
 //italics and bold not available for this font so don't use them
 export const stylechoice =
   {fontName: 'Voces',
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: 15,
     paddingRight: 15,
+    alignItems: 'center'
 
   },
 
@@ -106,7 +107,7 @@ gameModalContainer: {
   gameModalItem: {
     textAlign: 'left',
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '100',
     color: stylechoice.regtextcolor,
     paddingBottom: 1
 },
@@ -229,14 +230,21 @@ gameModalContainer: {
     alignItems: 'center'
   },
   modalimage: {
-    //width: Dimensions.get('window').width,
-    //height: Dimensions.get('window').width * .5625,
-    width: 200,
-    height: 150,
-    resizeMode: 'contain',
+    // width: Dimensions.get('window').width,
+    // height: Dimensions.get('window').width * .5625,
+    minWidth: 200,
+    minHeight: 150,
     borderWidth: 1,
     borderColor: stylechoice.regbackground,
     borderRadius: 10,
+    ...Platform.select({
+      ios: {
+      resizeMode: 'contain',
+      },
+      android: {
+        resizeMode: 'stretch',
+      },
+      }),
   },
 
   tab: {
